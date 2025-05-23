@@ -5,7 +5,7 @@ export default function Greeting() {
   return (
     <div data-aos="fade-up" id="top" className="greeting">
       <Image
-        src="/img/dragon.png"
+        src="./img/dragon.png"
         alt="Dragon illustration"
         width={100}
         height={100}
