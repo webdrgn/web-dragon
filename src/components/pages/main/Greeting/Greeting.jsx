@@ -5,9 +5,9 @@ export default function Greeting() {
     <div data-aos="fade-up" id="top" className="greeting">
       <img
         className="greeting__img w-32 lg:w-48"
-        src="/img/dragon.png"
+        src="./img/dragon.png"
       />
-      
+
       <div className="greeting__text">
         <h3>Герман Чернышёв</h3>
 

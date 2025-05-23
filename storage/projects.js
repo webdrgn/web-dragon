@@ -2,7 +2,7 @@ export const projects = [
   {
     id: 1,
     title: 'Лендинг кинокомпании «8 Студия»',
-    image: '/img/8studio.jpg',
+    image: './img/8studio.jpg',
     link: 'https://8studiofilm.ru',
     stack: 'React • Tailwind • Webpack • Node.js',
     achievements: [],
@@ -10,7 +10,7 @@ export const projects = [
   {
     id: 2,
     title: 'Аналог Flappy Bird — multiplayer-игра с рейтингами',
-    image: '/img/flappy-progger.jpg',
+    image: './img/flappy-progger.jpg',
     link: 'https://github.com/Mansur903/game.praktikum.yandex',
     stack:
       'React TS • Redux Toolkit • WebSocket • PostgreSQL • Node.js • Express',
@@ -22,14 +22,14 @@ export const projects = [
   {
     id: 3,
     title: 'Web Dragon Messenger — корпоративный мессенджер (P2P)',
-    image: '/img/wd.jpg',
+    image: './img/wd.jpg',
     link: 'https://github.com/grmnche/wdm',
     stack: 'TypeScript • Express • WebSocket • E2E-тесты (Mocha/Chai)',
   },
   {
     id: 4,
     title: 'Кибервариус — интерактивный лендинг с анимациями',
-    image: '/img/cybervarius.jpg',
+    image: './img/cybervarius.jpg',
     link: 'https://cybervarius.ru',
     stack: 'React TS, SCSS, Tailwind, Webpack, Redux/Redux Toolkit',
   },
