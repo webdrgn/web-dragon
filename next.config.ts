@@ -1,23 +1,26 @@
 import type { NextConfig } from 'next';
 const path = require('path');
 
+const repoName = 'web-dragon'; // Ваше имя репозитория
 const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig: NextConfig = {
   /* config options here */
-  distDir: 'dist',
   reactStrictMode: true,
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
     prependData: `@import "variables.scss";`, // автоматический импорт в каждый SCSS файл
   },
-  output: 'export', // Генерация статических файлов
-  assetPrefix: isProd ? `/web-dragon/` : '', // Для корректных путей
-  basePath: isProd ? `/web-dragon` : '',
+  output: 'export',
+  basePath: isProd ? `/${repoName}` : '',
+  assetPrefix: isProd ? `/${repoName}/` : '',
+  trailingSlash: true,
   images: {
-    unoptimized: true, // Отключает оптимизацию (обязательно для статики)
+    unoptimized: true,
   },
-  trailingSlash: true, // Добавляет / к URL (рекомендуется для GitHub Pages)
+  experimental: {
+    urlImports: ['https://github.com/grmnche/web-dragon/raw/gh-pages/'],
+  },
 };
 
 export default nextConfig;
