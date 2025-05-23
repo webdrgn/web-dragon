@@ -5,6 +5,7 @@
   @include flexbox(center, center, column, 96px);
   height: 100vh;
   min-height: fit-content;
+  padding-top: 80px;
 
   @include media(max, tablet) {
     gap: 72px;

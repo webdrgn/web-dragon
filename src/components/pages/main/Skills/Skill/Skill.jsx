@@ -16,7 +16,7 @@ function Skill({ skill }) {
           unoptimized={true}
         />
 
-        <h1 className="skill__title text-lg lg:text-2xl">{skill.title}</h1>
+        <h2 className="skill__title text-lg lg:text-2xl">{skill.title}</h2>
       </div>
 
       <p className="skill__description text-sm lg:text-xl text-[var(--primary)]">

@@ -91,14 +91,9 @@ button {
   @include media(max, tablet) {
     padding: 16px 20px;
   }
-
-  &:hover {
-    background-color: var(--white);
-    color: var(--dark-2);
-  }
 }
 
-a:not(:has(button)) {
+a {
   @include hover-active;
   transition: 0.3s;
 }
