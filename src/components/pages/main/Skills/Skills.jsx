@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import Skill from './Skill/Skill.jsx';
 import PropTypes from 'prop-types';
-import 'aos/dist/aos.css';
 import Image from 'next/image';
 
 function Skills(props) {

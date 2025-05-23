@@ -4,6 +4,7 @@ import Projects from '@/components/pages/main/Projects/Projects';
 import Header from '@/components/common/Header/Header';
 import Footer from '@/components/common/Footer/Footer';
 import { skills } from '../../storage/skills';
+import DragonFireflies from '@/components/animation/DragonFireflies/DragonFireflies';
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
       <Header />
 
       <main>
-        <div className="normalize-container">
+        <div className="normalize-section normalize-container">
           <Greeting />
         </div>
 

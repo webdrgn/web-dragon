@@ -54,7 +54,7 @@ html {
 }
 
 body {
-  color: #ebebeb;
+  color: var(--white);
   margin: 0;
   padding: 0;
   font-family: 'Roboto';
@@ -83,18 +83,22 @@ button {
 
   transition: 0.3s;
 
-  border: 1px solid #fff;
+  background-color: transparent;
+  border: 1px solid var(--white);
   border-radius: 16px;
   text-align: center;
-
-  @include hover-active;
 
   @include media(max, tablet) {
     padding: 16px 20px;
   }
+
+  &:hover {
+    background-color: var(--white);
+    color: var(--dark-2);
+  }
 }
 
-a {
+a:not(:has(button)) {
   @include hover-active;
   transition: 0.3s;
 }

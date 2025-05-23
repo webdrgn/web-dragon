@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import 'aos/dist/aos.css';
 
 const Modal = () => {
   const [isOpen, setIsOpen] = useState(false);

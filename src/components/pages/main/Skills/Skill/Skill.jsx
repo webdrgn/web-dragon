@@ -1,21 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import Aos from 'aos';
 import Image from 'next/image';
 
 function Skill({ skill }) {
-  const [isActive, setIsActive] = useState(false);
-
-  const handle = () => {
-    setIsActive((isActive) => !isActive);
-  };
-
-  useEffect(() => {
-    Aos.init({ duration: 2000 });
-  }, []);
-
   return (
-    <div data-aos="fade-up" className="skill col-12 col-md-6" onClick={handle}>
+    <div data-aos="fade-up" className="skill col-12 col-md-6">
       <div className="skill__preview">
         <Image
           src={skill.image}
