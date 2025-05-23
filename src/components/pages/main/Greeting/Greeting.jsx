@@ -9,7 +9,7 @@ export default function Greeting() {
         alt="Dragon illustration"
         width={100}
         height={100}
-        className="greeting__img w-32 lg:w-48"
+        className="greeting__icon w-32 lg:w-48"
         quality={100}
         unoptimized={true}
       />
