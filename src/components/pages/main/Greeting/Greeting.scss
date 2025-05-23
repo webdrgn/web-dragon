@@ -4,6 +4,7 @@
 .greeting {
   @include flexbox(center, center, column, 96px);
   height: 100vh;
+  min-height: fit-content;
 
   @include media(max, tablet) {
     gap: 72px;
