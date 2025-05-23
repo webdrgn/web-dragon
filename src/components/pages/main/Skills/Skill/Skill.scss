@@ -1,0 +1,23 @@
+@import '@/styles/mixins/flexbox.scss';
+
+.skill {
+  @include flexbox(initial, initial, column, 20px);
+  // border: 1px solid #fff;
+  padding: 32px;
+  border-radius: 16px;
+  background-color: #00000033;
+  opacity: 0.6;
+
+  @include media(max, mobile) {
+    padding: 24px;
+  }
+
+  &__preview {
+    @include flexbox(initial, initial, column, 20px);
+  }
+
+  &__description {
+    text-shadow: 0 0 20px var(--primary);
+    text-transform: lowercase;
+  }
+}

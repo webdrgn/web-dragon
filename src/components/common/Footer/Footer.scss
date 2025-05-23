@@ -1,0 +1,21 @@
+footer {
+  z-index: 1;
+
+  :nth-child(1) {
+    margin-right: 30px;
+  }
+
+  a {
+    cursor: pointer;
+    display: inline-block;
+    width: 30px;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  .icon {
+    width: 100%;
+  }
+}

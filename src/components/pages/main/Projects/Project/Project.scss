@@ -1,0 +1,54 @@
+@import '@/styles/mixins/media.scss';
+@import '@/styles/mixins/flexbox.scss';
+
+.project {
+  position: relative;
+  @include flexbox(initial, initial, column, 24px);
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 16px;
+  padding: 32px;
+
+  @include media(max, mobile) {
+    gap: 16px;
+    padding: 24px;
+  }
+
+  &__picture {
+    border-radius: 16px;
+    object-fit: contain;
+    opacity: 0.4;
+  }
+
+  &__desc {
+    position: relative;
+    @include flexbox(initial, initial, column, 24px);
+
+    width: 100%;
+    z-index: 1;
+
+    @include media(max, mobile) {
+      gap: 16px;
+    }
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    width: 100%;
+
+    @include media(max, tablet) {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__stack {
+    font-size: 1rem;
+    color: var(--primary);
+    text-shadow: 0 0 20px var(--primary);
+  }
+}

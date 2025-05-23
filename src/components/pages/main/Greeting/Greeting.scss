@@ -1,0 +1,27 @@
+@import '@/styles/mixins/flexbox.scss';
+@import '@/styles/mixins/media.scss';
+
+.greeting {
+  @include flexbox(center, center, column, 96px);
+  height: 100vh;
+
+  @include media(max, tablet) {
+    gap: 72px;
+  }
+
+  @include media(max, mobile) {
+    gap: 48px;
+  }
+
+  &__text {
+    @include flexbox(initial, initial, column, 24px);
+
+    p {
+      font-size: clamp(14px, 1.5vw, 20px);
+    }
+  }
+
+  h3 {
+    text-align: left;
+  }
+}

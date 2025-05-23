@@ -1,0 +1,26 @@
+@import '@/styles/mixins/media.scss';
+@import '@/styles/mixins/flexbox.scss';
+
+.skills {
+  @include flexbox(center, center, column, 96px);
+
+  @include media(max, mobile) {
+    gap: 64px;
+  }
+
+  &__text {
+    @include flexbox(initial, initial, column, 24px);
+  }
+
+  &__certificate {
+    width: 100%;
+    max-width: 720px;
+
+    margin: 24px auto 0;
+    border-radius: 16px;
+  }
+
+  &__icon {
+    margin-bottom: 64px;
+  }
+}

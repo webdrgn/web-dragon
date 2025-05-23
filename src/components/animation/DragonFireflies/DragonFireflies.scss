@@ -1,0 +1,26 @@
+.fireflies-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  overflow: hidden;
+
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.firefly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background-color: var(--primary);
+  box-shadow: 0 0 2px 1px var(--primary), 0 0 6px 2px var(--primary), 0 0 10px 4px var(--primary),
+    0 0 18px 8px var(--primary), 0 0 40px 14px #ffffff, 0 0 20px var(--primary),
+    0 0 26px #ffffff, 0 0 32px var(--primary), 0 0 38px #ffffff, 0 0 44px var(--primary);
+  opacity: 0.8;
+
+  border-radius: 50%;
+  animation: (move, firefly-animation) 8s linear infinite;
+  animation-delay: calc(var(--random-delay) * 4s);
+}

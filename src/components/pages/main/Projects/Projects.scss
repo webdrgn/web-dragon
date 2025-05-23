@@ -1,0 +1,35 @@
+@import '@/styles/mixins/flexbox.scss';
+
+.projects {
+  @include flexbox(center, center, column, 96px);
+
+  @include media(max, mobile) {
+    gap: 64px;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  &__icon {
+    margin-bottom: 64px;
+  }
+
+  &__nda {
+    @include flexbox(center, center, column, 48px);
+  }
+
+  &__contact {
+    @include flexbox(center, center, column, 48px);
+    margin-top: 12rem;
+    width: 100%;
+
+    @include media(max, tablet) {
+      margin-top: 6rem;
+    }
+
+    @include media(max, mobile) {
+      margin-top: 4rem;
+    }
+  }
+}
