@@ -16,9 +16,11 @@ export default function App({ Component, pageProps }: AppProps) {
   }, []);
 
   useEffect(() => {
-    loading
-      ? document?.querySelector('body')?.classList.add('lock')
-      : document?.querySelector('body')?.classList.remove('lock');
+    if (loading) {
+      document?.querySelector('body')?.classList.add('lock');
+    } else {
+      document?.querySelector('body')?.classList.remove('lock');
+    }
   }, [loading]);
 
   return (

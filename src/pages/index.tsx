@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Greeting from '@/components/pages/main/Greeting/Greeting';
 import Skills from '@/components/pages/main/Skills/Skills';
 import Projects from '@/components/pages/main/Projects/Projects';
