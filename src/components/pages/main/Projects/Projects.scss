@@ -1,4 +1,4 @@
-@import '@/styles/mixins/flexbox.scss';
+@import '../../../../styles/mixins/flexbox.scss';
 
 .projects {
   @include flexbox(center, center, column, 96px);

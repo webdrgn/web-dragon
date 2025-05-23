@@ -1,4 +1,4 @@
-@import '@/styles/mixins/flexbox.scss';
+@import '../../../../../styles/mixins/flexbox.scss';
 
 .skill {
   @include flexbox(initial, initial, column, 20px);

@@ -1,5 +1,5 @@
-@import '@/styles/mixins/flexbox.scss';
-@import '@/styles/mixins/media.scss';
+@import '../../../../styles/mixins/flexbox.scss';
+@import '../../../../styles/mixins/media.scss';
 
 .greeting {
   @include flexbox(center, center, column, 96px);
