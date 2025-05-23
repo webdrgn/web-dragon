@@ -2,7 +2,6 @@
 
 .skill {
   @include flexbox(initial, initial, column, 20px);
-  // border: 1px solid #fff;
   padding: 32px;
   border-radius: 16px;
   background-color: #00000033;

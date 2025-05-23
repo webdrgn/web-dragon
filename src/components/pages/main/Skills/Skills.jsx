@@ -2,14 +2,20 @@ import React, { useEffect } from 'react';
 import Skill from './Skill/Skill.jsx';
 import PropTypes from 'prop-types';
 import 'aos/dist/aos.css';
+import Image from 'next/image';
 
 function Skills(props) {
   return (
     <div id="skills" className="skills">
-      <img
-        data-aos="fade-up"
-        className="skills__icon w-64 lg:w-1/3"
+      <Image
         src="./img/dragon3.png"
+        alt="Dragon illustration"
+        width={100}
+        height={100}
+        className="skills__icon w-64 lg:w-1/3"
+        quality={100}
+        unoptimized={true}
+        data-aos="fade-up"
       />
 
       <h2 data-aos="fade-up">Скиллы</h2>
@@ -36,10 +42,15 @@ function Skills(props) {
           </li>
         </ul>
 
-        <img
+        <Image
           src="./img/certificate-yandex.jpg"
           alt="Сертификат Яндекс Практикум"
-          className='skills__certificate'
+          width={100}
+          height={100}
+          className="skills__certificate"
+          quality={100}
+          unoptimized={true}
+          data-aos="fade-up"
         />
       </div>
 

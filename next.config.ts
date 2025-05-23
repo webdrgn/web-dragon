@@ -1,7 +1,7 @@
 import type { NextConfig } from 'next';
 const path = require('path');
 
-const repoName = 'web-dragon'; // Ваше имя репозитория
+const repoName = 'web-dragon';
 const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig: NextConfig = {
@@ -15,11 +15,10 @@ const nextConfig: NextConfig = {
   basePath: isProd ? `/${repoName}` : '',
   assetPrefix: isProd ? `/${repoName}/` : '',
   trailingSlash: true,
+
+  // Настройки изображений
   images: {
-    unoptimized: true,
-  },
-  experimental: {
-    urlImports: ['https://github.com/grmnche/web-dragon/raw/gh-pages/'],
+    unoptimized: true, // Включаем оптимизацию
   },
 };
 

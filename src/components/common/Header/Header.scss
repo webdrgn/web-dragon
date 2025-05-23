@@ -13,7 +13,7 @@
 
   .nav {
     @include flexbox(center, center, unset, 32px);
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: #00000033;
     border-radius: 16px;
     padding: 12px;
 

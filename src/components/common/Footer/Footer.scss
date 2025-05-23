@@ -1,14 +1,23 @@
-footer {
-  z-index: 1;
+@import '../../../styles/mixins/flexbox.scss';
 
-  :nth-child(1) {
-    margin-right: 30px;
+.footer {
+  @include flexbox(initial, initial, column, 16px);
+
+  z-index: 1;
+  padding-bottom: 32px;
+
+  &__links {
+    @include flexbox(initial, initial, unset, 32px);
   }
 
   a {
     cursor: pointer;
     display: inline-block;
     width: 30px;
+
+    img {
+      width: 100%;
+    }
 
     &:hover {
       opacity: 0.6;

@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 function Navbar() {
   return (
@@ -9,10 +10,14 @@ function Navbar() {
         </a>
 
         <a href="#top" className="nav__item">
-          <img
+          <Image
             src="./img/dragon4.png"
+            alt="Dragon illustration"
+            width={20}
+            height={20}
             className="z-10 nav-img w-14"
-            alt=""
+            quality={100}
+            unoptimized={true}
           />
         </a>
 

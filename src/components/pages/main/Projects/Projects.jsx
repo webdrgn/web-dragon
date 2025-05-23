@@ -1,13 +1,19 @@
 import React from 'react';
 import { Project } from './Project/Project.jsx';
+import Image from 'next/image';
 
 export default function Projects() {
   return (
     <div id="projects" className="projects mt-32">
-      <img
-        data-aos="fade-up"
-        className="projects__icon w-56 lg:w-80 mx-auto"
+      <Image
         src="./img/dragon2.png"
+        alt="Dragon illustration"
+        width={100}
+        height={100}
+        className="projects__icon w-56 lg:w-80 mx-auto"
+        quality={100}
+        unoptimized={true}
+        data-aos="fade-up"
       />
 
       <h2 data-aos="fade-up">Сокровищница</h2>

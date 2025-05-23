@@ -1,11 +1,17 @@
 import React from 'react';
+import Image from 'next/image';
 
 export default function Greeting() {
   return (
     <div data-aos="fade-up" id="top" className="greeting">
-      <img
+      <Image
+        src="/img/dragon.png"
+        alt="Dragon illustration"
+        width={100}
+        height={100}
         className="greeting__img w-32 lg:w-48"
-        src="./img/dragon.png"
+        quality={100}
+        unoptimized={true}
       />
 
       <div className="greeting__text">
@@ -19,7 +25,7 @@ export default function Greeting() {
         </p>
       </div>
 
-      
+
     </div>
   );
 }
