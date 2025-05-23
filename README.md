@@ -75,9 +75,4 @@ web-dragon/
 
 ---
 
-**Автор:** [Герман Чернышёв](https://github.com/grmnche)  
 **Сайт:** [https://grmnche.github.io/web-dragon](https://grmnche.github.io/web-dragon)  
-
----
-
-🚫 **Внесение правок в проект запрещено.**
