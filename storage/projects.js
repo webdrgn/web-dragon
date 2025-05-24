@@ -25,12 +25,5 @@ export const projects = [
     image: './img/wd.jpg',
     link: 'https://github.com/grmnche/wdm',
     stack: 'TypeScript • Express • WebSocket • E2E-тесты (Mocha/Chai)',
-  },
-  {
-    id: 4,
-    title: 'Кибервариус — интерактивный лендинг с анимациями',
-    image: './img/cybervarius.jpg',
-    link: 'https://cybervarius.ru',
-    stack: 'React TS, SCSS, Tailwind, Webpack, Redux/Redux Toolkit',
-  },
+  }
 ];

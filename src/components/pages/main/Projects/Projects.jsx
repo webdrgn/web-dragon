@@ -48,7 +48,7 @@ export default function Projects() {
 
         <ul>
           <li>
-            <strong>20+ NDA-проектов: </strong>анимированные интерфейсы,
+            <strong>30+ NDA-проектов: </strong>анимированные интерфейсы,
             event-платформы, e-commerce
           </li>
           <li>
