@@ -32,7 +32,6 @@ const DragonFireflies = ({ count = 30 }) => {
 
   useEffect(() => {
     setIsRender(true);
-    console.log('setIsRender: ');
   });
 
   return (

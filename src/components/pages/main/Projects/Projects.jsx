@@ -39,7 +39,7 @@ export default function Projects() {
 
       <div className="projects__list grid">
         {projects.map((item, idx) =>
-          <Project index={idx} />
+          <Project index={idx} key={idx} />
         )}
       </div>
 
