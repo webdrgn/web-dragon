@@ -1,6 +1,7 @@
 import React from 'react';
 import { Project } from './Project/Project.jsx';
 import Image from 'next/image';
+import { projects } from '../../../../../storage/projects.js';
 
 export default function Projects() {
   return (
@@ -37,9 +38,9 @@ export default function Projects() {
       </ul>
 
       <div className="projects__list grid">
-        <Project index={0} />
-        <Project index={1} />
-        <Project index={2} />
+        {projects.map((item, idx) =>
+          <Project index={idx} />
+        )}
       </div>
 
       <div data-aos="fade-up" className="projects__nda">
