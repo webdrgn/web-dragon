@@ -25,5 +25,12 @@ export const projects = [
     image: './img/wd.jpg',
     link: 'https://github.com/grmnche/wdm',
     stack: 'TypeScript • Express • WebSocket • E2E-тесты (Mocha/Chai)',
-  }
+  },
+  {
+    id: 4,
+    title: '"Мечи и Щиты" — аналог классической игры "Крестики-нолики"',
+    image: './img/swords-and-shields.jpg',
+    link: 'https://github.com/grmnche/swords-and-shields',
+    stack: 'React • TypeScript • Redux Toolkit • CSS Modules • GitHub Actions',
+  },
 ];
