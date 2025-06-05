@@ -28,7 +28,7 @@ export const projects = [
   },
   {
     id: 4,
-    title: '"Мечи и Щиты" — аналог классической игры "Крестики-нолики"',
+    title: 'Мечи и Щиты — классическая аркада',
     image: './img/swords-and-shields.jpg',
     link: 'https://github.com/grmnche/swords-and-shields',
     stack: 'React • TypeScript • Redux Toolkit • CSS Modules • GitHub Actions',
