@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "predeploy": "next build && touch out/.nojekyll",
-    "deploy": "gh-pages -d out"
+    "deploy": "gh-pages -d out -t"
   },
   "dependencies": {
     "aos": "^2.3.4",
