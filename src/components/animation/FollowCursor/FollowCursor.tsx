@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const isTouchDevice = () => {
   if (typeof window === 'undefined') return false;
@@ -12,9 +12,13 @@ export default function FollowCursor() {
   const posX = useRef(0);
   const posY = useRef(0);
   const rafId = useRef<number | null>(null);
+  const [isTouch, setIsTouch] = useState(false);
 
   useEffect(() => {
-    if (isTouchDevice()) return;
+    if (isTouchDevice()) {
+      setIsTouch(true);
+      return;
+    }
 
     const handlePointerMove = (e: PointerEvent) => {
       targetX.current = e.clientX;
@@ -55,6 +59,10 @@ export default function FollowCursor() {
       if (rafId.current) cancelAnimationFrame(rafId.current);
     };
   }, []);
+
+  if (isTouch) {
+    return null;
+  }
 
   return (
     <div ref={cursorRef} className="follow-cursor" aria-hidden>
