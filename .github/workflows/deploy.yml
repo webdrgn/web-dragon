@@ -21,13 +21,9 @@ jobs:
           node-version: 20
           cache: 'npm'
           registry-url: 'https://registry.npmjs.org'
-          # do not set always-auth to avoid requiring token for public packages
       
-      # Ensure npm uses public registry without token to avoid E401 in CI
       - name: Configure npm registry (public)
-        run: |
-          echo "registry=https://registry.npmjs.org/" > ~/.npmrc
-          npm config set always-auth false
+        run: echo "registry=https://registry.npmjs.org/" > ~/.npmrc
           
       - run: npm ci
       - run: npm run build
