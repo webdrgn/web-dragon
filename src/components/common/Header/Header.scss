@@ -24,7 +24,7 @@
     transition: box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
 
     @include media(max, mobile) {
-      gap: 12px;
+      gap: 4px;
     }
 
     &__item {
