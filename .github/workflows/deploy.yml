@@ -26,7 +26,6 @@ jobs:
         run: |
           echo "registry=https://registry.npmjs.org/" > .npmrc
           echo "always-auth=false" >> .npmrc
-          echo "//registry.npmjs.org/:_authToken=" >> .npmrc
           echo "Using .npmrc:" && cat .npmrc
         env:
           NPM_CONFIG_USERCONFIG: ${{ github.workspace }}/.npmrc
