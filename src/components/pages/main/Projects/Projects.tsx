@@ -19,6 +19,12 @@ export default function Projects() {
 
       <h2 data-aos="fade-up">Сокровищница</h2>
 
+      <p data-aos="fade-up">
+        4.5+ года в 4 компаниях: React/Next.js, Vue 3/Nuxt 3, TypeScript, SSR/SEO,
+        high‑load, real‑time (WebSocket). Поднимаю Core Web Vitals до 95+, добиваюсь
+        FCP &lt; 1.5s, собираю UI‑киты 100+ компонентов.
+      </p>
+
       <ul data-aos="fade-up">
         <li>
           <strong>

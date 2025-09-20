@@ -7,8 +7,6 @@
 @import './typography.scss';
 @import './fonts.scss';
 
-// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-
 // Animation
 @import '../components/animation/NoiseAnimation/NoiseAnimation.scss';
 @import '../components/animation/DragonFireflies/DragonFireflies.scss';
@@ -56,6 +54,8 @@ html {
 
 body {
   color: var(--white);
+  font-size: clamp(16px, 1.5vw, 18px);
+
   margin: 0;
   padding: 0;
   font-family: 'Roboto';
