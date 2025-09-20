@@ -2,10 +2,12 @@ import '@/styles/globals.scss';
 import type { AppProps } from 'next/app';
 import { useEffect, useState } from 'react';
 import NoiseAnimation from '@/components/animation/NoiseAnimation';
-import Loader from '@/components/common/Loader/Loader.jsx';
+import Loader from '@/components/common/Loader/Loader';
 import DragonFireflies from '@/components/animation/DragonFireflies/DragonFireflies';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import ErrorBoundary from '@/components/common/ErrorBoundary';
+import { AOS_DURATION_MS, LOADER_DELAY_MS, FIREFLIES_COUNT } from '@/config/constants';
 
 export default function App({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(false);
@@ -13,11 +15,11 @@ export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     setLoading(true);
 
-    Aos.init({ duration: 2000 });
+    Aos.init({ duration: AOS_DURATION_MS });
 
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, LOADER_DELAY_MS);
   }, []);
 
   useEffect(() => {
@@ -29,15 +31,17 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [loading]);
 
   return (
-    <div className="app">
-      <NoiseAnimation />
-      <DragonFireflies count={9} />
+    <ErrorBoundary>
+      <div className="app">
+        <NoiseAnimation />
+        <DragonFireflies count={FIREFLIES_COUNT} />
 
-      {loading ? (
-        <Loader className={loading ? '' : 'hidden--opacity'} />
-      ) : (
-        <Component {...pageProps} />
-      )}
-    </div>
+        {loading ? (
+          <Loader className={loading ? '' : 'hidden--opacity'} />
+        ) : (
+          <Component {...pageProps} />
+        )}
+      </div>
+    </ErrorBoundary>
   );
 }
