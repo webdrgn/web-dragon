@@ -9,14 +9,20 @@
 
   h2 {
     text-align: center;
+    font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+    letter-spacing: 0.5px;
   }
 
   &__icon {
-    margin-bottom: 64px;
+    margin-bottom: 48px;
   }
 
   &__nda {
     @include flexbox(center, center, column, 48px);
+    padding: 24px;
+    border-radius: 16px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(255, 255, 255, 0.06);
   }
 
   &__contact {
@@ -32,4 +38,32 @@
       margin-top: 4rem;
     }
   }
+}
+
+/* Modernize bullet lists in Projects */
+.projects ul {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  display: grid;
+  gap: 16px;
+  list-style: none;
+}
+
+.projects li {
+  position: relative;
+  padding-left: 1.25rem;
+  line-height: 1.6;
+}
+
+.projects li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
 }

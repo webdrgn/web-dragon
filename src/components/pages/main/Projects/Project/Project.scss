@@ -8,10 +8,14 @@
   width: 100%;
   height: 100%;
 
-  background-color: #00000033;
-  opacity: 0.6;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
   padding: 32px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 
   @include media(max, mobile) {
     gap: 16px;
@@ -21,7 +25,8 @@
   &__picture {
     border-radius: 16px;
     object-fit: contain;
-    opacity: 0.4;
+    opacity: 0.5;
+    transition: opacity 0.35s ease, transform 0.35s ease;
   }
 
   &__desc {
@@ -37,19 +42,30 @@
   }
 
   &__title {
-    font-size: 1.8rem;
-    font-weight: 500;
-    letter-spacing: 2px;
+    font-size: clamp(1.25rem, 1.8vw, 1.6rem);
+    font-weight: 600;
+    letter-spacing: 0.5px;
     width: 100%;
 
     @include media(max, tablet) {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
     }
   }
 
   &__stack {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: var(--primary);
-    text-shadow: 0 0 20px var(--primary);
+    opacity: 0.9;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+    border-color: rgba(255, 255, 255, 0.12);
+
+    .project__picture {
+      opacity: 0.65;
+      transform: scale(1.015);
+    }
   }
 }

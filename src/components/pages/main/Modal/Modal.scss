@@ -25,9 +25,6 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
-    background: #ff000011;
-
     @include flexbox(space-between, initial, column, 24px);
 
     padding: 32px;
@@ -35,12 +32,15 @@
 
     width: calc(100% - 48px);
     max-width: 700px;
-    height: 30vh;
     min-height: fit-content;
 
-    background: rgba(24, 24, 24, 0.99);
+    background: linear-gradient(180deg, rgba(24, 24, 24, 0.92), rgba(24, 24, 24, 0.86));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     color: white;
     border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
 
     @include media(max, mobile) {
       padding: 24px;
@@ -49,6 +49,7 @@
 
   &__text {
     @include flexbox(initial, initial, column, 24px);
+    line-height: 1.7;
   }
 
   &__btn {

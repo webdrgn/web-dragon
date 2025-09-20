@@ -14,9 +14,14 @@
 
   .nav {
     @include flexbox(center, center, unset, 32px);
-    background-color: #00000033;
     border-radius: 16px;
     padding: 12px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
 
     @include media(max, mobile) {
       gap: 12px;
@@ -25,8 +30,17 @@
     &__item {
       font-size: clamp(14px, 1vw, 16px);
       color: #fff;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
       text-transform: uppercase;
+      opacity: 0.9;
+      padding: 6px 10px;
+      border-radius: 10px;
+      transition: color 0.25s ease, opacity 0.25s ease, background 0.25s ease;
+
+      &:hover {
+        opacity: 1;
+        background: rgba(255, 255, 255, 0.06);
+      }
     }
   }
 }

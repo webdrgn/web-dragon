@@ -10,6 +10,11 @@
 
   &__text {
     @include flexbox(initial, initial, column, 24px);
+    padding: 24px;
+    border-radius: 16px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    max-width: 980px;
   }
 
   &__certificate {
@@ -18,9 +23,36 @@
 
     margin: 24px auto 0;
     border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
   }
 
   &__icon {
     margin-bottom: 64px;
   }
+}
+
+.skills ul {
+  margin-top: 8px;
+  display: grid;
+  gap: 12px;
+  padding-left: 1rem;
+  list-style: none;
+}
+
+.skills li {
+  position: relative;
+  padding-left: 1rem;
+  line-height: 1.6;
+}
+
+.skills li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
 }
