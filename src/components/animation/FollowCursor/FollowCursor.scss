@@ -1,3 +1,5 @@
+@import '../../../styles/mixins/media';
+
 .follow-cursor {
   position: fixed;
   top: 0;
@@ -8,6 +10,10 @@
   z-index: 9999;
   will-change: transform;
   transform: translate3d(0, 0, 0);
+
+  @include media(max, tablet) {
+    display: none;
+  }
 
   .follow-cursor__ember {
     width: 14px;
