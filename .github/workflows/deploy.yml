@@ -22,10 +22,19 @@ jobs:
           cache: 'npm'
           registry-url: 'https://registry.npmjs.org'
       
-      - name: Configure npm registry (public)
-        run: echo "registry=https://registry.npmjs.org/" > ~/.npmrc
-          
-      - run: npm ci
+      - name: Configure npm to use local public registry file
+        run: |
+          echo "registry=https://registry.npmjs.org/" > .npmrc
+          echo "always-auth=false" >> .npmrc
+          echo "//registry.npmjs.org/:_authToken=" >> .npmrc
+          echo "Using .npmrc:" && cat .npmrc
+        env:
+          NPM_CONFIG_USERCONFIG: ${{ github.workspace }}/.npmrc
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+        env:
+          NPM_CONFIG_USERCONFIG: ${{ github.workspace }}/.npmrc
       - run: npm run build
       
       - uses: actions/upload-pages-artifact@v3
