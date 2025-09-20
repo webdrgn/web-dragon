@@ -30,11 +30,6 @@ export default function Skills({ skills }: SkillsProps) {
           Прошёл курс «Мидл фронтенд-разработчик» в Яндекс Практикуме, чтобы:
         </p>
 
-        <p>
-          Опыт 4.5+ года (4 компании): React/Next.js, Vue 3/Nuxt 3, TypeScript, Redux, Tailwind, GSAP;
-          SSR/SEO и high‑load; Core Web Vitals 95+, FCP &lt; 1.5s; создаю UI‑киты 100+ компонентов.
-        </p>
-
         <ul>
           <li>
             Писать не просто рабочий, а оптимальный код — где каждый компонент,
