@@ -8,6 +8,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import ErrorBoundary from '@/components/common/ErrorBoundary';
 import { AOS_DURATION_MS, LOADER_DELAY_MS, FIREFLIES_COUNT } from '@/config/constants';
+import FollowCursor from '@/components/animation/FollowCursor/FollowCursor';
 
 export default function App({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(false);
@@ -35,6 +36,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <div className="app">
         <NoiseAnimation />
         <DragonFireflies count={FIREFLIES_COUNT} />
+        <FollowCursor />
 
         {loading ? (
           <Loader className={loading ? '' : 'hidden--opacity'} />

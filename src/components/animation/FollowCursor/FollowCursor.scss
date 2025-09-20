@@ -1,0 +1,22 @@
+.follow-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+
+  .follow-cursor__ember {
+    width: 14px;
+    height: 14px;
+    margin-left: -7px;
+    margin-top: -7px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    filter: blur(8px);
+    box-shadow: 0 0 14px rgba(218, 211, 148, 0.18), 0 0 28px rgba(218, 211, 148, 0.10);
+  }
+}

@@ -1,22 +1,19 @@
 import { Html, Head, Main, NextScript } from 'next/document';
+import { SITE_URL, SITE_NAME, SEO_DESCRIPTION, SEO_KEYWORDS, AUTHOR_EMAIL, OG_IMAGE, SAME_AS, SKILLS_LIST } from '@/config/constants';
 
 const metaData = {
-  title:
-    'Frontend-разработчик | Веб-дракончик (Vue/React, TypeScript, Node.js)',
-  description:
-    'Создаю быстрые и прибыльные веб-приложения. Специализация: Vue, React, TypeScript, Node.js, e-commerce и event-платформы. Оптимизация производительности +30% к скорости.',
-  url: 'https://grmnche.github.io/web-dragon',
-  image: 'https://grmnche.github.io/web-dragon/assets/img/wd.jpg',
-  keywords:
-    'веб-разработчик, React, Vue, Nuxt, JavaScript, Node.js, фронтенд, fullstack, TypeScript, веб-дракончик',
-  author: 'Герман Чернышёв',
+  title: SITE_NAME,
+  description: SEO_DESCRIPTION,
+  url: SITE_URL,
+  image: OG_IMAGE,
+  keywords: SEO_KEYWORDS.join(', '),
+  author: 'web-dragon',
 };
 
 export default function Document() {
   return (
     <Html lang="ru">
       <Head>
-        {/* Базовые мета-теги */}
         <meta charSet="utf-8" />
         <meta
           name="viewport"
@@ -25,8 +22,6 @@ export default function Document() {
         <meta name="theme-color" content="#000000" />
         <link rel="icon" href="/web-dragon/favicon.ico" />
 
-        {/* Основные SEO */}
-        <title>{metaData.title}</title>
         <meta name="description" content={metaData.description} />
         <meta name="keywords" content={metaData.keywords} />
         <meta name="author" content={metaData.author} />
@@ -34,7 +29,6 @@ export default function Document() {
         <meta name="revisit-after" content="7 days" />
         <link rel="canonical" href={metaData.url} />
 
-        {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content={metaData.url} />
         <meta property="og:title" content={metaData.title} />
@@ -42,29 +36,38 @@ export default function Document() {
         <meta property="og:image" content={metaData.image} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta
-          property="og:image:alt"
-          content="Фронтенд-разработчик - Портфолио"
-        />
+        <meta property="og:image:alt" content="Фронтенд-разработчик - Портфолио" />
         <meta property="og:locale" content="ru_RU" />
 
-        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content={metaData.url} />
         <meta name="twitter:title" content={metaData.title} />
         <meta name="twitter:description" content={metaData.description} />
         <meta name="twitter:image" content={metaData.image} />
 
-        {/* JSON-LD (без dangerouslySetInnerHTML) */}
         <script type="application/ld+json">
           {JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Person',
-            'name': metaData.author,
-            'jobTitle': 'Frontend Developer',
-            'url': metaData.url,
-            'sameAs': ['https://github.com/grmnche'],
-            'description': metaData.description,
+            name: metaData.author,
+            jobTitle: 'Frontend Developer',
+            url: metaData.url,
+            description: metaData.description,
+            sameAs: SAME_AS,
+            email: `mailto:${AUTHOR_EMAIL}`,
+            nationality: 'RU',
+            knowsAbout: SKILLS_LIST,
+            alumniOf: {
+              '@type': 'EducationalOrganization',
+              name: 'Яндекс Практикум',
+            },
+            contactPoint: {
+              '@type': 'ContactPoint',
+              contactType: 'customer support',
+              email: AUTHOR_EMAIL,
+              areaServed: 'RU',
+              availableLanguage: ['ru'],
+            },
           })}
         </script>
       </Head>
