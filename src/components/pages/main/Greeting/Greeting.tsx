@@ -17,7 +17,7 @@ export default function Greeting() {
       <div className="greeting__text">
         <h3>Герман Чернышёв</h3>
 
-        <h2>Frontend Developer / WebDragon</h2>
+        <h2>Senior Frontend Developer / WebDragon</h2>
 
         <p>
           Огнеупорная бизнес-логика и пламенный UX/UI. Сжигаю legacy-код, строю

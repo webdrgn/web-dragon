@@ -2,8 +2,8 @@ export const AOS_DURATION_MS = 2000;
 export const LOADER_DELAY_MS = 2000;
 export const FIREFLIES_COUNT = 9;
 export const SITE_URL = 'https://grmnche.github.io/web-dragon';
-export const SITE_NAME = 'WebDragon — Портфолио Frontend-разработчика';
-export const SEO_DESCRIPTION = 'Middle+ Frontend Developer (4.5+ года): Vue 3/Nuxt 3, React/Next.js, TypeScript. High-load UI, SSR/SEO, GSAP-анимации, Core Web Vitals 95+, FCP <1.5s. Архитектура, UI-киты, повышение конверсий на 10–30%.';
+export const SITE_NAME = 'WebDragon — Senior frontend-разработчик';
+export const SEO_DESCRIPTION = 'Senior Frontend Developer (4.5+ года): Vue 3/Nuxt 3, React/Next.js, TypeScript. High-load UI, SSR/SEO, GSAP-анимации, Core Web Vitals 95+, FCP <1.5s. Архитектура, UI-киты, повышение конверсий на 10–30%.';
 export const SEO_KEYWORDS = [
   // роли
   'frontend разработчик',
