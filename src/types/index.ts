@@ -9,7 +9,8 @@ export interface ProjectItem {
   id: number;
   title: string;
   image: string;
-  link: string;
+  link?: string;
+  github?: string;
   stack: string;
-  achievements?: string[];
+  achievements: string[];
 }

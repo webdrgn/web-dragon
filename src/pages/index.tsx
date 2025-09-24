@@ -3,7 +3,6 @@ import Skills from '@/components/pages/main/Skills/Skills';
 import Projects from '@/components/pages/main/Projects/Projects';
 import Header from '@/components/common/Header/Header';
 import Footer from '@/components/common/Footer/Footer';
-import { skills } from '../../storage/skills';
 import Head from 'next/head';
 import { SITE_URL, SITE_NAME, SEO_DESCRIPTION, SEO_KEYWORDS, OG_IMAGE } from '@/config/constants';
 
@@ -47,7 +46,7 @@ export default function Home() {
         </div>
 
         <div className="normalize-section normalize-container">
-          <Skills skills={skills} />
+          <Skills />
         </div>
 
         <div className="normalize-section normalize-container">

@@ -18,7 +18,8 @@
 @import '../components/pages/main/Skills/Skills.scss';
 @import '../components/pages/main/Skills/Skill/Skill.scss';
 @import '../components/pages/main/Projects/Projects.scss';
-@import '../components/pages/main/Projects/Project/Project.scss';
+// Project styles are now defined in the component with Tailwind
+// @import '../components/pages/main/Projects/Project/Project.scss';
 @import '../components/common/Loader/Loader.scss';
 
 @import '../components/common/Footer/Footer.scss';

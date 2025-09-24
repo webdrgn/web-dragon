@@ -1,13 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
-import Skill from './Skill/Skill';
-import type { Skill as SkillType } from '@/types';
+import { skills } from '../../../../../storage/skills';
 
-interface SkillsProps {
-  skills: SkillType[];
-}
-
-export default function Skills({ skills }: SkillsProps) {
+export default function Skills() {
   return (
     <div id="skills" className="skills">
       <Image
@@ -23,50 +18,49 @@ export default function Skills({ skills }: SkillsProps) {
 
       <h2 data-aos="fade-up">Скиллы</h2>
 
-      <div data-aos="fade-up" className="skills__text">
-        <p>
-          Cертифицированный frontend-дракончик — знаю не только как писать код,
-          но и как строить масштабируемые, быстрые и прибыльные интерфейсы.
-          Прошёл курс «Мидл фронтенд-разработчик» в Яндекс Практикуме, чтобы:
+      <div className="skills__content">
+        <p data-aos="fade-up" className="text-center max-w-3xl mx-auto mb-12 text-lg">
+          Frontend-дракончик с 4.5+ годами опыта, который превращает сложные задачи в элегантные решения.
+          Прошёл путь от верстальщика до архитектора, но сохранил драконью страсть к созданию
+          по-настоящему огненных интерфейсов.
         </p>
 
-        <ul>
-          <li>
-            Писать не просто рабочий, а оптимальный код — где каждый компонент,
-            хук и стор живут в отлаженной системе
-          </li>
-          <li>
-            Довести до автоматизма паттерны, которые сокращают техдолг на старте
-          </li>
-          <li>
-            Превращаю legacy в реактивные системы — не просто рефакторю, а
-            провожу полную трансмутацию кода. Где был хаос унаследованных
-            решений — возвожу современную архитектуру
-          </li>
-          {/* <li>
-            Профессионально владею нейросетями (LLM/AI) — от генерации и
-            адаптации копирайта и UI‑текста до ускорения рутинных задач в
-            разработке. Если компании нужны драконьи ИИ‑способности — я смогу
-            разжечь их на полную мощность
-          </li> */}
-        </ul>
+        <div data-aos="fade-up">
+          <div className="grid">
+            {skills.map((skill) => (
+              <div key={skill.id} className="col-12 col-md-6 col-lg-4">
+                <div className="skills__item bg-white/5 p-6 rounded-xl backdrop-blur-sm hover:bg-white/10 transition-colors border border-white/10 h-full">
+              <div className="skills__item-icon mb-4">
+                <Image
+                  src={skill.image}
+                  alt=""
+                  width={48}
+                  height={48}
+                  className="w-12 h-12"
+                  quality={100}
+                  unoptimized={true}
+                />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-white">{skill.title}</h3>
+              <p className="text-sm text-gray-300 leading-relaxed">{skill.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
 
-        <Image
-          src="./img/certificate-yandex.jpg"
-          alt="Сертификат Яндекс Практикум"
-          width={100}
-          height={100}
-          className="skills__certificate"
-          quality={100}
-          unoptimized={true}
-          data-aos="fade-up"
-        />
-      </div>
-
-      <div data-aos="fade-up" className="skills__list grid">
-        {skills.map((skill) => (
-          <Skill skill={skill} key={skill.id} />
-        ))}
+        <div className="mt-12 text-center" data-aos="fade-up">
+          <p className="mb-6 text-lg">Мои сертификаты и достижения</p>
+          <Image
+            src="./img/certificate-yandex.jpg"
+            alt="Сертификат Яндекс Практикум"
+            width={300}
+            height={200}
+            className="skills__certificate mx-auto rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+            quality={90}
+            unoptimized={true}
+          />
+        </div>
       </div>
     </div>
   );

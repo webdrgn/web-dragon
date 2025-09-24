@@ -3,36 +3,34 @@ import { ProjectItem } from '@/types';
 export const projects: ProjectItem[] = [
   {
     id: 1,
-    title: 'Лендинг кинокомпании «8 Студия»',
+    title: 'Кинокомпания «8 Студия» — лендинг',
     image: './img/8studio.jpg',
     link: 'https://8studiofilm.ru',
-    stack: 'React • Tailwind • Webpack • Node.js',
+    stack: 'Next.js 13 • TypeScript • Tailwind CSS • Framer Motion • Vercel Edge Network',
     achievements: [],
   },
   {
     id: 2,
-    title: 'Аналог Flappy Bird — multiplayer-игра с рейтингами',
+    title: 'Flappy Progger — мультиплеерная игра с рейтингами',
     image: './img/flappy-progger.jpg',
     link: 'https://github.com/Mansur903/game.praktikum.yandex',
-    stack:
-      'React TS • Redux Toolkit • WebSocket • PostgreSQL • Node.js • Express',
-    achievements: [
-      'Реализовал real-time leaderboards',
-      'Оптимизировал FPS до 60 на слабых устройствах',
-    ],
+    stack: 'React 18 • TypeScript • Redux Toolkit • WebSocket • Node.js • Express • PostgreSQL • Docker',
+    achievements: [],
   },
   {
     id: 3,
-    title: 'Web Dragon Messenger — корпоративный мессенджер (P2P)',
+    title: 'Web Dragon Messenger — защищенный корпоративный мессенджер',
     image: './img/wd.jpg',
     link: 'https://github.com/grmnche/wdm',
-    stack: 'TypeScript • Express • WebSocket • E2E-тесты (Mocha/Chai)',
+    stack: 'TypeScript • WebRTC • E2EE • IndexedDB • Service Workers • Jest • GitHub Actions',
+    achievements: [],
   },
   {
     id: 4,
-    title: 'Мечи и Щиты — классическая аркада',
+    title: 'Классическая игра в крестики-нолики',
     image: './img/swords-and-shields.jpg',
-    link: 'https://github.com/grmnche/swords-and-shields',
-    stack: 'React • TypeScript • Redux Toolkit • CSS Modules • GitHub Actions',
-  },
+    link: 'https://github.com/grmnche/tic-tac-toe',
+    stack: 'React 18 • TypeScript • CSS Modules',
+    achievements: [],
+  }
 ];
