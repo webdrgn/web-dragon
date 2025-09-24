@@ -50,7 +50,7 @@ export default function Skills() {
         </div>
 
         <div className="mt-12 text-center" data-aos="fade-up">
-          <p className="mb-6 text-lg">Мои сертификаты и достижения</p>
+          <p className="mb-6 text-lg">Сертифицированный frontend-дракончик</p>
           <Image
             src="./img/certificate-yandex.jpg"
             alt="Сертификат Яндекс Практикум"
