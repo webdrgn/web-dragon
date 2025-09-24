@@ -14,7 +14,7 @@ export function Project({ className = "", index }: ProjectProps) {
 
   return (
     <div
-      className={`relative bg-gray-900/20 backdrop-blur-sm rounded-2xl overflow-hidden transition-all duration-300 transform h-full flex flex-col border border-gray-700/30 ${
+      className={`relative backdrop-blur-sm rounded-2xl overflow-hidden transition-all duration-300 transform h-full flex flex-col border border-gray-700/30 ${
         isHovered ? "shadow-lg -translate-y-0.5 bg-gray-800/20" : "shadow-md"
       } ${className}`}
       onMouseEnter={() => setIsHovered(true)}
@@ -30,7 +30,6 @@ export function Project({ className = "", index }: ProjectProps) {
           }`}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
-        {/* Градиентная тень удалена */}
       </div>
 
       <div className="p-5 flex-1 flex flex-col">
@@ -41,7 +40,7 @@ export function Project({ className = "", index }: ProjectProps) {
           {project.stack.split(" • ").map((tech, i) => (
             <span
               key={i}
-              className="text-xs bg-gray-800/40 text-gray-200 px-2 py-0.5 rounded-full transition-all duration-300 hover:bg-primary/80 hover:text-white backdrop-blur-sm"
+              className="text-xs text-gray-200 px-2 py-0.5 rounded-full transition-all duration-300 hover:bg-primary/80 hover:text-white backdrop-blur-sm"
             >
               {tech}
             </span>
