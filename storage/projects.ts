@@ -29,7 +29,7 @@ export const projects: ProjectItem[] = [
     id: 4,
     title: 'Классическая игра в крестики-нолики',
     image: './img/swords-and-shields.jpg',
-    link: 'https://github.com/grmnche/tic-tac-toe',
+    link: 'https://github.com/grmnche/swords-and-shields',
     stack: 'React 18 • TypeScript • CSS Modules',
     achievements: [],
   }

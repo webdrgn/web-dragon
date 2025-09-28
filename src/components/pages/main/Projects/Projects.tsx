@@ -1,7 +1,7 @@
-import React from 'react';
-import Image from 'next/image';
-import { projects } from '../../../../../storage/projects';
-import { Project } from './Project/Project';
+import React from "react";
+import Image from "next/image";
+import { projects } from "../../../../../storage/projects";
+import { Project } from "./Project/Project";
 
 export default function Projects() {
   return (
@@ -20,36 +20,36 @@ export default function Projects() {
       <h2 data-aos="fade-up">Сокровищница</h2>
 
       <p data-aos="fade-up">
-        За 4.5 года в 4 компаниях я собрал коллекцию из 100+ компонентов, разжег десятки проектов
-        и поднял Core Web Vitals до 95+ баллов. Мои технологии: React/Next.js, Vue 3/Nuxt 3, TypeScript —
-        это мой огненный арсенал для создания быстрых и масштабируемых приложений.
+        За 4.5 года в 4 компаниях я собрал коллекцию из 100+ компонентов, разжег
+        десятки проектов и поднял Core Web Vitals до 95+ баллов. Мои технологии:
+        React/Next.js, Vue 3/Nuxt 3, TypeScript — это мой огненный арсенал для
+        создания быстрых и масштабируемых приложений.
       </p>
 
       <ul data-aos="fade-up">
         <li>
-          <strong>
-            Архитектурные Подвиги (10K+ DAU):{' '}
-          </strong>
-          Создаю маркетплейсы и корпоративные порталы, которые выдерживают огненное испытание нагрузкой.
-          Моя библиотека компонентов-драконов ускоряет разработку на 30% — каждый компонент как зачарованный артефакт,
-          созданный для решения конкретных бизнес-задач.
+          <strong>Архитектурные Подвиги (10K+ DAU): </strong>
+          Создаю маркетплейсы и корпоративные порталы, которые выдерживают
+          огненное испытание нагрузкой. Моя библиотека компонентов-драконов
+          ускоряет разработку на 30% — каждый компонент как зачарованный
+          артефакт, созданный для решения конкретных бизнес-задач.
         </li>
 
         <li>
-          <strong>Охотник за техническим долгом: </strong> Превращаю старые проекты из каменного века в современные
-          реактивные системы. Мигрировал 10+ проектов с jQuery на Vue 3/React, освободив команде 20+ часов в неделю.
-          Мой секрет — магия обновления стека без простоев, как по волшебству.
+          <strong>Охотник за техническим долгом: </strong> Превращаю старые
+          проекты из каменного века в современные реактивные системы. Мигрировал
+          10+ проектов с jQuery на Vue 3/React, освободив команде 20+ часов в
+          неделю. Мой секрет — магия обновления стека без простоев, как по
+          волшебству.
         </li>
       </ul>
 
-      <div className="mt-12">
-        <div className="grid">
-          {projects.map((_, idx) => (
-            <div key={idx} className="col-12 col-md-6 col-lg-4">
-              <Project index={idx} className="h-full" />
-            </div>
-          ))}
-        </div>
+      <div className="grid mt-12">
+        {projects.map((_, idx) => (
+          <div key={idx} className="col-12 col-md-6 col-lg-4">
+            <Project index={idx} className="h-full" />
+          </div>
+        ))}
       </div>
 
       <div data-aos="fade-up" className="projects__nda">
@@ -61,8 +61,8 @@ export default function Projects() {
             event-платформы, e-commerce
           </li>
           <li>
-            <strong>Архитектура &quot;под замком&quot;: </strong>проектировал системы с
-            ограниченным доступом
+            <strong>Архитектура &quot;под замком&quot;: </strong>проектировал
+            системы с ограниченным доступом
           </li>
         </ul>
       </div>

@@ -19,6 +19,7 @@ export function Project({ className = "", index }: ProjectProps) {
       } ${className}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      data-aos="fade-up"
     >
       <div className="relative h-48 overflow-hidden flex-shrink-0">
         <Image

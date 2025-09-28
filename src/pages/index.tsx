@@ -1,10 +1,16 @@
-import Greeting from '@/components/pages/main/Greeting/Greeting';
-import Skills from '@/components/pages/main/Skills/Skills';
-import Projects from '@/components/pages/main/Projects/Projects';
-import Header from '@/components/common/Header/Header';
-import Footer from '@/components/common/Footer/Footer';
-import Head from 'next/head';
-import { SITE_URL, SITE_NAME, SEO_DESCRIPTION, SEO_KEYWORDS, OG_IMAGE } from '@/config/constants';
+import Greeting from "@/components/pages/main/Greeting/Greeting";
+import Skills from "@/components/pages/main/Skills/Skills";
+import Projects from "@/components/pages/main/Projects/Projects";
+import Header from "@/components/common/Header/Header";
+import Footer from "@/components/common/Footer/Footer";
+import Head from "next/head";
+import {
+  SITE_URL,
+  SITE_NAME,
+  SEO_DESCRIPTION,
+  SEO_KEYWORDS,
+  OG_IMAGE,
+} from "@/config/constants";
 
 export default function Home() {
   return (
@@ -12,7 +18,7 @@ export default function Home() {
       <Head>
         <title>{SITE_NAME}</title>
         <meta name="description" content={SEO_DESCRIPTION} />
-        <meta name="keywords" content={SEO_KEYWORDS.join(', ')} />
+        <meta name="keywords" content={SEO_KEYWORDS.join(", ")} />
         <link rel="canonical" href={SITE_URL} />
 
         <meta property="og:type" content="website" />
@@ -20,7 +26,10 @@ export default function Home() {
         <meta property="og:title" content={SITE_NAME} />
         <meta property="og:description" content={SEO_DESCRIPTION} />
         <meta property="og:image" content={OG_IMAGE} />
-        <meta property="og:image:alt" content="Фронтенд-разработчик - Портфолио" />
+        <meta
+          property="og:image:alt"
+          content="Фронтенд-разработчик - Портфолио"
+        />
         <meta property="og:locale" content="ru_RU" />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -30,14 +39,14 @@ export default function Home() {
 
         <script type="application/ld+json">
           {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebSite',
-            'name': SITE_NAME,
-            'url': SITE_URL,
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: SITE_NAME,
+            url: SITE_URL,
           })}
         </script>
       </Head>
-      
+
       <Header />
 
       <main>
@@ -54,9 +63,7 @@ export default function Home() {
         </div>
       </main>
 
-      <div className="normalize-container">
-        <Footer />
-      </div>
+      <Footer />
     </>
   );
 }
