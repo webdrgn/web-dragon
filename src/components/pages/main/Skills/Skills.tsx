@@ -24,7 +24,7 @@ export default function Skills() {
           data-aos="fade-up"
           className="text-center max-w-3xl mx-auto mb-12 text-lg"
         >
-              Senior Frontend Developer. 4.5+ года опыта в создании frontend-архитектуры для сложных продуктов. Проектирую реализацию бизнес-логики: превращая комплексные задачи в чистый, поддерживаемый и масштабируемый код.
+          Senior Frontend Developer. 4.5+ года опыта в создании frontend-архитектуры для сложных продуктов. Проектирую реализацию бизнес-логики: превращая комплексные задачи в чистый, поддерживаемый и масштабируемый код.
         </p>
 
         <div className="grid">
