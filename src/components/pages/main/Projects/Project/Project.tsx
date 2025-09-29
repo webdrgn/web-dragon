@@ -14,9 +14,7 @@ export function Project({ className = "", index }: ProjectProps) {
 
   return (
     <div
-      className={`relative backdrop-blur-sm rounded-2xl overflow-hidden transition-all duration-300 transform h-full flex flex-col border border-gray-700/30 ${
-        isHovered ? "shadow-lg -translate-y-0.5 bg-gray-800/20" : "shadow-md"
-      } ${className}`}
+      className={`relative backdrop-blur-sm rounded-2xl overflow-hidden h-full flex flex-col border border-gray-700/30 ${className}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       data-aos="fade-up"
