@@ -27,7 +27,7 @@ export default function Footer() {
         </div>
 
         <p className="text-[#818181] text-sm mt-2 lg:text-base">
-          © 2025 webdragon
+          © 2026 webdragon
         </p>
       </div>
     </footer>

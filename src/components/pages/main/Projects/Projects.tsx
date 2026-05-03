@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import { projects } from "../../../../../storage/projects";
-import { Project } from "./Project/Project";
+// import { projects } from "../../../../../storage/projects";
+// import { Project } from "./Project/Project";
 
 export default function Projects() {
   return (
@@ -20,7 +20,7 @@ export default function Projects() {
       <h2 data-aos="fade-up">Сокровищница</h2>
 
       <p data-aos="fade-up">
-        За 4.5 года в 4 компаниях собрал коллекцию из 100+ компонентов, разжёг
+        За 5+ лет в 4 компаниях собрал коллекцию из 100+ компонентов, разжёг
         десятки проектов и поднял Core Web Vitals до 95+ баллов. Мои технологии:
         React/Next.js, Vue 3/Nuxt 3, TypeScript — мои огненные помощники в
         создания быстрых и масштабируемых приложений.
@@ -43,13 +43,13 @@ export default function Projects() {
         </li>
       </ul>
 
-      <div className="grid mt-12">
+      {/* <div className="grid mt-12">
         {projects.map((_, idx) => (
           <div key={idx} className="col-12 col-md-6 col-lg-4">
             <Project index={idx} className="h-full" />
           </div>
         ))}
-      </div>
+      </div> */}
 
       <div data-aos="fade-up" className="projects__nda">
         <h3>NDA-Дракон | Секретные миссии</h3>
