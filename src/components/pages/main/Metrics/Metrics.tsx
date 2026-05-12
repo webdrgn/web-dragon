@@ -65,7 +65,7 @@ export default function Metrics() {
           />
         </div>
         <h2 id="metrics-heading" className="section-heading" data-aos="fade-up">
-          Цифры и факты
+          Цифры
         </h2>
       </header>
 
