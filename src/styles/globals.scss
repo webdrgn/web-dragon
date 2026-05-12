@@ -38,6 +38,12 @@ html {
   background-color: rgb(28, 28, 28);
 }
 
+@include media(max, mobile) {
+  html {
+    scroll-padding-top: 96px;
+  }
+}
+
 * {
   transition: 0.2s;
 
