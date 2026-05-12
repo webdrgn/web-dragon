@@ -1,29 +1,86 @@
 import React from "react";
-import Image from "next/image";
+import {
+  FaFileAlt,
+  FaGithub,
+  FaLinkedin,
+  FaTelegramPlane,
+} from "react-icons/fa";
+import {
+  AUTHOR_GITHUB,
+  AUTHOR_TELEGRAM,
+  AUTHOR_HABR,
+  AUTHOR_HH_RESUME,
+  AUTHOR_LINKEDIN,
+} from "@/config/constants";
+
+const ICON_SIZE = 18;
 
 export default function Footer() {
+  const resumeUrl = AUTHOR_HH_RESUME || AUTHOR_HABR;
+  const resumeLabel = AUTHOR_HH_RESUME ? "Резюме на hh.ru" : "Резюме (Habr Career)";
+
   return (
-    <footer className="footer mt-40 lg:mt-64 mx-auto w-full">
+    <footer id="contacts" className="footer mt-40 lg:mt-64 mx-auto w-full">
       <div className="footer__inner">
-        <div className="footer__links">
-          <a href="https://t.me/grmnche" target="_blank">
-            <Image
-              src="./img/tg-clean.png"
-              alt="Telegram"
-              width={20}
-              height={20}
-              unoptimized={true}
-            />
-          </a>
-          <a href="https://github.com/grmnche" target="_blank">
-            <Image
-              src="./img/github-clean.png"
-              alt="GitHub"
-              width={20}
-              height={20}
-              unoptimized={true}
-            />
-          </a>
+        <div className="footer__cta">
+          <h2 className="footer__cta-title">
+            Ищете архитектора фронтенд-платформы?
+          </h2>
+          <p className="footer__cta-text">
+            Загляните в резюме и напишите в удобный канал: разберём задачу, зону
+            ответственности и формат работы. За брендом WebDragon те же правила,
+            что и в переговорах со стейкхолдерами: сроки, артефакты и понятные
+            ожидания, без размытых обещаний.
+          </p>
+
+          <nav className="footer__cta-links" aria-label="Контакты и ссылки">
+            <a
+              href={resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer__text-link"
+            >
+              <span className="footer__link-icon">
+                <FaFileAlt size={ICON_SIZE} aria-hidden />
+              </span>
+              {resumeLabel}
+            </a>
+            <a
+              href={AUTHOR_TELEGRAM}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer__text-link"
+            >
+              <span className="footer__link-icon">
+                <FaTelegramPlane size={ICON_SIZE} aria-hidden />
+              </span>
+              Telegram
+            </a>
+            <a
+              href={AUTHOR_GITHUB}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer__text-link"
+            >
+              <span className="footer__link-icon">
+                <FaGithub size={ICON_SIZE} aria-hidden />
+              </span>
+              GitHub
+            </a>
+            {AUTHOR_LINKEDIN ? (
+              <a
+                href={AUTHOR_LINKEDIN}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer__text-link"
+              >
+                <span className="footer__link-icon">
+                  <FaLinkedin size={ICON_SIZE} aria-hidden />
+                </span>
+                LinkedIn
+              </a>
+            ) : null}
+          </nav>
         </div>
 
         <p className="text-[#818181] text-sm mt-2 lg:text-base">

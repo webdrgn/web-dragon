@@ -1,6 +1,7 @@
 import Greeting from "@/components/pages/main/Greeting/Greeting";
-import Skills from "@/components/pages/main/Skills/Skills";
+import Metrics from "@/components/pages/main/Metrics/Metrics";
 import Projects from "@/components/pages/main/Projects/Projects";
+import Skills from "@/components/pages/main/Skills/Skills";
 import Header from "@/components/common/Header/Header";
 import Footer from "@/components/common/Footer/Footer";
 import Head from "next/head";
@@ -28,7 +29,7 @@ export default function Home() {
         <meta property="og:image" content={OG_IMAGE} />
         <meta
           property="og:image:alt"
-          content="Фронтенд-разработчик - Портфолио"
+          content="Герман Чернышёв · Frontend Architect / Tech Lead"
         />
         <meta property="og:locale" content="ru_RU" />
 
@@ -55,11 +56,15 @@ export default function Home() {
         </div>
 
         <div className="normalize-section normalize-container">
-          <Skills />
+          <Metrics />
         </div>
 
         <div className="normalize-section normalize-container">
           <Projects />
+        </div>
+
+        <div className="normalize-section normalize-container">
+          <Skills />
         </div>
       </main>
 

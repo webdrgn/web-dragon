@@ -2,17 +2,17 @@
 @import '../../../../styles/mixins/media.scss';
 
 .greeting {
-  @include flexbox(center, center, column, 96px);
-  height: 100vh;
-  min-height: fit-content;
-  padding-top: 80px;
+  @include flexbox(center, center, column, clamp(2rem, 5vw, 3.5rem));
+  min-height: min(100dvh, 960px);
+  padding-top: clamp(4rem, 12vh, 10rem);
+  padding-bottom: clamp(2rem, 6vh, 4rem);
 
   @include media(max, tablet) {
-    gap: 72px;
+    gap: clamp(1.75rem, 4vw, 2.75rem);
   }
 
   @include media(max, mobile) {
-    gap: 48px;
+    gap: clamp(1.5rem, 4vw, 2.25rem);
   }
 
   &__text {
@@ -31,5 +31,66 @@
 
   h3 {
     text-align: left;
+    margin-bottom: 0;
+    text-transform: none;
+    letter-spacing: 0.03em;
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    line-height: 1.25;
+  }
+
+  &__role {
+    margin: 0;
+    font-size: clamp(14px, 1.35vw, 17px);
+    opacity: 0.88;
+    line-height: 1.45;
+  }
+
+  &__headline {
+    text-transform: none;
+    font-size: clamp(1.05rem, 2vw, 1.35rem);
+    font-weight: 600;
+    line-height: 1.45;
+    margin: 0;
+    letter-spacing: 0.01em;
+  }
+
+  &__subtitle {
+    margin: 0;
+    font-size: clamp(13px, 1.35vw, 16px);
+    opacity: 0.85;
+    line-height: 1.5;
+  }
+
+  &__tech-strip {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 18px;
+    margin-top: 4px;
+
+    svg {
+      display: block;
+      opacity: 0.88;
+      color: rgba(255, 255, 255, 0.88);
+    }
+  }
+
+  &__brand {
+    margin: 0;
+    font-size: clamp(13px, 1.3vw, 15px);
+    line-height: 1.55;
+    opacity: 0.72;
+    font-style: italic;
+    letter-spacing: 0.02em;
+  }
+
+  &__about {
+    margin: 0;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: clamp(14px, 1.45vw, 17px);
+    line-height: 1.65;
+    opacity: 0.9;
   }
 }
+
