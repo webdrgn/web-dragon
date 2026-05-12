@@ -6,14 +6,14 @@
   max-width: calc(1140px + 48px);
   min-width: 220px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 clamp(16px, 4vw, 28px);
 }
 
 .normalize-section {
-  margin-bottom: 200px;
+  margin-bottom: clamp(3.5rem, 9vw, 6.5rem);
 
   @include media(max, tablet) {
-    margin-bottom: 64px;
+    margin-bottom: clamp(3rem, 8vw, 5rem);
   }
 }
 

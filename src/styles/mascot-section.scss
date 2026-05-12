@@ -1,0 +1,33 @@
+@import './mixins/flexbox.scss';
+
+.mascot-section-header {
+  @include flexbox(center, center, column, clamp(0.75rem, 2vw, 1.25rem));
+  width: 100%;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mascot-section-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(10px, 2vw, 18px);
+  border-radius: 20px;
+  background: radial-gradient(
+    ellipse 80% 70% at 50% 45%,
+    rgba(255, 255, 255, 0.07),
+    rgba(255, 255, 255, 0.02) 55%,
+    transparent 75%
+  );
+}
+
+.mascot-section-img,
+.greeting__icon {
+  display: block;
+  box-sizing: border-box;
+  width: min(220px, 88vw, clamp(7.75rem, 26vw, 13.75rem));
+  height: min(220px, 88vw, clamp(7.75rem, 26vw, 13.75rem));
+  object-fit: contain;
+  object-position: center;
+}

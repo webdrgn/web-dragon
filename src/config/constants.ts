@@ -2,8 +2,9 @@ export const AOS_DURATION_MS = 2000;
 export const LOADER_DELAY_MS = 2000;
 export const FIREFLIES_COUNT = 9;
 export const SITE_URL = 'https://grmnche.github.io/web-dragon';
-export const SITE_NAME = 'WebDragon — Senior frontend-разработчик';
-export const SEO_DESCRIPTION = 'Senior Frontend Developer (4.5+ года): Vue 3/Nuxt 3, React/Next.js, TypeScript. High-load UI, SSR/SEO, GSAP-анимации, Core Web Vitals 95+, FCP <1.5s. Архитектура, UI-киты, повышение конверсий на 10–30%.';
+export const SITE_NAME = 'WebDragon · Frontend Architect / Tech Lead';
+export const SEO_DESCRIPTION =
+  'Frontend Architect / Tech Lead: Vue 3, Nuxt 3, TypeScript, платформенная разработка. Дизайн-система 100+ компонентов, ускорение разработки 30–70%, онбординг 4→1 неделя, 100+ технических интервью.';
 export const SEO_KEYWORDS = [
   // роли
   'frontend разработчик',
@@ -34,6 +35,8 @@ export const SEO_KEYWORDS = [
 export const AUTHOR_GITHUB = 'https://github.com/grmnche';
 export const AUTHOR_TELEGRAM = 'https://t.me/grmnche';
 export const AUTHOR_HABR = 'https://career.habr.com/grmnche';
+export const AUTHOR_HH_RESUME = '';
+export const AUTHOR_LINKEDIN = '';
 export const AUTHOR_SITE = SITE_URL;
 export const AUTHOR_EMAIL = 'grmnche@yandex.ru';
 export const AUTHOR_REMOTE = true;
