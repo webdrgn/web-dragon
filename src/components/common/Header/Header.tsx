@@ -27,8 +27,8 @@ export default function Navbar() {
           <Image
             src="./img/dragon4.png"
             alt="На главный экран"
-            width={56}
-            height={56}
+            width={40}
+            height={40}
             className="nav-img"
             quality={100}
             unoptimized={true}
