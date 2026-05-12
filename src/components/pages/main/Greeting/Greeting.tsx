@@ -29,7 +29,7 @@ export default function Greeting() {
           За 5 лет прошёл путь от разработчика до архитектора фронтенд-платформ:
           спроектировал систему компонентов из{" "}
           <strong>100+ компонентов</strong> и ускорил разработку на{" "}
-          <strong>40–70%</strong>.
+          <strong>30–70%</strong>.
         </h2>
 
         <p className="greeting__subtitle">
