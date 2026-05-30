@@ -32,7 +32,7 @@ export const SEO_KEYWORDS = [
   'веб-дракон',
   'webdragon',
 ];
-export const AUTHOR_GITHUB = 'https://github.com/grmnche';
+export const AUTHOR_GITHUB = 'https://github.com/webdrgn';
 export const AUTHOR_TELEGRAM = 'https://t.me/grmnche';
 export const AUTHOR_HABR = 'https://career.habr.com/grmnche';
 export const AUTHOR_HH_RESUME = '';
