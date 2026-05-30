@@ -21,7 +21,7 @@ export const projects: ProjectItem[] = [
     id: 3,
     title: 'Web Dragon Messenger — защищенный корпоративный мессенджер',
     image: './img/wd.jpg',
-    link: 'https://github.com/grmnche/wdm',
+    link: 'https://github.com/webdrgn/wdm',
     stack: 'TypeScript • WebRTC • E2EE • IndexedDB • Service Workers • Jest • GitHub Actions',
     achievements: [],
   },
@@ -29,7 +29,7 @@ export const projects: ProjectItem[] = [
     id: 4,
     title: 'Классическая игра в крестики-нолики',
     image: './img/swords-and-shields.jpg',
-    link: 'https://github.com/grmnche/swords-and-shields',
+    link: 'https://github.com/webdrgn/swords-and-shields',
     stack: 'React 18 • TypeScript • CSS Modules',
     achievements: [],
   }
