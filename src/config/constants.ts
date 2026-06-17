@@ -1,7 +1,7 @@
 export const AOS_DURATION_MS = 2000;
 export const LOADER_DELAY_MS = 2000;
 export const FIREFLIES_COUNT = 9;
-export const SITE_URL = 'https://grmnche.github.io/web-dragon';
+export const SITE_URL = 'https://webdrgn.github.io/web-dragon';
 export const SITE_NAME = 'WebDragon · Frontend Architect / Tech Lead';
 export const SEO_DESCRIPTION =
   'Frontend Architect / Tech Lead: Vue 3, Nuxt 3, TypeScript, платформенная разработка. Дизайн-система 100+ компонентов, ускорение разработки 30–70%, онбординг 4→1 неделя, 100+ технических интервью.';

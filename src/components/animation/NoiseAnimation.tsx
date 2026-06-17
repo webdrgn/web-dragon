@@ -35,6 +35,7 @@ const NoiseAnimation: React.FC = () => {
         patternData.data[i + 2] = value;
         patternData.data[i + 3] = patternAlpha;
       }
+
       patternCtx.putImageData(patternData, 0, 0);
     };
 
@@ -47,10 +48,12 @@ const NoiseAnimation: React.FC = () => {
 
     const loop = () => {
       const shouldDraw = ++frame % patternRefreshInterval === 0;
+      
       if (shouldDraw) {
         update();
         draw();
       }
+
       window.requestAnimationFrame(loop);
     };
 

@@ -75,4 +75,4 @@ web-dragon/
 
 ---
 
-**Сайт:** [https://grmnche.github.io/web-dragon](https://grmnche.github.io/web-dragon)  
+**Сайт:** [https://webdrgn.github.io/web-dragon](https://webdrgn.github.io/web-dragon)  

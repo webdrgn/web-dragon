@@ -13,12 +13,14 @@ const DragonFireflies: React.FC<DragonFirefliesProps> = ({ count = 30 }) => {
     firefliesRef.current = firefliesRef.current.slice(0, count);
     firefliesRef.current.forEach((firefly) => {
       if (!firefly) return;
+
       const container = firefly.parentNode as HTMLElement;
       const containerRect = container.getBoundingClientRect();
       const containerWidth = containerRect.width;
       const containerHeight = containerRect.height;
       const initialX = Math.random() * containerWidth;
       const initialY = Math.random() * containerHeight;
+      
       gsap.set(firefly, { x: initialX, y: initialY });
 
       const animateFirefly = () => {
