@@ -1,37 +1,43 @@
-import React from "react";
+import React from 'react'
 import {
   FaFileAlt,
-  FaGithub,
-  FaLinkedin,
-  FaTelegramPlane,
-} from "react-icons/fa";
+  FaTelegramPlane
+} from 'react-icons/fa'
 import {
-  AUTHOR_GITHUB,
   AUTHOR_TELEGRAM,
   AUTHOR_HABR,
   AUTHOR_HH_RESUME,
-  AUTHOR_LINKEDIN,
-} from "@/config/constants";
+} from '@/config/constants'
 
-const ICON_SIZE = 18;
+const ICON_SIZE = 18
 
 export default function Footer() {
-  const resumeUrl = AUTHOR_HH_RESUME || AUTHOR_HABR;
-  const resumeLabel = AUTHOR_HH_RESUME ? "Резюме на hh.ru" : "Резюме (Habr Career)";
+  const resumeUrl = AUTHOR_HH_RESUME || AUTHOR_HABR
+  const resumeLabel = AUTHOR_HH_RESUME
+    ? 'Резюме на hh.ru'
+    : 'Habr Career'
 
   return (
-    <footer id="contacts" className="footer mt-40 lg:mt-64 mx-auto w-full">
+    <footer
+      id="contacts"
+      className="footer mt-40 lg:mt-64 mx-auto w-full"
+    >
       <div className="footer__inner">
         <div className="footer__cta">
           <h2 className="footer__cta-title">
-            Ищете архитектора фронтенд-платформы?
+            Ищете техлида, который пересоберет ваш фронтенд? Или ментора,
+            который прокачает команду?
           </h2>
           <p className="footer__cta-text">
-            Загляните в резюме и напишите в удобный канал — разберём задачу, зону
-            ответственности и формат работы.
+            Напишите в удобный канал. Покажу, как выстроить архитектуру,
+            ускорить разработку, снизить техдолг и вырастить разработчиков,
+            которым можно доверять.
           </p>
 
-          <nav className="footer__cta-links" aria-label="Контакты и ссылки">
+          <nav
+            className="footer__cta-links"
+            aria-label="Контакты и ссылки"
+          >
             <a
               href={resumeUrl}
               target="_blank"
@@ -39,7 +45,10 @@ export default function Footer() {
               className="footer__text-link"
             >
               <span className="footer__link-icon">
-                <FaFileAlt size={ICON_SIZE} aria-hidden />
+                <FaFileAlt
+                  size={ICON_SIZE}
+                  aria-hidden
+                />
               </span>
               {resumeLabel}
             </a>
@@ -50,34 +59,13 @@ export default function Footer() {
               className="footer__text-link"
             >
               <span className="footer__link-icon">
-                <FaTelegramPlane size={ICON_SIZE} aria-hidden />
+                <FaTelegramPlane
+                  size={ICON_SIZE}
+                  aria-hidden
+                />
               </span>
               Telegram
             </a>
-            <a
-              href={AUTHOR_GITHUB}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer__text-link"
-            >
-              <span className="footer__link-icon">
-                <FaGithub size={ICON_SIZE} aria-hidden />
-              </span>
-              GitHub
-            </a>
-            {AUTHOR_LINKEDIN ? (
-              <a
-                href={AUTHOR_LINKEDIN}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footer__text-link"
-              >
-                <span className="footer__link-icon">
-                  <FaLinkedin size={ICON_SIZE} aria-hidden />
-                </span>
-                LinkedIn
-              </a>
-            ) : null}
           </nav>
         </div>
 
@@ -86,5 +74,5 @@ export default function Footer() {
         </p>
       </div>
     </footer>
-  );
+  )
 }
