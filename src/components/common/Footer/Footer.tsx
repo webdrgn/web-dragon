@@ -3,9 +3,11 @@ import {
   FaFileAlt,
   FaTelegramPlane
 } from 'react-icons/fa'
+import { SiHabr } from 'react-icons/si'
 import {
   AUTHOR_TELEGRAM,
   AUTHOR_HABR,
+  AUTHOR_HABR_PROFILE,
   AUTHOR_HH_RESUME,
 } from '@/config/constants'
 
@@ -25,7 +27,7 @@ export default function Footer() {
       <div className="footer__inner">
         <div className="footer__cta">
           <h2 className="footer__cta-title">
-            Ищете техлида, который пересоберет ваш фронтенд? Или ментора,
+            Ищете техлида, который пересоберет ваш фронтенд / ментора,
             который прокачает команду?
           </h2>
           <p className="footer__cta-text">
@@ -51,6 +53,20 @@ export default function Footer() {
                 />
               </span>
               {resumeLabel}
+            </a>
+            <a
+              href={AUTHOR_HABR_PROFILE}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer__text-link"
+            >
+              <span className="footer__link-icon">
+                <SiHabr
+                  size={ICON_SIZE}
+                  aria-hidden
+                />
+              </span>
+              Habr
             </a>
             <a
               href={AUTHOR_TELEGRAM}

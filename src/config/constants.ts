@@ -35,6 +35,7 @@ export const SEO_KEYWORDS = [
 export const AUTHOR_GITHUB = 'https://github.com/webdrgn';
 export const AUTHOR_TELEGRAM = 'https://t.me/grmnche';
 export const AUTHOR_HABR = 'https://career.habr.com/grmnche';
+export const AUTHOR_HABR_PROFILE = 'https://habr.com/ru/users/grmnche/';
 export const AUTHOR_HH_RESUME = '';
 export const AUTHOR_LINKEDIN = '';
 export const AUTHOR_SITE = SITE_URL;
@@ -43,7 +44,7 @@ export const AUTHOR_REMOTE = true;
 export const AUTHOR_EXPERIENCE_YEARS = 4.5;
 export const SALARY_EXPECTATION_RUB = 200000;
 export const OG_IMAGE = SITE_URL + '/img/wd.jpg';
-export const SAME_AS: string[] = [AUTHOR_GITHUB, AUTHOR_TELEGRAM, AUTHOR_HABR, AUTHOR_SITE];
+export const SAME_AS: string[] = [AUTHOR_GITHUB, AUTHOR_TELEGRAM, AUTHOR_HABR, AUTHOR_HABR_PROFILE, AUTHOR_SITE];
 export const SKILLS_LIST: string[] = [
   'JavaScript', 'TypeScript', 'Vue.js', 'Nuxt.js', 'React', 'Next.js',
   'Redux', 'SCSS', 'TailwindCSS', 'Vite', 'Webpack', 'Node.js', 'Express',
