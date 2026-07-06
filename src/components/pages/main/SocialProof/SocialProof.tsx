@@ -1,8 +1,10 @@
 import React from 'react'
 import { FiExternalLink } from 'react-icons/fi'
+import SectionHeading from '@/components/common/SectionHeading/SectionHeading'
 import {
   AUTHOR_HABR_ARTICLE,
   AUTHOR_HABR_ARTICLE_TITLE,
+  SECTION_MASCOTS,
 } from '@/config/constants'
 
 export default function SocialProof() {
@@ -12,13 +14,9 @@ export default function SocialProof() {
       className="social-proof"
       aria-labelledby="social-proof-heading"
     >
-      <h2
-        id="social-proof-heading"
-        className="section-heading"
-        data-aos="fade-up"
-      >
+      <SectionHeading id="social-proof-heading" mascot={SECTION_MASCOTS.expertise}>
         Экспертиза
-      </h2>
+      </SectionHeading>
 
       <article
         data-aos="fade-up"

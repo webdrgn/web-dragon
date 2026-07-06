@@ -1,3 +1,10 @@
+export const SECTION_MASCOTS = {
+  metrics: '/img/dragon4.png',
+  cases: '/img/dragon2.png',
+  expertise: '/img/dragon3.png',
+  mentorship: '/img/dragon.png',
+  stack: '/img/dragon4.png',
+} as const;
 export const AOS_DURATION_MS = 700;
 export const LOADER_DELAY_MS = 500;
 export const LOADER_SESSION_KEY = 'webdragon-visited';

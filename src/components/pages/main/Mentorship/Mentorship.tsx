@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaChalkboardUser, FaComments, FaUserGraduate } from 'react-icons/fa6'
-import { AUTHOR_TELEGRAM } from '@/config/constants'
+import SectionHeading from '@/components/common/SectionHeading/SectionHeading'
+import { AUTHOR_TELEGRAM, SECTION_MASCOTS } from '@/config/constants'
 
 const MENTORSHIP_VALUES = [
   {
@@ -34,13 +35,9 @@ export default function Mentorship() {
       aria-labelledby="mentorship-heading"
     >
       <header className="mentorship__header">
-        <h2
-          id="mentorship-heading"
-          className="section-heading"
-          data-aos="fade-up"
-        >
+        <SectionHeading id="mentorship-heading" mascot={SECTION_MASCOTS.mentorship}>
           Менторство
-        </h2>
+        </SectionHeading>
         <p
           className="section-lead mentorship__lead"
           data-aos="fade-up"

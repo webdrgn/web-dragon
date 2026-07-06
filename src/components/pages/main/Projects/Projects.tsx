@@ -1,5 +1,6 @@
 import React from 'react'
-import { AUTHOR_TELEGRAM } from '@/config/constants'
+import { AUTHOR_TELEGRAM, SECTION_MASCOTS } from '@/config/constants'
+import SectionHeading from '@/components/common/SectionHeading/SectionHeading'
 import CaseStudyList from './CaseStudyList'
 
 export default function Projects() {
@@ -9,17 +10,14 @@ export default function Projects() {
       className="projects"
     >
       <header className="projects__header">
-        <h2
-          className="section-heading"
-          data-aos="fade-up"
-        >
+        <SectionHeading mascot={SECTION_MASCOTS.cases}>
           Кейсы
-        </h2>
+        </SectionHeading>
         <p
           className="projects__kicker"
           data-aos="fade-up"
         >
-          Кейсы из продуктовой работы
+          Кейсы из продуктовой разработки
         </p>
       </header>
 

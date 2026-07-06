@@ -6,6 +6,8 @@ import {
   FaLayerGroup,
   FaUserClock,
 } from "react-icons/fa6";
+import SectionHeading from "@/components/common/SectionHeading/SectionHeading";
+import { SECTION_MASCOTS } from "@/config/constants";
 
 const METRICS: Array<{
   value: string;
@@ -51,9 +53,9 @@ export default function Metrics() {
       aria-labelledby="metrics-heading"
     >
       <header className="metrics__header">
-        <h2 id="metrics-heading" className="section-heading" data-aos="fade-up">
+        <SectionHeading id="metrics-heading" mascot={SECTION_MASCOTS.metrics}>
           Цифры
-        </h2>
+        </SectionHeading>
       </header>
 
       <p className="section-lead metrics__lead" data-aos="fade-up">
