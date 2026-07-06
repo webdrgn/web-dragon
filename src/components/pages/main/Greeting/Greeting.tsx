@@ -71,17 +71,6 @@ export default function Greeting() {
           Код воспринимаю как часть экономики продукта, не как самоцель.
         </p>
       </div>
-
-      <Image
-        src={publicAsset('/img/dragon.png')}
-        alt=""
-        width={160}
-        height={160}
-        className="greeting__mascot"
-        quality={100}
-        unoptimized
-        aria-hidden
-      />
     </div>
   );
 }

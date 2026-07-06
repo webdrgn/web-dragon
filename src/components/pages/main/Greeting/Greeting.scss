@@ -2,11 +2,17 @@
 @import '../../../../styles/mixins/media.scss';
 
 .greeting {
-  position: relative;
   @include flexbox(center, center, column, clamp(1.5rem, 4vw, 2.5rem));
   min-height: min(88dvh, 860px);
   padding-top: clamp(2.5rem, 8vh, 6rem);
   padding-bottom: clamp(2rem, 6vh, 4rem);
+
+  @include media(min, tablet) {
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    gap: clamp(1rem, 2.2vw, 1.75rem);
+  }
 
   &__text {
     @include flexbox(initial, initial, column, 20px);
@@ -17,6 +23,10 @@
     max-width: 980px;
     width: 100%;
     z-index: 1;
+
+    @include media(min, tablet) {
+      max-width: 860px;
+    }
   }
 
   &__profile {
@@ -140,21 +150,5 @@
     font-size: clamp(14px, 1.45vw, 17px);
     line-height: 1.65;
     color: var(--text-secondary);
-  }
-
-  &__mascot {
-    display: none;
-
-    @include media(min, tablet) {
-      display: block;
-      position: absolute;
-      right: clamp(0px, 2vw, 24px);
-      bottom: clamp(12px, 4vh, 48px);
-      width: min(160px, 14vw);
-      height: auto;
-      opacity: 0.55;
-      pointer-events: none;
-      user-select: none;
-    }
   }
 }
