@@ -23,17 +23,11 @@ export default function PlayunmuteShowcase() {
       className="playunmute"
       aria-labelledby="playunmute-heading"
     >
-      <article
-        data-aos="fade-up"
-        className="case-study product-showcase"
-      >
+      <article data-aos="fade-up" className="product-showcase">
         <p className="product-showcase__label">Продукт</p>
 
         <div className="product-showcase__head">
-          <h2
-            id="playunmute-heading"
-            className="case-study__title"
-          >
+          <h2 id="playunmute-heading" className="product-showcase__title">
             Playunmute
           </h2>
           <a
@@ -47,7 +41,7 @@ export default function PlayunmuteShowcase() {
           </a>
         </div>
 
-        <p className="case-study__proof">
+        <p className="product-showcase__proof">
           Fullstack-приложение — браузерный симулятор технического
           собеседования: калибровка темпа → Zoom-интервью → разбор с оценками.
         </p>

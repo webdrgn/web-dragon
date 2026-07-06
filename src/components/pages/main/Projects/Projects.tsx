@@ -1,7 +1,7 @@
 import React from 'react'
 import { AUTHOR_TELEGRAM, SECTION_MASCOTS } from '@/config/constants'
 import SectionHeading from '@/components/common/SectionHeading/SectionHeading'
-import CaseStudyList from './CaseStudyList'
+import CaseList from './CaseList'
 
 export default function Projects() {
   return (
@@ -31,7 +31,7 @@ export default function Projects() {
         детали.
       </p>
 
-      <CaseStudyList />
+      <CaseList />
 
       <p
         className="projects__micro-cta"

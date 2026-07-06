@@ -2,20 +2,20 @@
 
 import React, { useState } from 'react'
 import { caseStudies } from '../../../../../storage/caseStudies'
-import CaseStudyAccordion from './CaseStudyAccordion'
+import CaseAccordion from './CaseAccordion'
 
-export default function CaseStudyList() {
+export default function CaseList() {
   const [openId, setOpenId] = useState(caseStudies[0]?.id ?? '')
 
   return (
     <div className="projects__accordion-list" data-aos="fade-up">
-      {caseStudies.map((study) => (
-        <CaseStudyAccordion
-          key={study.id}
-          study={study}
-          isOpen={openId === study.id}
+      {caseStudies.map((caseEntry) => (
+        <CaseAccordion
+          key={caseEntry.id}
+          caseEntry={caseEntry}
+          isOpen={openId === caseEntry.id}
           onToggle={() =>
-            setOpenId((current) => (current === study.id ? '' : study.id))
+            setOpenId((current) => (current === caseEntry.id ? '' : caseEntry.id))
           }
         />
       ))}

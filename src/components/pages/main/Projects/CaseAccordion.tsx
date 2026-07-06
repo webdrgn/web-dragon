@@ -29,49 +29,45 @@ function renderStarText(text: string) {
   })
 }
 
-function CaseStudyDt({ label }: { label: StarLabel }) {
+function StarTerm({ label }: { label: StarLabel }) {
   const Icon = STAR_LABEL_ICONS[label]
   return (
-    <dt className="case-study__dt">
-      <Icon className="case-study__dt-icon" size={15} aria-hidden />
+    <dt className="case__dt">
+      <Icon className="case__dt-icon" size={15} aria-hidden />
       <span>{label}</span>
     </dt>
   )
 }
 
-type CaseStudyAccordionProps = {
-  study: CaseStudy
+type CaseAccordionProps = {
+  caseEntry: CaseStudy
   isOpen: boolean
   onToggle: () => void
 }
 
-export default function CaseStudyAccordion({
-  study,
+export default function CaseAccordion({
+  caseEntry,
   isOpen,
   onToggle,
-}: CaseStudyAccordionProps) {
+}: CaseAccordionProps) {
   const panelId = useId()
   const triggerId = useId()
 
   return (
     <article
-      className={`case-study case-study--accordion${isOpen ? ' case-study--open' : ''}`}
+      className={`case case--accordion${isOpen ? ' case--open' : ''}`}
     >
-      <h3 className="case-study__heading">
+      <h3 className="case__heading">
         <button
           id={triggerId}
           type="button"
-          className="case-study__trigger"
+          className="case__trigger"
           aria-expanded={isOpen}
           aria-controls={panelId}
           onClick={onToggle}
         >
-          <span className="case-study__trigger-text">{study.title}</span>
-          <FaChevronDown
-            className="case-study__chevron"
-            aria-hidden
-            size={14}
-          />
+          <span className="case__trigger-text">{caseEntry.title}</span>
+          <FaChevronDown className="case__chevron" aria-hidden size={14} />
         </button>
       </h3>
 
@@ -79,28 +75,25 @@ export default function CaseStudyAccordion({
         id={panelId}
         role="region"
         aria-labelledby={triggerId}
-        className="case-study__panel"
+        className="case__panel"
         hidden={!isOpen}
       >
-        {study.proof && (
-          <p className="case-study__proof">
-            {study.proof}
-            {study.proofHighlight && (
+        {caseEntry.proof && (
+          <p className="case__proof">
+            {caseEntry.proof}
+            {caseEntry.proofHighlight && (
               <>
                 {' '}
-                <strong>{study.proofHighlight}</strong>
+                <strong>{caseEntry.proofHighlight}</strong>
               </>
             )}
           </p>
         )}
 
-        <dl className="case-study__star">
-          {study.rows.map((row) => (
-            <div
-              key={row.label}
-              className="case-study__row"
-            >
-              <CaseStudyDt label={row.label} />
+        <dl className="case__star">
+          {caseEntry.rows.map((row) => (
+            <div key={row.label} className="case__row">
+              <StarTerm label={row.label} />
               <dd>{renderStarText(row.text)}</dd>
             </div>
           ))}
