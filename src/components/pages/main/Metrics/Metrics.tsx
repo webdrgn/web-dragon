@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import type { IconType } from "react-icons";
 import {
   FaArrowTrendUp,
@@ -51,19 +50,7 @@ export default function Metrics() {
       className="metrics"
       aria-labelledby="metrics-heading"
     >
-      <header className="mascot-section-header">
-        <div className="mascot-section-wrap" data-aos="fade-up">
-          <Image
-            src="./img/dragon4.png"
-            alt=""
-            width={220}
-            height={220}
-            className="mascot-section-img"
-            quality={100}
-            unoptimized={true}
-            sizes="(max-width: 640px) min(88vw, 220px), (max-width: 1024px) 180px, 220px"
-          />
-        </div>
+      <header className="metrics__header">
         <h2 id="metrics-heading" className="section-heading" data-aos="fade-up">
           Цифры
         </h2>
@@ -87,12 +74,6 @@ export default function Metrics() {
           </li>
         ))}
       </ul>
-
-      <p className="metrics__footnote" data-aos="fade-up">
-        Дополнительно:{" "}
-        <strong>50+ технических интервью</strong> как интервьюер, вывод{" "}
-        <strong>4 разработчиков</strong> на уверенное ревью кода.
-      </p>
     </section>
   );
 }

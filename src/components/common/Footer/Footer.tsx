@@ -1,14 +1,21 @@
 import React from 'react'
 import {
   FaFileAlt,
-  FaTelegramPlane
+  FaGithub,
+  FaTelegramPlane,
+  FaEnvelope,
 } from 'react-icons/fa'
 import { SiHabr } from 'react-icons/si'
+import { FiExternalLink } from 'react-icons/fi'
 import {
   AUTHOR_TELEGRAM,
   AUTHOR_HABR,
   AUTHOR_HABR_PROFILE,
+  AUTHOR_HABR_ARTICLE,
+  AUTHOR_HABR_ARTICLE_TITLE,
   AUTHOR_HH_RESUME,
+  AUTHOR_GITHUB,
+  AUTHOR_EMAIL,
 } from '@/config/constants'
 
 const ICON_SIZE = 18
@@ -22,70 +29,117 @@ export default function Footer() {
   return (
     <footer
       id="contacts"
-      className="footer mt-40 lg:mt-64 mx-auto w-full"
+      className="footer"
     >
       <div className="footer__inner">
-        <div className="footer__cta">
-          <h2 className="footer__cta-title">
-            Ищете техлида, который пересоберет ваш фронтенд / ментора,
-            который прокачает команду?
-          </h2>
-          <p className="footer__cta-text">
-            Напишите в удобный канал. Покажу, как выстроить архитектуру,
-            ускорить разработку, снизить техдолг и вырастить разработчиков,
-            которым можно доверять.
-          </p>
+        <div className="footer__paths">
+          <div className="footer__path">
+            <h2 className="footer__path-title">Tech Lead · Architect</h2>
+            <p className="footer__path-text">
+              Выстраиваю фронтенд-платформы, ускоряю поставку и снижаю техдолг.
+              Разберём архитектуру и формат работы с командой.
+            </p>
+            <nav
+              className="footer__path-links"
+              aria-label="Контакты для сотрудничества"
+            >
+              <a
+                href={resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer__text-link"
+              >
+                <span className="footer__link-icon">
+                  <FaFileAlt size={ICON_SIZE} aria-hidden />
+                </span>
+                {resumeLabel}
+              </a>
+              <a
+                href={`mailto:${AUTHOR_EMAIL}`}
+                className="footer__text-link"
+              >
+                <span className="footer__link-icon">
+                  <FaEnvelope size={ICON_SIZE} aria-hidden />
+                </span>
+                Email
+              </a>
+            </nav>
+          </div>
 
-          <nav
-            className="footer__cta-links"
-            aria-label="Контакты и ссылки"
-          >
-            <a
-              href={resumeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer__text-link"
+          <div className="footer__path-divider" aria-hidden />
+
+          <div className="footer__path">
+            <h2 className="footer__path-title">Менторство</h2>
+            <p className="footer__path-text">
+              Подготовка к собеседованиям, прокачка code review, выход на
+              middle+. Опыт с обеих сторон стола — как интервьюер и ментор.
+            </p>
+            <nav
+              className="footer__path-links"
+              aria-label="Контакты для менторства"
             >
-              <span className="footer__link-icon">
-                <FaFileAlt
-                  size={ICON_SIZE}
-                  aria-hidden
-                />
-              </span>
-              {resumeLabel}
-            </a>
-            <a
-              href={AUTHOR_HABR_PROFILE}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer__text-link"
-            >
-              <span className="footer__link-icon">
-                <SiHabr
-                  size={ICON_SIZE}
-                  aria-hidden
-                />
-              </span>
-              Habr
-            </a>
-            <a
-              href={AUTHOR_TELEGRAM}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer__text-link"
-            >
-              <span className="footer__link-icon">
-                <FaTelegramPlane
-                  size={ICON_SIZE}
-                  aria-hidden
-                />
-              </span>
-              Telegram
-            </a>
-          </nav>
+              <a
+                href={AUTHOR_TELEGRAM}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer__text-link"
+              >
+                <span className="footer__link-icon">
+                  <FaTelegramPlane size={ICON_SIZE} aria-hidden />
+                </span>
+                Telegram
+              </a>
+              <a
+                href="#playunmute"
+                className="footer__text-link"
+              >
+                Playunmute
+              </a>
+            </nav>
+          </div>
         </div>
 
-        <p className="text-[#818181] text-sm mt-2 lg:text-base">
+        <nav
+          className="footer__social"
+          aria-label="Профили и публикации"
+        >
+          <a
+            href={AUTHOR_GITHUB}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer__text-link"
+          >
+            <span className="footer__link-icon">
+              <FaGithub size={ICON_SIZE} aria-hidden />
+            </span>
+            GitHub
+          </a>
+          <a
+            href={AUTHOR_HABR_PROFILE}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer__text-link"
+          >
+            <span className="footer__link-icon">
+              <SiHabr size={ICON_SIZE} aria-hidden />
+            </span>
+            Habr
+          </a>
+          <a
+            href={AUTHOR_HABR_ARTICLE}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer__text-link"
+            title={AUTHOR_HABR_ARTICLE_TITLE}
+          >
+            <span className="footer__link-icon">
+              <FiExternalLink size={ICON_SIZE} aria-hidden />
+            </span>
+            Статья на Habr
+          </a>
+        </nav>
+
+        <p className="footer__copy">
           © 2026 webdragon
         </p>
       </div>

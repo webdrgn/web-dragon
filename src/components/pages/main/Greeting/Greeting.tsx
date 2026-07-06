@@ -1,49 +1,68 @@
 import React from "react";
 import Image from "next/image";
 import { SiNuxtdotjs, SiTypescript, SiVuedotjs } from "react-icons/si";
+import {
+  AUTHOR_EXPERIENCE_YEARS,
+  AUTHOR_NAME,
+  AUTHOR_JOB_TITLE,
+  AUTHOR_PHOTO,
+} from "@/config/constants";
+import { publicAsset } from "@/utils/publicAsset";
 
 export default function Greeting() {
   return (
     <div data-aos="fade-up" id="top" className="greeting">
-      <Image
-        src="./img/dragon.png"
-        alt="WebDragon"
-        width={220}
-        height={220}
-        className="greeting__icon"
-        quality={100}
-        unoptimized={true}
-        sizes="(max-width: 640px) min(88vw, 220px), (max-width: 1024px) 180px, 220px"
-        priority
-      />
-
       <div className="greeting__text">
-        <h3>Герман Чернышёв</h3>
+        <div className="greeting__profile">
+          <Image
+            src={publicAsset(AUTHOR_PHOTO)}
+            alt={AUTHOR_NAME}
+            width={120}
+            height={120}
+            className="greeting__photo"
+            quality={100}
+            unoptimized
+            priority
+          />
 
-        <p className="greeting__role">
-          Frontend Architect / Tech Lead, платформенная разработка и
-          техническое лидерство
-        </p>
+          <div className="greeting__identity">
+            <h1 className="greeting__name">{AUTHOR_NAME}</h1>
+            <p className="greeting__role">{AUTHOR_JOB_TITLE}</p>
+          </div>
+        </div>
 
         <h2 className="greeting__headline">
-          За 5 лет прошёл путь от разработчика до архитектора фронтенд-платформ:
-          спроектировал систему компонентов из{" "}
+          За {AUTHOR_EXPERIENCE_YEARS} лет прошёл путь от разработчика до
+          архитектора фронтенд-платформ: спроектировал систему из{" "}
           <strong>100+ компонентов</strong> и ускорил разработку на{" "}
           <strong>30–70%</strong>.
         </h2>
 
-        <p className="greeting__subtitle">
-          Vue 3 · TypeScript · Nuxt 3 · платформенные решения · техническое
-          лидерство
-        </p>
+        <div className="greeting__actions">
+          <a
+            href="#contacts"
+            className="greeting__cta greeting__cta--primary"
+          >
+            Обсудить сотрудничество
+          </a>
+          <a
+            href="#mentorship"
+            className="greeting__cta"
+          >
+            Менторство
+          </a>
+        </div>
 
         <div
           className="greeting__tech-strip"
-          aria-hidden
+          aria-label="Основной стек"
         >
-          <SiVuedotjs size={22} title="Vue 3" />
-          <SiTypescript size={22} title="TypeScript" />
-          <SiNuxtdotjs size={22} title="Nuxt 3" />
+          <SiVuedotjs size={22} aria-hidden />
+          <SiTypescript size={22} aria-hidden />
+          <SiNuxtdotjs size={22} aria-hidden />
+          <span className="greeting__tech-label">
+            Vue 3 · TypeScript · Nuxt 3
+          </span>
         </div>
 
         <p className="greeting__about">
@@ -52,6 +71,17 @@ export default function Greeting() {
           Код воспринимаю как часть экономики продукта, не как самоцель.
         </p>
       </div>
+
+      <Image
+        src={publicAsset('/img/dragon.png')}
+        alt=""
+        width={160}
+        height={160}
+        className="greeting__mascot"
+        quality={100}
+        unoptimized
+        aria-hidden
+      />
     </div>
   );
 }

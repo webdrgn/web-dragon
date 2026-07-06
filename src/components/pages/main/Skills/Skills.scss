@@ -9,6 +9,11 @@
     gap: clamp(2rem, 5vw, 3rem);
   }
 
+  &__header {
+    width: 100%;
+    text-align: center;
+  }
+
   &__title {
     margin-top: clamp(0.25rem, 1vw, 0.5rem);
   }

@@ -1,0 +1,93 @@
+@import '../../../../styles/mixins/media.scss';
+
+.playunmute {
+  width: 100%;
+}
+
+.product-showcase {
+  &__label {
+    margin: 0 0 8px;
+    font-size: clamp(13px, 1.35vw, 15px);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+
+    .case-study__title {
+      margin: 0;
+    }
+  }
+
+  &__preview {
+    margin-top: 16px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  &__preview-img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &__highlights {
+    margin: 16px 0 0;
+    padding-left: 1rem;
+    display: grid;
+    gap: 8px;
+    list-style: none;
+  }
+
+  &__highlights li {
+    position: relative;
+    padding-left: 1.25rem;
+    font-size: clamp(14px, 1.4vw, 16px);
+    line-height: 1.5;
+    color: var(--text-secondary);
+  }
+
+  &__highlights li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.65em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary);
+  }
+
+  &__stack {
+    margin: 14px 0 0;
+    font-size: clamp(12px, 1.2vw, 14px);
+    line-height: 1.5;
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
+  }
+
+  &__demo {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: clamp(14px, 1.35vw, 16px);
+    font-weight: 600;
+    color: var(--primary);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+    flex-shrink: 0;
+
+    &:hover {
+      opacity: 0.85;
+      text-decoration: none;
+    }
+  }
+}

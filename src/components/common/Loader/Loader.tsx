@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { publicAsset } from '@/utils/publicAsset';
 
 interface LoaderProps {
   className?: string;
@@ -9,7 +10,7 @@ export default function Loader({ className = '' }: LoaderProps) {
   return (
     <div className={`loader ${className}`}>
       <Image
-        src="./img/dragon4.png"
+        src={publicAsset('/img/dragon4.png')}
         alt="Dragon illustration"
         width={100}
         height={100}

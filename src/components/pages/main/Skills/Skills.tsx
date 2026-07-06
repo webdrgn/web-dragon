@@ -1,25 +1,11 @@
 import React from "react";
-import Image from "next/image";
 import { skills } from "../../../../../storage/skills";
 import Skill from "./Skill/Skill";
 
 export default function Skills() {
   return (
     <div id="stack" className="skills">
-      <header className="mascot-section-header">
-        <div className="mascot-section-wrap" data-aos="fade-up">
-          <Image
-            src="./img/dragon3.png"
-            alt=""
-            width={220}
-            height={220}
-            className="mascot-section-img"
-            quality={100}
-            unoptimized={true}
-            sizes="(max-width: 640px) min(88vw, 220px), (max-width: 1024px) 180px, 220px"
-            priority={false}
-          />
-        </div>
+      <header className="skills__header">
         <h2 className="section-heading skills__title" data-aos="fade-up">
           Технологии
         </h2>
