@@ -5,14 +5,9 @@ import {
   FaTelegramPlane,
   FaEnvelope,
 } from 'react-icons/fa'
-import { SiHabr } from 'react-icons/si'
-import { FiExternalLink } from 'react-icons/fi'
 import {
   AUTHOR_TELEGRAM,
   AUTHOR_HABR,
-  AUTHOR_HABR_PROFILE,
-  AUTHOR_HABR_ARTICLE,
-  AUTHOR_HABR_ARTICLE_TITLE,
   AUTHOR_HH_RESUME,
   AUTHOR_GITHUB,
   AUTHOR_EMAIL,
@@ -113,29 +108,6 @@ export default function Footer() {
               <FaGithub size={ICON_SIZE} aria-hidden />
             </span>
             GitHub
-          </a>
-          <a
-            href={AUTHOR_HABR_PROFILE}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer__text-link"
-          >
-            <span className="footer__link-icon">
-              <SiHabr size={ICON_SIZE} aria-hidden />
-            </span>
-            Habr
-          </a>
-          <a
-            href={AUTHOR_HABR_ARTICLE}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer__text-link"
-            title={AUTHOR_HABR_ARTICLE_TITLE}
-          >
-            <span className="footer__link-icon">
-              <FiExternalLink size={ICON_SIZE} aria-hidden />
-            </span>
-            Статья на Habr
           </a>
         </nav>
 
