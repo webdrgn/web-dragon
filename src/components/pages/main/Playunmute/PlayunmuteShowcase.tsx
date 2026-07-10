@@ -4,7 +4,7 @@ import { FiExternalLink } from 'react-icons/fi'
 import { publicAsset } from '@/utils/publicAsset'
 
 const PLAYUNMUTE_DEMO = 'https://webdrgn.github.io/playunmute'
-const PLAYUNMUTE_PREVIEW = publicAsset('/img/candidate_interviewer.svg')
+const PLAYUNMUTE_PREVIEW = publicAsset('/img/playunmute.png')
 
 const PLAYUNMUTE_STACK =
   'Fullstack · Nuxt · Vue 3 · TypeScript · Node.js · Express'
