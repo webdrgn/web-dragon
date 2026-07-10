@@ -1,17 +1,16 @@
-import React from "react";
-import Image from "next/image";
-import { SiNuxtdotjs, SiTypescript, SiVuedotjs } from "react-icons/si";
-import {
-  AUTHOR_EXPERIENCE_YEARS,
-  AUTHOR_NAME,
-  AUTHOR_JOB_TITLE,
-  AUTHOR_PHOTO,
-} from "@/config/constants";
-import { publicAsset } from "@/utils/publicAsset";
+import React from 'react'
+import Image from 'next/image'
+import { SiNuxtdotjs, SiTypescript, SiVuedotjs } from 'react-icons/si'
+import { AUTHOR_NAME, AUTHOR_JOB_TITLE, AUTHOR_PHOTO } from '@/config/constants'
+import { publicAsset } from '@/utils/publicAsset'
 
 export default function Greeting() {
   return (
-    <div data-aos="fade-up" id="top" className="greeting">
+    <div
+      data-aos="fade-up"
+      id="top"
+      className="greeting"
+    >
       <div className="greeting__text">
         <div className="greeting__profile">
           <Image
@@ -32,10 +31,8 @@ export default function Greeting() {
         </div>
 
         <h2 className="greeting__headline">
-          За {AUTHOR_EXPERIENCE_YEARS} лет прошёл путь от разработчика до
-          архитектора фронтенд-платформ: спроектировал систему из{" "}
-          <strong>100+ компонентов</strong> и ускорил разработку на{" "}
-          <strong>30–70%</strong>.
+          Начинал с кода. Сейчас отвечаю за разработку целиком. Но до сих пор
+          открываю IDE, когда нужно принять сложное решение.
         </h2>
 
         <div className="greeting__actions">
@@ -57,20 +54,30 @@ export default function Greeting() {
           className="greeting__tech-strip"
           aria-label="Основной стек"
         >
-          <SiVuedotjs size={22} aria-hidden />
-          <SiTypescript size={22} aria-hidden />
-          <SiNuxtdotjs size={22} aria-hidden />
+          <SiVuedotjs
+            size={22}
+            aria-hidden
+          />
+          <SiTypescript
+            size={22}
+            aria-hidden
+          />
+          <SiNuxtdotjs
+            size={22}
+            aria-hidden
+          />
           <span className="greeting__tech-label">
             Vue 3 · TypeScript · Nuxt 3
           </span>
         </div>
 
         <p className="greeting__about">
-          Строю фронтенд-платформы, которые комфортно живут при росте нагрузки и
-          команды: от выбора стека до обновлений без постоянных поломок в проде.
-          Код воспринимаю как часть экономики продукта, не как самоцель.
+          Моя работа — чтобы команда выпускала фичи предсказуемо и без лишнего
+          стресса. А бизнес получал результат, на который можно рассчитывать.
+          Всё остальное — найм, архитектура, процессы, качество в проде — просто
+          инструменты.
         </p>
       </div>
     </div>
-  );
+  )
 }

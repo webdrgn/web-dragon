@@ -3,26 +3,20 @@ import { FaChalkboardUser, FaComments, FaUserGraduate } from 'react-icons/fa6'
 import SectionHeading from '@/components/common/SectionHeading/SectionHeading'
 import { AUTHOR_TELEGRAM, SECTION_MASCOTS } from '@/config/constants'
 
-const MENTORSHIP_VALUES = [
+const MENTORSHIP_FORMATS = [
   {
     accent: 'Собеседования',
-    label: 'Знаю вопросы изнутри',
-    context:
-      'Провожу технические интервью как нанимающий — понимаю, что проверяют на middle+ и senior',
+    label: 'Подготовка к реальным вопросам middle+ и senior',
     Icon: FaComments,
   },
   {
     accent: 'Code review',
-    label: 'От страха к уверенности',
-    context:
-      'Выстраиваю привычку ревью: от «боюсь комментировать» до самостоятельных задач без микроменеджмента',
+    label: 'От страха комментировать до уверенных решений',
     Icon: FaUserGraduate,
   },
   {
     accent: 'Playunmute',
-    label: 'Тренажёр в браузере',
-    context:
-      'Симулятор технического интервью с разбором ответов — готовый инструмент для подготовки',
+    label: 'Мой тренажер для подготовки',
     Icon: FaChalkboardUser,
   },
 ]
@@ -42,28 +36,27 @@ export default function Mentorship() {
           className="section-lead mentorship__lead"
           data-aos="fade-up"
         >
-          Помогаю разработчикам готовиться к собеседованиям, прокачивать ревью
-          и выходить на уровень middle+.
+          Провел десятки собеседований. Знаю, что там проверяют на самом деле.
+          Помогаю готовиться, прокачивать ревью, выходить на уровень middle+.
         </p>
       </header>
 
       <ul className="mentorship__grid">
-        {MENTORSHIP_VALUES.map((point) => (
+        {MENTORSHIP_FORMATS.map((format) => (
           <li
-            key={point.accent}
+            key={format.accent}
             data-aos="fade-up"
             className="mentorship__card"
           >
-            <div className="mentorship__accent">{point.accent}</div>
+            <div className="mentorship__accent">{format.accent}</div>
             <div className="mentorship__label-row">
-              <point.Icon
+              <format.Icon
                 className="mentorship__icon"
                 aria-hidden
                 size={18}
               />
-              <div className="mentorship__label">{point.label}</div>
+              <div className="mentorship__label">{format.label}</div>
             </div>
-            <p className="mentorship__context">{point.context}</p>
           </li>
         ))}
       </ul>

@@ -1,24 +1,10 @@
 'use client'
 
 import React, { useId } from 'react'
-import type { IconType } from 'react-icons'
-import {
-  FaBullseye,
-  FaChartLine,
-  FaChevronDown,
-  FaClipboardList,
-  FaWrench,
-} from 'react-icons/fa'
-import type { CaseStudy, StarLabel } from '../../../../../storage/caseStudies'
+import { FaChevronDown } from 'react-icons/fa'
+import type { CaseStudy } from '../../../../../storage/caseStudies'
 
-const STAR_LABEL_ICONS: Record<StarLabel, IconType> = {
-  Ситуация: FaClipboardList,
-  Задача: FaBullseye,
-  Действия: FaWrench,
-  Результат: FaChartLine,
-}
-
-function renderStarText(text: string) {
+function renderCaseText(text: string) {
   const parts = text.split(/(\d+\+?%?|\d+ → \d+)/g)
 
   return parts.map((part, index) => {
@@ -27,16 +13,6 @@ function renderStarText(text: string) {
     }
     return part
   })
-}
-
-function StarTerm({ label }: { label: StarLabel }) {
-  const Icon = STAR_LABEL_ICONS[label]
-  return (
-    <dt className="case__dt">
-      <Icon className="case__dt-icon" size={15} aria-hidden />
-      <span>{label}</span>
-    </dt>
-  )
 }
 
 type CaseAccordionProps = {
@@ -78,26 +54,7 @@ export default function CaseAccordion({
         className="case__panel"
         hidden={!isOpen}
       >
-        {caseEntry.proof && (
-          <p className="case__proof">
-            {caseEntry.proof}
-            {caseEntry.proofHighlight && (
-              <>
-                {' '}
-                <strong>{caseEntry.proofHighlight}</strong>
-              </>
-            )}
-          </p>
-        )}
-
-        <dl className="case__star">
-          {caseEntry.rows.map((row) => (
-            <div key={row.label} className="case__row">
-              <StarTerm label={row.label} />
-              <dd>{renderStarText(row.text)}</dd>
-            </div>
-          ))}
-        </dl>
+        <p className="case__proof">{renderCaseText(caseEntry.description)}</p>
       </div>
     </article>
   )

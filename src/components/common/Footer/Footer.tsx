@@ -29,10 +29,11 @@ export default function Footer() {
       <div className="footer__inner">
         <div className="footer__paths">
           <div className="footer__path">
-            <h2 className="footer__path-title">Tech Lead · Architect</h2>
+            <h2 className="footer__path-title">
+              Head of Development / Frontend Architect
+            </h2>
             <p className="footer__path-text">
-              Выстраиваю фронтенд-платформы, ускоряю поставку и снижаю техдолг.
-              Разберём архитектуру и формат работы с командой.
+              Стратегия, архитектура, команда, качество.
             </p>
             <nav
               className="footer__path-links"
@@ -66,8 +67,7 @@ export default function Footer() {
           <div className="footer__path">
             <h2 className="footer__path-title">Менторство</h2>
             <p className="footer__path-text">
-              Подготовка к собеседованиям, прокачка code review, выход на
-              middle+. Опыт с обеих сторон стола — как интервьюер и ментор.
+              Подготовка к собеседованиям, прокачка ревью, рост до middle+.
             </p>
             <nav
               className="footer__path-links"

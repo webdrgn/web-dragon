@@ -7,13 +7,13 @@ const PLAYUNMUTE_DEMO = 'https://webdrgn.github.io/playunmute'
 const PLAYUNMUTE_PREVIEW = publicAsset('/img/playunmute.png')
 
 const PLAYUNMUTE_STACK =
-  'Fullstack · Nuxt · Vue 3 · TypeScript · Node.js · Express'
+  'Fullstack · Nuxt 3 · Vue 3 · TypeScript · Node.js · Express'
 
 const PLAYUNMUTE_HIGHLIGHTS = [
-  'Спроектировал полный цикл: калибровка → иммерсивное интервью → разбор с вердиктом',
-  'Алгоритм оценки: содержание ответа и тайминг относительно индивидуального темпа мышления',
-  'Детальный фидбек по 6 этапам — баллы, pass/fail и комментарий к каждому ответу',
-  'Контент-ориентированная архитектура: новые сценарии без изменения ядра продукта',
+  'Калибровка темпа мышления',
+  'Оценка содержания и скорости реакции',
+  'Разбор по шести этапам с вердиктом',
+  'Архитектура под новые сценарии без изменения ядра',
 ]
 
 export default function PlayunmuteShowcase() {
@@ -37,13 +37,20 @@ export default function PlayunmuteShowcase() {
             className="product-showcase__demo"
           >
             <FiExternalLink aria-hidden />
-            Демо
+            Играть
           </a>
         </div>
 
         <p className="product-showcase__proof">
-          Fullstack-приложение — браузерный симулятор технического
-          собеседования: калибровка темпа → Zoom-интервью → разбор с оценками.
+          Я сделал браузерный тренажер для подготовки к техническим
+          собеседованиям. Полный цикл: калибровка, интервью в Zoom-стиле,
+          разбор ошибок с баллами и комментариями.
+        </p>
+
+        <p className="product-showcase__proof">
+          Зачем? Я провел десятки технических собеседований. Видел, как
+          кандидаты готовятся не к тому. Сделал инструмент, который дает именно
+          ту обратную связь, которая нужна.
         </p>
 
         <div className="product-showcase__preview">

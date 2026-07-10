@@ -12,12 +12,12 @@ export const FIREFLIES_COUNT = 9;
 export const REPO_NAME = 'web-dragon';
 export const BASE_PATH = `/${REPO_NAME}`;
 export const SITE_URL = `https://webdrgn.github.io${BASE_PATH}`;
-export const SITE_NAME = 'WebDragon · Frontend Architect / Tech Lead';
+export const SITE_NAME = 'WebDragon · Head of Development / Frontend Architect';
 export const AUTHOR_NAME = 'Герман Чернышёв';
-export const AUTHOR_JOB_TITLE = 'Frontend Architect / Tech Lead';
+export const AUTHOR_JOB_TITLE = 'Head of Development / Frontend Architect';
 export const AUTHOR_PHOTO = '/img/resume.jpg';
 export const SEO_DESCRIPTION =
-  'Frontend Architect / Tech Lead: Vue 3, Nuxt 3, TypeScript, платформенная разработка. Дизайн-система 100+ компонентов, ускорение разработки 30–70%, онбординг 4→1 неделя, 100+ технических интервью.';
+  'Head of Development / Frontend Architect. Управляю разработкой полного цикла: стратегия, архитектура, команда, качество. Vue 3, Nuxt, TypeScript. Дизайн-система 100+ компонентов, ускорение 30–70%, онбординг 4→1 неделя.';
 export const SEO_KEYWORDS = [
   'frontend разработчик',
   'опытный фронтенд разработчик',
@@ -49,6 +49,7 @@ export const AUTHOR_HABR_ARTICLE =
   'https://habr.com/ru/articles/1053396/';
 export const AUTHOR_HABR_ARTICLE_TITLE =
   'Оптимизация без AI: как я автоматизировал API-ручки и типы';
+export const AUTHOR_GITHUB_ARTICLE = 'https://github.com/webdrgn/articles/blob/main/optimizaciya-bez-ai.md';
 export const AUTHOR_HH_RESUME = '';
 export const AUTHOR_LINKEDIN = '';
 export const AUTHOR_SITE = SITE_URL;

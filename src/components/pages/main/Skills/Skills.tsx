@@ -9,7 +9,7 @@ export default function Skills() {
     <div id="stack" className="skills">
       <header className="skills__header">
         <SectionHeading mascot={SECTION_MASCOTS.stack} className="skills__title">
-          Технологии
+          Стек
         </SectionHeading>
       </header>
 
@@ -18,10 +18,7 @@ export default function Skills() {
           data-aos="fade-up"
           className="section-lead skills__lead"
         >
-          Стек сгруппирован по зонам ответственности: платформа и UI,
-          интеграции и данные на клиенте, при необходимости Node на полном цикле.
-          Технологии подбираю под задачу, ограничения продукта и эксплуатацию в
-          проде.
+          Выбираю под задачу, команду и нагрузку.
         </p>
 
         <div className="skills__grid grid">

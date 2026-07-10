@@ -17,30 +17,30 @@ const METRICS: Array<{
 }> = [
   {
     value: "100+",
-    label: "Компонентов в дизайн-системе",
+    label: "компонентов",
     context:
-      "Библиотека для платформенных продуктов, проектирование, Storybook, версионирование",
+      "С нуля собрал дизайн-систему. Storybook, версии, контроль изменений. Новичок разбирается за день.",
     Icon: FaLayerGroup,
   },
   {
     value: "30–70%",
-    label: "Ускорение разработки",
+    label: "быстрее",
     context:
-      "Типовые экраны и новые фичи после внедрения платформы и стандартов",
+      "Типовые задачи теперь делаются не за неделю, а за день. Новые фичи — не переписывание старого, а надстройка.",
     Icon: FaArrowTrendUp,
   },
   {
     value: "−45%",
-    label: "Критических багов в проде",
+    label: "критических багов",
     context:
-      "После усиления code review, регламентов релизов и контроля качества",
+      "Код-ревью и регламенты релизов. Системно, а не когда горит.",
     Icon: FaBug,
   },
   {
-    value: "4 → 1",
-    label: "Неделя онбординга",
+    value: "месяц → неделя",
+    label: "онбординг",
     context:
-      "Сокращение времени выхода новых разработчиков на автономную работу",
+      "Новый разработчик выходит на результат за семь дней. Не потому что я гениальный ментор, а потому что в коде порядок.",
     Icon: FaUserClock,
   },
 ];
@@ -59,20 +59,18 @@ export default function Metrics() {
       </header>
 
       <p className="section-lead metrics__lead" data-aos="fade-up">
-        Измеримый эффект платформенной работы и процессов: масштаб
-        дизайн-системы, скорость поставки, стабильность в проде и онбординг
-        команды — в контексте продуктовых задач.
+        То, что я считаю важным и умею измерять.
       </p>
 
       <ul className="metrics__grid">
-        {METRICS.map((m) => (
-          <li key={m.label} data-aos="fade-up" className="metrics__card">
-            <div className="metrics__value">{m.value}</div>
+        {METRICS.map((metric) => (
+          <li key={metric.label} data-aos="fade-up" className="metrics__card">
+            <div className="metrics__value">{metric.value}</div>
             <div className="metrics__label-row">
-              <m.Icon className="metrics__card-icon" aria-hidden size={18} />
-              <div className="metrics__label">{m.label}</div>
+              <metric.Icon className="metrics__card-icon" aria-hidden size={18} />
+              <div className="metrics__label">{metric.label}</div>
             </div>
-            <p className="metrics__context">{m.context}</p>
+            <p className="metrics__context">{metric.context}</p>
           </li>
         ))}
       </ul>

@@ -2,8 +2,7 @@ import React from 'react'
 import { FiExternalLink } from 'react-icons/fi'
 import SectionHeading from '@/components/common/SectionHeading/SectionHeading'
 import {
-  AUTHOR_HABR_ARTICLE,
-  AUTHOR_HABR_ARTICLE_TITLE,
+  AUTHOR_GITHUB_ARTICLE,
   SECTION_MASCOTS,
 } from '@/config/constants'
 
@@ -15,28 +14,25 @@ export default function SocialProof() {
       aria-labelledby="social-proof-heading"
     >
       <SectionHeading id="social-proof-heading" mascot={SECTION_MASCOTS.expertise}>
-        Экспертиза
+        Статья на GitHub
       </SectionHeading>
 
       <article
         data-aos="fade-up"
         className="social-proof__card"
       >
-        <p className="social-proof__label">Статья на Habr</p>
-        <h3 className="social-proof__title">{AUTHOR_HABR_ARTICLE_TITLE}</h3>
         <p className="social-proof__excerpt">
-          Как автоматизировать API-клиент и типы через OpenAPI: единая точка
-          входа в контракт, линейный флоу обновлений и предсказуемая разработка
-          без ручной типизации.
+          Как мы перестали тратить время на ручную типизацию API. OpenAPI,
+          автоматическая генерация и предсказуемый флоу обновлений.
         </p>
         <a
-          href={AUTHOR_HABR_ARTICLE}
+          href={AUTHOR_GITHUB_ARTICLE}
           target="_blank"
           rel="noopener noreferrer"
           className="social-proof__link"
         >
           <FiExternalLink aria-hidden />
-          Читать на Habr
+          Читать на GitHub
         </a>
       </article>
     </section>

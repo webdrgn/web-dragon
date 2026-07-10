@@ -17,19 +17,9 @@ export default function Projects() {
           className="projects__kicker"
           data-aos="fade-up"
         >
-          Кейсы из продуктовой разработки
+          Три проекта. Три результата.
         </p>
       </header>
-
-      <p
-        className="projects__intro section-lead"
-        data-aos="fade-up"
-      >
-        Три кейса в формате{' '}
-        <abbr title="Situation, Task, Action, Result">STAR</abbr>: ситуация,
-        задача, действия и измеримый результат. Раскройте кейс, чтобы увидеть
-        детали.
-      </p>
 
       <CaseList />
 
