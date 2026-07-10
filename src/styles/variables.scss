@@ -12,4 +12,37 @@ html {
   --text-muted: rgba(235, 235, 235, 0.62);
 
   --grey-1: #f6f6f6;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 48px;
+
+  --space-card: clamp(1.25rem, 3vw, 1.75rem);
+  --space-section: clamp(3.5rem, 9vw, 6.5rem);
+  --space-section-sm: clamp(3rem, 8vw, 5rem);
+  --space-stack: clamp(1.5rem, 4vw, 2.25rem);
+  --space-stack-tight: clamp(0.75rem, 2vw, 1rem);
+  --space-card-inner: clamp(1.1rem, 2.5vw, 1.5rem);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 14px;
+  --radius-xl: 16px;
+
+  --touch-min: 44px;
+
+  --cta-pad-y: 12px;
+  --cta-pad-x: 24px;
+  --cta-pad-y-lg: 14px;
+  --cta-pad-x-lg: 28px;
+
+  --content-max: 980px;
+  --content-wide: 1100px;
+  --measure: 42rem;
 }

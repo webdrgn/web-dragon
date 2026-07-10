@@ -7,9 +7,9 @@
   width: 100%;
 
   &__inner {
-    @include flexbox(initial, initial, column, 20px);
+    @include flexbox(initial, initial, column, var(--space-5));
 
-    padding: clamp(1.25rem, 3vw, 1.75rem);
+    padding: var(--space-card);
 
     background: linear-gradient(
       180deg,
@@ -18,12 +18,12 @@
     );
     border: 1px solid rgba(255, 255, 255, 0.06);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-    border-radius: 16px;
+    border-radius: var(--radius-xl);
   }
 
   &__paths {
     display: grid;
-    gap: 24px;
+    gap: var(--space-6);
     width: 100%;
 
     @include media(min, tablet) {
@@ -46,7 +46,7 @@
   }
 
   &__path {
-    @include flexbox(initial, initial, column, 12px);
+    @include flexbox(initial, initial, column, var(--space-3));
     text-align: center;
 
     @include media(min, tablet) {
@@ -75,8 +75,8 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 8px 12px;
-    margin-top: 4px;
+    gap: var(--space-2) var(--space-3);
+    margin-top: var(--space-1);
 
     @include media(min, tablet) {
       justify-content: flex-start;
@@ -87,8 +87,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 8px 16px;
-    padding-top: 16px;
+    gap: var(--space-2) var(--space-4);
+    padding-top: var(--space-4);
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     width: 100%;
   }
@@ -96,13 +96,14 @@
   &__text-link {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: var(--space-2);
     flex: 0 1 auto;
+    min-height: var(--touch-min);
     color: var(--primary);
     text-decoration: none;
     font-weight: 500;
-    padding: 8px 10px;
-    border-radius: 8px;
+    padding: var(--space-2) 10px;
+    border-radius: var(--radius-sm);
     transition: background 0.2s ease, opacity 0.2s ease;
     white-space: nowrap;
 

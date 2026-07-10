@@ -30,10 +30,10 @@ export default function Greeting() {
           </div>
         </div>
 
-        <h2 className="greeting__headline">
+        <p className="greeting__headline">
           Начинал с кода. Сейчас отвечаю за разработку целиком. Но до сих пор
           открываю IDE, когда нужно принять сложное решение.
-        </h2>
+        </p>
 
         <div className="greeting__actions">
           <a

@@ -22,6 +22,8 @@ const NAV_SECTIONS = [
   { href: '#stack', sectionId: 'stack', label: 'Стек', Icon: FaCode },
 ] as const
 
+const NAV_SPLIT_AT = 3
+
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState('')
 
@@ -67,7 +69,7 @@ export default function Navbar() {
           className="nav"
           aria-label="Основная навигация"
         >
-          {NAV_SECTIONS.slice(0, 2).map(({ href, sectionId, label, Icon }) => (
+          {NAV_SECTIONS.slice(0, NAV_SPLIT_AT).map(({ href, sectionId, label, Icon }) => (
             <a
               key={sectionId}
               href={href}
@@ -97,7 +99,7 @@ export default function Navbar() {
             />
           </a>
 
-          {NAV_SECTIONS.slice(2).map(({ href, sectionId, label, Icon }) => (
+          {NAV_SECTIONS.slice(NAV_SPLIT_AT).map(({ href, sectionId, label, Icon }) => (
             <a
               key={sectionId}
               href={href}

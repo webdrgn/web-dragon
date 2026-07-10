@@ -50,7 +50,7 @@ ul {
 .section-lead {
   margin: 0 auto;
   text-align: center;
-  max-width: 42rem;
+  max-width: var(--measure);
   font-size: clamp(0.9375rem, 1.65vw, 1.0625rem);
   line-height: 1.65;
   color: var(--text-secondary);

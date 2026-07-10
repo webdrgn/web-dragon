@@ -12,27 +12,28 @@ export default function FollowCursor() {
   const posX = useRef(0);
   const posY = useRef(0);
   const rafId = useRef<number | null>(null);
-  const [isTouch, setIsTouch] = useState(false);
+  const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
-    if (isTouchDevice()) {
-      setIsTouch(true);
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+
+    if (isTouchDevice() || prefersReducedMotion) {
       return;
     }
+
+    setEnabled(true);
 
     const handlePointerMove = (e: PointerEvent) => {
       targetX.current = e.clientX;
       targetY.current = e.clientY;
     };
-    const handleMouseMove = (e: MouseEvent) => {
-      targetX.current = e.clientX;
-      targetY.current = e.clientY;
-    };
 
     window.addEventListener('pointermove', handlePointerMove, { passive: true });
-    window.addEventListener('mousemove', handleMouseMove, { passive: true });
 
-    const lerp = (start: number, end: number, amt: number) => start + (end - start) * amt;
+    const lerp = (start: number, end: number, amount: number) =>
+      start + (end - start) * amount;
 
     const tick = () => {
       posX.current = lerp(posX.current, targetX.current, 0.18);
@@ -55,12 +56,11 @@ export default function FollowCursor() {
 
     return () => {
       window.removeEventListener('pointermove', handlePointerMove);
-      window.removeEventListener('mousemove', handleMouseMove);
       if (rafId.current) cancelAnimationFrame(rafId.current);
     };
   }, []);
 
-  if (isTouch) {
+  if (!enabled) {
     return null;
   }
 

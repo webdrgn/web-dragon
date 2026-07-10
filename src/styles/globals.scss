@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import './variables.scss';
+@import './mixins/media.scss';
 @import './grid.scss';
 @import './typography.scss';
 @import './mascot-section.scss';
@@ -27,7 +28,6 @@
 
 @import './mixins/flexbox.scss';
 @import './mixins/placeholder.scss';
-@import './mixins/media.scss';
 @import './mixins/hover-active.scss';
 
 ::selection {
@@ -36,13 +36,13 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 140px;
+  scroll-padding-top: 88px;
   background-color: rgb(28, 28, 28);
 }
 
 @include media(max, mobile) {
   html {
-    scroll-padding-top: 56px;
+    scroll-padding-top: 64px;
   }
 }
 
@@ -70,8 +70,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto';
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="6" height="6"><circle cx="3" cy="3" r="3" fill="white"/></svg>'),
-    auto;
+  cursor: auto;
 
   width: 100%;
   height: 100%;
@@ -90,9 +89,10 @@ body {
 }
 
 button {
-  padding: 14px 32px;
-  font-size: clamp(14px, 1.3vw, 18px);
-  border-radius: 14px;
+  padding: var(--cta-pad-y-lg) var(--cta-pad-x-lg);
+  min-height: var(--touch-min);
+  font-size: clamp(14px, 1.3vw, 16px);
+  border-radius: var(--radius-lg);
   text-align: center;
 
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
@@ -121,7 +121,7 @@ button {
   }
 
   @include media(max, tablet) {
-    padding: 12px 20px;
+    padding: var(--cta-pad-y) var(--cta-pad-x);
   }
 }
 
@@ -147,7 +147,7 @@ a {
 }
 
 ul {
-  @include flexbox(initial, initial, column, 16px);
+  @include flexbox(initial, initial, column, var(--space-4));
   list-style: none;
   padding-left: 0;
   width: 100%;
@@ -181,4 +181,18 @@ ul {
     top: 16px;
     text-decoration: none;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+html.aos-disabled [data-aos],
+body.aos-disabled [data-aos] {
+  opacity: 1 !important;
+  transform: none !important;
 }

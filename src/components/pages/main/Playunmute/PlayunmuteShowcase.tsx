@@ -37,7 +37,7 @@ export default function PlayunmuteShowcase() {
             className="product-showcase__demo"
           >
             <FiExternalLink aria-hidden />
-            Играть
+            Демо
           </a>
         </div>
 

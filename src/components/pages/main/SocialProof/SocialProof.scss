@@ -1,14 +1,14 @@
 @import '../../../../styles/mixins/flexbox.scss';
 
 .social-proof {
-  @include flexbox(center, center, column, clamp(1.25rem, 3vw, 1.75rem));
+  @include flexbox(center, center, column, var(--space-stack));
   width: 100%;
 
   &__card {
     width: 100%;
-    max-width: 980px;
-    padding: clamp(1.25rem, 3vw, 1.75rem);
-    border-radius: 16px;
+    max-width: var(--content-max);
+    padding: var(--space-card);
+    border-radius: var(--radius-xl);
     background: linear-gradient(
       180deg,
       rgba(255, 255, 255, 0.05),
@@ -18,7 +18,7 @@
   }
 
   &__label {
-    margin: 0 0 8px;
+    margin: 0 0 var(--space-2);
     font-size: clamp(13px, 1.35vw, 15px);
     letter-spacing: 0.14em;
     text-transform: uppercase;
@@ -27,7 +27,7 @@
   }
 
   &__title {
-    margin: 0 0 12px;
+    margin: 0 0 var(--space-3);
     font-size: clamp(1.05rem, 2vw, 1.3rem);
     font-weight: 700;
     line-height: 1.35;
@@ -38,7 +38,7 @@
   }
 
   &__excerpt {
-    margin: 0 0 16px;
+    margin: 0 0 var(--space-4);
     font-size: clamp(14px, 1.45vw, 17px);
     line-height: 1.6;
     color: var(--text-secondary);
@@ -47,7 +47,8 @@
   &__link {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: var(--space-2);
+    min-height: var(--touch-min);
     font-size: clamp(14px, 1.35vw, 16px);
     font-weight: 600;
     color: var(--primary);

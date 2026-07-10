@@ -2,10 +2,10 @@
 @import '../../../../styles/mixins/media.scss';
 
 .mentorship {
-  @include flexbox(center, center, column, clamp(1.5rem, 4vw, 2.25rem));
+  @include flexbox(center, center, column, var(--space-stack));
 
   &__header {
-    @include flexbox(center, center, column, clamp(0.75rem, 2vw, 1rem));
+    @include flexbox(center, center, column, var(--space-stack-tight));
     width: 100%;
   }
 
@@ -18,19 +18,23 @@
     padding: 0;
     margin: 0;
     width: 100%;
-    max-width: 1100px;
+    max-width: var(--content-wide);
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: clamp(12px, 2.5vw, 20px);
 
-    @include media(max, tablet) {
-      grid-template-columns: 1fr;
+    @include media(min, mobile) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media(min, tablet) {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
   &__card {
-    padding: clamp(1.1rem, 2.5vw, 1.5rem);
-    border-radius: 16px;
+    padding: var(--space-card-inner);
+    border-radius: var(--radius-xl);
     background: linear-gradient(
       180deg,
       rgba(255, 255, 255, 0.06),
@@ -53,7 +57,7 @@
   &__label-row {
     display: flex;
     align-items: flex-start;
-    gap: 8px;
+    gap: var(--space-2);
   }
 
   &__icon {
@@ -86,8 +90,9 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 14px 28px;
-    border-radius: 14px;
+    min-height: var(--touch-min);
+    padding: var(--cta-pad-y-lg) var(--cta-pad-x-lg);
+    border-radius: var(--radius-lg);
     font-size: clamp(14px, 1.3vw, 16px);
     font-weight: 600;
     color: var(--text-primary);

@@ -30,23 +30,34 @@ export default function App({ Component, pageProps }: AppProps) {
     Aos.init({
       duration: prefersReducedMotion ? 0 : AOS_DURATION_MS,
       disable: prefersReducedMotion,
+      once: true,
+      offset: 48,
+      easing: 'ease-out-cubic',
     });
 
     if (skipLoader) {
       return;
     }
 
-    setTimeout(() => {
+    const loaderTimer = window.setTimeout(() => {
       setLoading(false);
     }, LOADER_DELAY_MS);
+
+    return () => window.clearTimeout(loaderTimer);
   }, []);
 
   useEffect(() => {
     if (loading) {
-      document?.querySelector('body')?.classList.add('lock');
-    } else {
-      document?.querySelector('body')?.classList.remove('lock');
+      document.body.classList.add('lock');
+      return;
     }
+
+    document.body.classList.remove('lock');
+    const refreshTimer = window.setTimeout(() => {
+      Aos.refreshHard();
+    }, 50);
+
+    return () => window.clearTimeout(refreshTimer);
   }, [loading]);
 
   return (

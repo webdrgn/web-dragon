@@ -2,7 +2,7 @@
 
 .header {
   position: sticky;
-  top: 6px;
+  top: var(--space-2);
   width: 100%;
   padding: 0 clamp(6px, 1.5vw, 12px);
   z-index: 1000;
@@ -11,7 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: var(--space-2);
     max-width: 100%;
   }
 
@@ -21,8 +21,10 @@
     justify-content: center;
     gap: 6px;
     flex-shrink: 0;
-    padding: 8px 12px;
-    border-radius: 12px;
+    min-width: var(--touch-min);
+    min-height: var(--touch-min);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-md);
     font-size: clamp(12px, 1.2vw, 14px);
     font-weight: 600;
     letter-spacing: 0.04em;
@@ -64,13 +66,13 @@
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    gap: 4px;
+    gap: var(--space-1);
     flex: 1;
     min-width: 0;
     max-width: 100%;
     box-sizing: border-box;
-    border-radius: 14px;
-    padding: 6px 8px;
+    border-radius: var(--radius-lg);
+    padding: 6px var(--space-2);
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
     border: 1px solid rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
@@ -89,16 +91,18 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 5px;
+      gap: 6px;
       flex: 0 0 auto;
       white-space: nowrap;
-      font-size: clamp(11px, 1.2vw, 14px);
+      min-width: var(--touch-min);
+      min-height: var(--touch-min);
+      font-size: clamp(12px, 1.2vw, 14px);
       color: #fff;
       letter-spacing: 0.05em;
       text-transform: uppercase;
       opacity: 0.9;
-      padding: 6px 8px;
-      border-radius: 8px;
+      padding: var(--space-2) 10px;
+      border-radius: var(--radius-sm);
       transition: color 0.25s ease, opacity 0.25s ease, background 0.25s ease;
 
       &:hover {
@@ -133,7 +137,7 @@
     }
 
     &__item--logo {
-      padding: 4px 6px;
+      padding: var(--space-1) 6px;
     }
   }
 
@@ -145,17 +149,15 @@
   }
 
   @include media(max, mobile) {
-    top: 4px;
-    padding: 0 4px;
+    top: var(--space-1);
+    padding: 0 var(--space-1);
 
     &__bar {
       gap: 6px;
     }
 
     &__cta {
-      padding: 8px 10px;
-      min-width: 36px;
-      min-height: 36px;
+      padding: var(--space-2);
     }
 
     &__cta-text {
@@ -171,19 +173,17 @@
     }
 
     .nav {
-      padding: 4px 6px;
-      gap: 2px;
-      border-radius: 12px;
+      padding: var(--space-1) 6px;
+      gap: var(--space-1);
+      border-radius: var(--radius-md);
     }
 
     .nav__item:not(.nav__item--logo) {
-      padding: 6px;
-      min-width: 34px;
-      min-height: 34px;
+      padding: var(--space-2);
     }
 
     .nav__item--logo {
-      padding: 2px 4px;
+      padding: var(--space-1);
     }
 
     .nav-img {
@@ -193,23 +193,23 @@
   }
 
   @include media(min, tablet) {
-    top: 8px;
+    top: var(--space-2);
 
     .nav {
       flex-wrap: wrap;
       justify-content: center;
-      gap: 8px 10px;
-      padding: 8px 12px;
+      gap: var(--space-2) 10px;
+      padding: var(--space-2) var(--space-3);
       overflow: visible;
     }
 
     .nav__item {
-      padding: 7px 10px;
+      padding: 10px var(--space-3);
       font-size: clamp(12px, 1.1vw, 14px);
     }
 
     &__cta {
-      padding: 9px 16px;
+      padding: 10px var(--space-4);
     }
   }
 }
