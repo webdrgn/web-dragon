@@ -1,28 +1,17 @@
 import '@/styles/globals.scss';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import NoiseAnimation from '@/components/animation/NoiseAnimation';
-import Loader from '@/components/common/Loader/Loader';
 import DragonFireflies from '@/components/animation/DragonFireflies/DragonFireflies';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import ErrorBoundary from '@/components/common/ErrorBoundary';
-import { AOS_DURATION_MS, LOADER_DELAY_MS, LOADER_SESSION_KEY, FIREFLIES_COUNT } from '@/config/constants';
+import { AOS_DURATION_MS, FIREFLIES_COUNT } from '@/config/constants';
 import FollowCursor from '@/components/animation/FollowCursor/FollowCursor';
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [loading, setLoading] = useState(false);
-
   useEffect(() => {
-    const visited = sessionStorage.getItem(LOADER_SESSION_KEY);
-    const skipLoader = Boolean(visited);
-
-    if (!skipLoader) {
-      setLoading(true);
-      sessionStorage.setItem(LOADER_SESSION_KEY, '1');
-    }
-
     const prefersReducedMotion = window.matchMedia(
       '(prefers-reduced-motion: reduce)'
     ).matches;
@@ -35,30 +24,12 @@ export default function App({ Component, pageProps }: AppProps) {
       easing: 'ease-out-cubic',
     });
 
-    if (skipLoader) {
-      return;
-    }
-
-    const loaderTimer = window.setTimeout(() => {
-      setLoading(false);
-    }, LOADER_DELAY_MS);
-
-    return () => window.clearTimeout(loaderTimer);
-  }, []);
-
-  useEffect(() => {
-    if (loading) {
-      document.body.classList.add('lock');
-      return;
-    }
-
-    document.body.classList.remove('lock');
     const refreshTimer = window.setTimeout(() => {
       Aos.refreshHard();
     }, 50);
 
     return () => window.clearTimeout(refreshTimer);
-  }, [loading]);
+  }, []);
 
   return (
     <ErrorBoundary>
@@ -72,12 +43,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <NoiseAnimation />
         <DragonFireflies count={FIREFLIES_COUNT} />
         <FollowCursor />
-
-        {loading ? (
-          <Loader className={loading ? '' : 'hidden--opacity'} />
-        ) : (
-          <Component {...pageProps} />
-        )}
+        <Component {...pageProps} />
       </div>
     </ErrorBoundary>
   );

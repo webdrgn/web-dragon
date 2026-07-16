@@ -2,19 +2,17 @@ import React from 'react'
 import Image from 'next/image'
 import { publicAsset } from '@/utils/publicAsset'
 
-type SectionHeadingProps = {
-  id?: string
-  mascot: string
-  className?: string
-  children: React.ReactNode
-}
-
 export default function SectionHeading({
   id,
   mascot,
   className = '',
   children,
-}: SectionHeadingProps) {
+}: {
+  id?: string
+  mascot: string
+  className?: string
+  children: React.ReactNode
+}) {
   const headingClass = ['section-heading', className].filter(Boolean).join(' ')
 
   return (

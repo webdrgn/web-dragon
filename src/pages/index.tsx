@@ -1,4 +1,4 @@
-import Greeting from "@/components/pages/main/Greeting/Greeting";
+import Hero from "@/components/pages/main/Hero/Hero";
 import Metrics from "@/components/pages/main/Metrics/Metrics";
 import PlayunmuteShowcase from "@/components/pages/main/Playunmute/PlayunmuteShowcase";
 import Projects from "@/components/pages/main/Projects/Projects";
@@ -52,7 +52,7 @@ export default function Home() {
 
       <main id="main-content">
         <div className="normalize-section normalize-container">
-          <Greeting />
+          <Hero />
         </div>
 
         <div className="normalize-section normalize-container">

@@ -6,8 +6,6 @@ export const SECTION_MASCOTS = {
   stack: '/img/dragon4.png',
 } as const;
 export const AOS_DURATION_MS = 700;
-export const LOADER_DELAY_MS = 500;
-export const LOADER_SESSION_KEY = 'webdragon-visited';
 export const FIREFLIES_COUNT = 9;
 export const REPO_NAME = 'web-dragon';
 export const BASE_PATH = `/${REPO_NAME}`;

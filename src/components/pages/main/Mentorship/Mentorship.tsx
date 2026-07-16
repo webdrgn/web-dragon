@@ -6,12 +6,12 @@ import { AUTHOR_TELEGRAM, SECTION_MASCOTS } from '@/config/constants'
 const MENTORSHIP_FORMATS = [
   {
     accent: 'Собеседования',
-    label: 'Подготовка к реальным вопросам middle+ и senior',
+    label: 'Подготовка к реальным вопросам middle+',
     Icon: FaComments,
   },
   {
     accent: 'Code review',
-    label: 'От страха комментировать до уверенных решений',
+    label: 'От страха комментировать к уверенным решениям',
     Icon: FaUserGraduate,
   },
   {

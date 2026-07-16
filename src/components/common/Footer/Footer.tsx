@@ -12,6 +12,7 @@ import {
   AUTHOR_GITHUB,
   AUTHOR_EMAIL,
 } from '@/config/constants'
+import dayjs from 'dayjs'
 
 const ICON_SIZE = 18
 
@@ -20,6 +21,8 @@ export default function Footer() {
   const resumeLabel = AUTHOR_HH_RESUME
     ? 'Резюме на hh.ru'
     : 'Habr Career'
+
+  const currentYear = dayjs().year()
 
   return (
     <footer
@@ -112,7 +115,7 @@ export default function Footer() {
         </nav>
 
         <p className="footer__copy">
-          © 2026 webdragon
+          © {currentYear} webdragon
         </p>
       </div>
     </footer>

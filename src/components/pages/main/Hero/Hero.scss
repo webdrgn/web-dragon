@@ -1,7 +1,7 @@
 @import '../../../../styles/mixins/flexbox.scss';
 @import '../../../../styles/mixins/media.scss';
 
-.greeting {
+.hero {
   @include flexbox(center, flex-start, column, var(--space-stack));
   min-height: auto;
   padding-top: clamp(2.5rem, 8vh, 6rem);
