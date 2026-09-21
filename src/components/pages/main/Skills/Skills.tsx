@@ -16,7 +16,7 @@ export default function Skills() {
       <div className="skills__content">
         <div data-aos="fade-up">
           <p className="section-lead skills__lead">
-          Технологии — просто инструмент. Выбираю под задачу, команду и нагрузку. JavaScript, TypeScript, Vue, React, Node.js, PHP, PostgreSQL, Docker, CI/CD, WebSocket, Centrifugo. Строил дизайн-системы, вытаскивал проекты из легаси, настраивал инфраструктуру и процессы. Не важно на чём — важно, чтобы работало, масштабировалось и не ломалось.
+          Технологии выбираю под задачу, команду и нагрузку. JavaScript, TypeScript, Vue, React, Node.js, PHP, PostgreSQL, Docker, CI/CD, WebSocket, Centrifugo. Строил дизайн-системы, вытаскивал проекты из легаси, настраивал инфраструктуру и процессы. Не важно на чём — важно, чтобы работало, масштабировалось и не ломалось.
           </p>
         </div>
 
