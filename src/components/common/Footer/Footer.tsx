@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaGithub, FaEnvelope } from 'react-icons/fa'
 import {
+  AUTHOR_JOB_TITLE,
   AUTHOR_TELEGRAM,
   AUTHOR_GITHUB,
   AUTHOR_EMAIL,
@@ -18,6 +19,13 @@ export default function Footer() {
       className="footer"
     >
       <div className="footer__inner">
+        <div className="footer__intro">
+          <h2 className="footer__title">{AUTHOR_JOB_TITLE}</h2>
+          <p className="footer__text">
+            Стратегия, архитектура, команда, качество.
+          </p>
+        </div>
+
         <a
           href={AUTHOR_TELEGRAM}
           target="_blank"
