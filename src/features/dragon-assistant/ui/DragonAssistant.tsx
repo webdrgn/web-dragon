@@ -15,7 +15,7 @@ export default function DragonAssistant({
   text: string
   className?: string
 }) {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(true)
 
   const closeTip = () => {
     setIsOpen(false)
