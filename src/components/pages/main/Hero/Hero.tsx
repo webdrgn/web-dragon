@@ -1,6 +1,5 @@
 import React from 'react'
 import Image from 'next/image'
-import { SiNuxtdotjs, SiTypescript, SiVuedotjs } from 'react-icons/si'
 import { AUTHOR_NAME, AUTHOR_JOB_TITLE, AUTHOR_PHOTO } from '@/config/constants'
 import { publicAsset } from '@/utils/publicAsset'
 
@@ -40,34 +39,22 @@ export default function Hero() {
             href="#contacts"
             className="hero__cta hero__cta--primary"
           >
-            Обсудить сотрудничество
+            Обсудим?
           </a>
           <a
             href="#mentorship"
             className="hero__cta"
           >
-            Менторство
+            Нужен ментор? Напиши.
           </a>
         </div>
 
         <div
           className="hero__tech-strip"
-          aria-label="Основной стек"
+          aria-label="Фокус"
         >
-          <SiVuedotjs
-            size={22}
-            aria-hidden
-          />
-          <SiTypescript
-            size={22}
-            aria-hidden
-          />
-          <SiNuxtdotjs
-            size={22}
-            aria-hidden
-          />
           <span className="hero__tech-label">
-            Vue 3 · TypeScript · Nuxt 3
+            Architecture · Team Leadership · Full-cycle Engineering
           </span>
         </div>
 

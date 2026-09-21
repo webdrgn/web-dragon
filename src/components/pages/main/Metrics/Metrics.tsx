@@ -5,6 +5,7 @@ import {
   FaBug,
   FaLayerGroup,
   FaUserClock,
+  FaUsers,
 } from "react-icons/fa6";
 import SectionHeading from "@/components/common/SectionHeading/SectionHeading";
 import { SECTION_MASCOTS } from "@/config/constants";
@@ -16,11 +17,18 @@ const METRICS: Array<{
   Icon: IconType;
 }> = [
   {
-    value: "100+",
+    value: "70–100+",
     label: "компонентов",
     context:
       "Собрал дизайн-систему с нуля. Storybook, версии, changelog. Новый разработчик заходит в проект и сразу понимает, где что лежит. Всё понятно за час. Онбординг дешевеет. Ошибок меньше.",
     Icon: FaLayerGroup,
+  },
+  {
+    value: "20+",
+    label: "специалистов",
+    context:
+      "Найм, онбординг, рост. Выстраиваю команду так, чтобы она выдавала результат без постоянных согласований и героизма по ночам.",
+    Icon: FaUsers,
   },
   {
     value: "30–70%",

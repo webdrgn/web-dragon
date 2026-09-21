@@ -1,5 +1,6 @@
 import Hero from "@/components/pages/main/Hero/Hero";
 import Metrics from "@/components/pages/main/Metrics/Metrics";
+import WhatRemains from "@/components/pages/main/WhatRemains/WhatRemains";
 import PlayunmuteShowcase from "@/components/pages/main/Playunmute/PlayunmuteShowcase";
 import Projects from "@/components/pages/main/Projects/Projects";
 import SocialProof from "@/components/pages/main/SocialProof/SocialProof";
@@ -57,6 +58,10 @@ export default function Home() {
 
         <div className="normalize-section normalize-container">
           <Metrics />
+        </div>
+
+        <div className="normalize-section normalize-container">
+          <WhatRemains />
         </div>
 
         <div className="normalize-section normalize-container">

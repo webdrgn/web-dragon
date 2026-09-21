@@ -1,5 +1,6 @@
 export const SECTION_MASCOTS = {
   metrics: '/img/dragon4.png',
+  whatRemains: '/img/dragon3.png',
   cases: '/img/dragon2.png',
   expertise: '/img/dragon3.png',
   mentorship: '/img/dragon.png',
@@ -10,12 +11,12 @@ export const FIREFLIES_COUNT = 9;
 export const REPO_NAME = 'web-dragon';
 export const BASE_PATH = `/${REPO_NAME}`;
 export const SITE_URL = `https://webdrgn.github.io${BASE_PATH}`;
-export const SITE_NAME = 'WebDragon · Head of Development / Frontend Architect';
+export const SITE_NAME = 'Head of Development / Architect';
 export const AUTHOR_NAME = 'Герман Чернышёв';
-export const AUTHOR_JOB_TITLE = 'Head of Development / Frontend Architect';
+export const AUTHOR_JOB_TITLE = 'Head of Development / Architect';
 export const AUTHOR_PHOTO = '/img/resume.jpg';
 export const SEO_DESCRIPTION =
-  'Head of Development / Frontend Architect. Управляю разработкой полного цикла: стратегия, архитектура, команда, качество. Vue 3, Nuxt, TypeScript. Дизайн-система 100+ компонентов, ускорение 30–70%, онбординг 4→1 неделя.';
+  'Head of Development / Architect. Управляю разработкой полного цикла: стратегия, архитектура, команда, качество. Vue 3, Nuxt, TypeScript. Дизайн-система 70–100+ компонентов, ускорение 30–70%, онбординг 4→1 неделя.';
 export const SEO_KEYWORDS = [
   'frontend разработчик',
   'опытный фронтенд разработчик',
@@ -61,7 +62,8 @@ export const SAME_AS: string[] = [
   AUTHOR_SITE,
 ];
 export const SKILLS_LIST: string[] = [
-  'JavaScript', 'TypeScript', 'Vue.js', 'Nuxt.js', 'React', 'Next.js',
-  'Redux', 'SCSS', 'TailwindCSS', 'Vite', 'Webpack', 'Node.js', 'Express',
-  'SSR', 'PWA', 'WebSocket', 'GSAP', 'UI Kit', 'Storybook',
+  'JavaScript', 'TypeScript', 'Vue.js', 'Nuxt.js', 'React', 'Node.js', 'PHP',
+  'Pinia', 'Vuex', 'Redux Toolkit', 'Vite', 'Webpack', 'Docker', 'CI/CD',
+  'REST API', 'GraphQL', 'WebSocket', 'Centrifugo', 'PostgreSQL', 'Storybook',
+  'Design Systems', 'Microfrontends', 'FSD', 'SSR', 'Agile', 'Scrum', 'Kanban',
 ];

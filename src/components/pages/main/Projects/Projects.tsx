@@ -23,19 +23,24 @@ export default function Projects() {
 
       <CaseList />
 
-      <p
-        className="projects__micro-cta"
+      <aside
+        className="projects__nda"
         data-aos="fade-up"
+        aria-label="Проекты под NDA"
       >
-        Похожая задача?{' '}
+        <h3>Проекты под NDA</h3>
+        <p>
+          Ссылки и детали — в личном диалоге.
+        </p>
         <a
           href={AUTHOR_TELEGRAM}
           target="_blank"
           rel="noopener noreferrer"
+          className="projects__nda-link"
         >
-          Напишите в Telegram
+          Написать в Telegram
         </a>
-      </p>
+      </aside>
     </div>
   )
 }

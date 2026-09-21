@@ -70,6 +70,44 @@
     color: var(--text-secondary);
   }
 
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    min-height: var(--touch-min);
+    padding: var(--cta-pad-y-lg) var(--cta-pad-x-lg);
+    border-radius: var(--radius-lg);
+    font-size: clamp(14px, 1.3vw, 16px);
+    font-weight: 600;
+    color: var(--text-primary);
+    text-decoration: none;
+    text-align: center;
+    background: linear-gradient(
+      180deg,
+      rgba(218, 211, 148, 0.18),
+      rgba(218, 211, 148, 0.08)
+    );
+    border: 1px solid rgba(218, 211, 148, 0.35);
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+
+    @include media(min, tablet) {
+      align-self: flex-start;
+    }
+
+    &:hover {
+      color: var(--primary);
+      text-decoration: none;
+      transform: translateY(-2px);
+      border-color: rgba(218, 211, 148, 0.55);
+      background: linear-gradient(
+        180deg,
+        rgba(218, 211, 148, 0.24),
+        rgba(218, 211, 148, 0.12)
+      );
+    }
+  }
+
   &__path-links {
     display: flex;
     flex-wrap: wrap;

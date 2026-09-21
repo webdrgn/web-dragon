@@ -116,12 +116,12 @@ export default function Navbar() {
         <a
           href="#contacts"
           className={`header__cta${activeSection === 'contacts' ? ' header__cta--active' : ''}`}
-          aria-label="Связаться"
-          title="Связаться"
+          aria-label="Написать"
+          title="Написать"
           aria-current={activeSection === 'contacts' ? 'true' : undefined}
         >
           <FaEnvelope className="header__cta-icon" aria-hidden size={15} />
-          <span className="header__cta-text">Связаться</span>
+          <span className="header__cta-text">Написать</span>
         </a>
       </div>
     </header>

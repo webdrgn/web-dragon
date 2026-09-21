@@ -15,6 +15,7 @@
 
 @import '../components/pages/main/Hero/Hero.scss';
 @import '../components/pages/main/Metrics/Metrics.scss';
+@import '../components/pages/main/WhatRemains/WhatRemains.scss';
 @import '../components/pages/main/Skills/Skills.scss';
 @import '../components/pages/main/Skills/Skill/Skill.scss';
 @import '../components/pages/main/SocialProof/SocialProof.scss';
@@ -85,7 +86,18 @@ body {
   position: relative;
   height: 100%;
   padding-bottom: 8px;
-  background: url('../../public/img/cave.png') no-repeat center / cover;
+  background-color: rgb(28, 28, 28);
+  isolation: isolate;
+
+  &::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: url('../../public/img/castle.png') no-repeat center / cover;
+    opacity: 0.22;
+    filter: brightness(0.45) contrast(0.9);
+  }
 }
 
 button {

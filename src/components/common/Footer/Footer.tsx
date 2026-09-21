@@ -25,11 +25,19 @@ export default function Footer() {
         <div className="footer__paths">
           <div className="footer__path">
             <h2 className="footer__path-title">
-              Head of Development / Frontend Architect
+              Head of Development / Architect
             </h2>
             <p className="footer__path-text">
               Стратегия, архитектура, команда, качество.
             </p>
+            <a
+              href={AUTHOR_TELEGRAM}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer__cta"
+            >
+              Обсудим?
+            </a>
             <nav
               className="footer__path-links"
               aria-label="Контакты для сотрудничества"

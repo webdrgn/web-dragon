@@ -5,6 +5,7 @@ import {
   FaSwatchbook,
   FaServer,
   FaLayerGroup,
+  FaTimeline,
 } from "react-icons/fa6";
 import type { Skill as SkillType } from "@/types";
 
@@ -13,6 +14,7 @@ const SKILL_ICON_BY_ID: Record<number, IconType> = {
   2: FaSwatchbook,
   3: FaDiagramProject,
   4: FaServer,
+  5: FaTimeline,
 };
 
 interface SkillProps {

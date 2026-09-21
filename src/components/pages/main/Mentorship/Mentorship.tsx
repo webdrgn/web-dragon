@@ -35,10 +35,7 @@ export default function Mentorship() {
         <div data-aos="fade-up">
           <p className="section-lead mentorship__lead">
             Боишься собеседований? Я провёл десятки. Знаю, на чём валятся даже
-            сильные инженеры.
-          </p>
-          <p className="section-lead mentorship__lead">
-            Дам шаблон ответов на каверзные вопросы. Разберу твоё ревью, покажу,
+            сильные инженеры. Дам шаблон ответов на каверзные вопросы. Разберу твоё ревью, покажу,
             где ты сливаешься.
           </p>
         </div>
@@ -74,7 +71,7 @@ export default function Mentorship() {
           rel="noopener noreferrer"
           className="mentorship__cta-link"
         >
-          Обсудить менторство в Telegram
+          Нужен ментор? Напиши.
         </a>
       </div>
     </section>
