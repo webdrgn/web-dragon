@@ -4,10 +4,6 @@
 .projects {
   @include flexbox(center, center, column, var(--space-stack));
 
-  @include media(max, mobile) {
-    gap: clamp(1.25rem, 3.5vw, 1.75rem);
-  }
-
   &__header {
     position: relative;
     @include flexbox(center, center, column, var(--space-stack-tight));
@@ -99,6 +95,10 @@
     @include flexbox(center, center, column, var(--space-3));
     width: 100%;
     max-width: var(--content-max);
+
+    @include media(max, mobile) {
+      gap: var(--space-4);
+    }
   }
 }
 

@@ -74,6 +74,11 @@
     gap: var(--space-3);
     list-style: none;
 
+    @include media(max, mobile) {
+      gap: var(--space-4);
+      margin-top: var(--space-6);
+    }
+
     @include media(min, mobile) {
       grid-template-columns: repeat(3, 1fr);
       gap: var(--space-4);
@@ -82,7 +87,7 @@
 
   &__feature {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: var(--space-2);
     font-size: clamp(14px, 1.35vw, 15px);
     line-height: 1.45;
@@ -91,7 +96,6 @@
 
   &__feature-icon {
     flex-shrink: 0;
-    margin-top: 1px;
   }
 
   &__stack {

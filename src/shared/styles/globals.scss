@@ -43,7 +43,34 @@ html {
 
 @include media(max, mobile) {
   html {
-    scroll-padding-top: 64px;
+    scroll-padding-top: 72px;
+    --space-section: clamp(5rem, 16vw, 7.5rem);
+    --space-section-sm: clamp(4.25rem, 14vw, 6.25rem);
+    --space-stack: clamp(2rem, 6.5vw, 2.85rem);
+    --space-stack-tight: clamp(1.15rem, 3.8vw, 1.6rem);
+    --space-card: clamp(1.45rem, 5vw, 1.9rem);
+    --space-card-inner: clamp(1.3rem, 4.2vw, 1.65rem);
+  }
+
+  .normalize-container {
+    padding-left: clamp(20px, 5.5vw, 28px);
+    padding-right: clamp(20px, 5.5vw, 28px);
+  }
+
+  .app {
+    padding-bottom: 28px;
+
+    &::before {
+      opacity: 0.16;
+    }
+  }
+
+  .section-lead {
+    line-height: 1.75;
+  }
+
+  .section-heading {
+    line-height: 1.15;
   }
 }
 

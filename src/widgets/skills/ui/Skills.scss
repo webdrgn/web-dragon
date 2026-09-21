@@ -5,10 +5,6 @@
   @include flexbox(center, center, column, var(--space-stack));
   width: 100%;
 
-  @include media(max, mobile) {
-    gap: clamp(1.25rem, 3.5vw, 1.75rem);
-  }
-
   &__header {
     width: 100%;
     text-align: center;
@@ -79,6 +75,12 @@
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
     border: 1px solid rgba(255, 255, 255, 0.06);
     max-width: var(--content-max);
+  }
+}
+
+.skills__item {
+  @include media(max, mobile) {
+    padding: var(--space-card);
   }
 }
 

@@ -9,13 +9,6 @@ export default function Hero() {
   return (
     <div id="top" className="hero">
       <div className="hero__stage">
-        <DragonAssistant
-          tipId={WEB_DRAGON_TIPS.hero.tipId}
-          icon={WEB_DRAGON_TIPS.hero.icon}
-          text={WEB_DRAGON_TIPS.hero.text}
-          className="dragon-guide--hero"
-        />
-
         <div className="hero__brand hero__reveal hero__reveal--1">
           <Image
             src={publicAsset(AUTHOR_PHOTO)}
@@ -32,6 +25,13 @@ export default function Hero() {
             <h1 className="hero__name">{AUTHOR_NAME}</h1>
           </div>
         </div>
+
+        <DragonAssistant
+          tipId={WEB_DRAGON_TIPS.hero.tipId}
+          icon={WEB_DRAGON_TIPS.hero.icon}
+          text={WEB_DRAGON_TIPS.hero.text}
+          className="dragon-guide--hero"
+        />
 
         <p className="hero__headline hero__reveal hero__reveal--2">
           Начинал с кода. Сейчас отвечаю за разработку целиком.

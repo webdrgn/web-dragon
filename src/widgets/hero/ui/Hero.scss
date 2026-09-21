@@ -198,16 +198,43 @@
 @include media(max, mobile) {
   .hero {
     min-height: auto;
-    padding-top: clamp(4.5rem, 10vh, 6rem);
+    padding-top: clamp(5.5rem, 12vh, 7rem);
+    padding-bottom: clamp(2.75rem, 8vh, 4.5rem);
     align-items: stretch;
+
+    &__stage {
+      gap: clamp(1.5rem, 5vw, 2.1rem);
+    }
 
     &__brand {
       flex-direction: column;
       align-items: flex-start;
+      gap: clamp(1.15rem, 4vw, 1.6rem);
     }
 
     &__headline {
       max-width: none;
+    }
+
+    &__support {
+      line-height: 1.7;
+    }
+
+    &__actions {
+      flex-direction: column;
+      align-items: stretch;
+      width: 100%;
+      gap: var(--space-3);
+      margin-top: var(--space-2);
+    }
+
+    &__cta {
+      width: 100%;
+      justify-content: center;
+    }
+
+    &__focus {
+      margin-top: var(--space-3);
     }
   }
 }

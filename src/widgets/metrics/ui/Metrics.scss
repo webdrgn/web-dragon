@@ -5,12 +5,9 @@
   @include flexbox(center, center, column, var(--space-stack));
   padding-top: var(--space-2);
 
-  @include media(max, mobile) {
-    gap: clamp(1.25rem, 3.5vw, 1.75rem);
-  }
-
   &__header {
     position: relative;
+    @include flexbox(center, center, column, var(--space-stack-tight));
     width: 100%;
     text-align: center;
   }
@@ -31,6 +28,7 @@
 
     @include media(max, mobile) {
       grid-template-columns: 1fr;
+      gap: var(--space-4);
     }
   }
 
@@ -79,14 +77,13 @@
 
   &__label-row {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: var(--space-2);
   }
 
   &__card-icon {
     display: block;
     flex-shrink: 0;
-    margin-top: 2px;
     opacity: 0.88;
   }
 

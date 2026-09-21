@@ -171,17 +171,29 @@
 
 @include media(max, mobile) {
   .dragon-guide {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    margin-inline: auto;
+    margin-bottom: var(--space-2);
+    z-index: 5;
+
     &--hero,
     &--section {
       top: auto;
-      right: var(--space-2);
-      bottom: var(--space-2);
+      right: auto;
+      bottom: auto;
     }
 
     &__bubble {
-      top: auto;
-      bottom: calc(100% + var(--space-2));
-      transform-origin: bottom right;
+      top: calc(100% + var(--space-2));
+      bottom: auto;
+      left: 50%;
+      right: auto;
+      transform: translateX(-50%);
+      transform-origin: top center;
+      animation-name: dragon-guide-reveal-center;
     }
   }
 }
@@ -195,6 +207,18 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes dragon-guide-reveal-center {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
   }
 }
 

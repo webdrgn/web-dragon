@@ -9,6 +9,11 @@
   &__inner {
     @include flexbox(center, center, column, var(--space-5));
     padding: var(--space-card);
+
+    @include media(max, mobile) {
+      gap: var(--space-6);
+      padding: var(--space-card) clamp(1.25rem, 5vw, 1.75rem);
+    }
     background: linear-gradient(
       180deg,
       rgba(255, 255, 255, 0.04),
