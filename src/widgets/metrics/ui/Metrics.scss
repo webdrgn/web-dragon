@@ -1,0 +1,106 @@
+@import 'mixins/flexbox';
+@import 'mixins/media';
+
+.metrics {
+  @include flexbox(center, center, column, var(--space-stack));
+  padding-top: var(--space-2);
+
+  @include media(max, mobile) {
+    gap: clamp(1.25rem, 3.5vw, 1.75rem);
+  }
+
+  &__header {
+    position: relative;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__lead {
+    max-width: var(--measure);
+  }
+
+  &__grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: var(--content-wide);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(12px, 2.5vw, 20px);
+
+    @include media(max, mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    padding: var(--space-card-inner);
+    border-radius: var(--radius-xl);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.02)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition:
+      transform 0.25s ease,
+      border-color 0.25s ease,
+      background 0.25s ease;
+
+    @media (hover: hover) {
+      &:hover {
+        transform: translateY(-3px);
+        border-color: rgba(218, 211, 148, 0.28);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.08),
+          rgba(255, 255, 255, 0.03)
+        );
+      }
+    }
+
+    &:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__value {
+    font-family: var(--font-display), system-ui, sans-serif;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    color: var(--primary);
+    line-height: 1.1;
+  }
+
+  &__label-row {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  &__card-icon {
+    display: block;
+    flex-shrink: 0;
+    margin-top: 2px;
+    opacity: 0.88;
+  }
+
+  &__label {
+    font-weight: 600;
+    font-size: clamp(15px, 1.5vw, 18px);
+    line-height: 1.35;
+    color: var(--text-primary);
+  }
+
+  &__context {
+    margin: 0;
+    font-size: clamp(13px, 1.2vw, 15px);
+    line-height: 1.55;
+    color: var(--text-secondary);
+  }
+}

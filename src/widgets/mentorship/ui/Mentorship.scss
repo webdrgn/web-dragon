@@ -1,0 +1,126 @@
+@import 'mixins/flexbox';
+@import 'mixins/media';
+
+.mentorship {
+  @include flexbox(center, center, column, var(--space-stack));
+
+  &__header {
+    position: relative;
+    @include flexbox(center, center, column, var(--space-stack-tight));
+    width: 100%;
+  }
+
+  &__lead {
+    max-width: 38rem;
+  }
+
+  &__grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: var(--content-wide);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(12px, 2.5vw, 20px);
+
+    @include media(min, mobile) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media(min, tablet) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__card {
+    padding: var(--space-card-inner);
+    border-radius: var(--radius-xl);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.02)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__accent {
+    font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--primary);
+    line-height: 1.2;
+  }
+
+  &__label-row {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  &__icon {
+    display: block;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  &__label {
+    font-weight: 600;
+    font-size: clamp(15px, 1.5vw, 18px);
+    line-height: 1.35;
+    color: var(--text-primary);
+  }
+
+  &__context {
+    margin: 0;
+    font-size: clamp(13px, 1.2vw, 15px);
+    line-height: 1.55;
+    color: var(--text-secondary);
+  }
+
+  &__cta {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__cta-icon {
+    flex-shrink: 0;
+  }
+
+  &__cta-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: var(--touch-min);
+    padding: var(--cta-pad-y-lg) var(--cta-pad-x-lg);
+    border-radius: var(--radius-lg);
+    font-size: clamp(14px, 1.3vw, 16px);
+    font-weight: 600;
+    color: var(--text-primary);
+    text-decoration: none;
+    background: linear-gradient(
+      180deg,
+      rgba(218, 211, 148, 0.18),
+      rgba(218, 211, 148, 0.08)
+    );
+    border: 1px solid rgba(218, 211, 148, 0.35);
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+
+    &:hover {
+      color: var(--primary);
+      text-decoration: none;
+      transform: translateY(-2px);
+      border-color: rgba(218, 211, 148, 0.55);
+      background: linear-gradient(
+        180deg,
+        rgba(218, 211, 148, 0.24),
+        rgba(218, 211, 148, 0.12)
+      );
+    }
+  }
+}

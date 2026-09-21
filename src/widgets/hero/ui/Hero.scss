@@ -1,0 +1,213 @@
+@import 'mixins/flexbox';
+@import 'mixins/media';
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: min(88vh, 900px);
+  padding: clamp(5rem, 12vh, 8rem) 0 clamp(2.5rem, 6vh, 4rem);
+  z-index: 1;
+
+  &__stage {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(1.25rem, 3vw, 1.75rem);
+    width: 100%;
+    max-width: var(--content-wide);
+  }
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 3vw, 1.75rem);
+    width: 100%;
+  }
+
+  &__photo {
+    flex-shrink: 0;
+    width: clamp(96px, 16vw, 148px);
+    height: clamp(96px, 16vw, 148px);
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid rgba(218, 211, 148, 0.4);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  &__identity {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    min-width: 0;
+  }
+
+  &__role {
+    margin: 0;
+    font-size: clamp(13px, 1.2vw, 15px);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--primary);
+    line-height: 1.35;
+  }
+
+  &__name {
+    margin: 0;
+    font-family: var(--font-display), system-ui, sans-serif;
+    font-weight: 600;
+    font-size: clamp(2.1rem, 6.2vw, 4.25rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    text-transform: none;
+    color: var(--text-primary);
+    text-wrap: balance;
+  }
+
+  &__headline {
+    margin: 0;
+    max-width: 22ch;
+    font-family: var(--font-display), system-ui, sans-serif;
+    font-weight: 500;
+    font-size: clamp(1.35rem, 3vw, 2rem);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    text-transform: none;
+    color: var(--text-primary);
+    text-wrap: balance;
+  }
+
+  &__support {
+    margin: 0;
+    max-width: 34rem;
+    font-size: clamp(1rem, 1.6vw, 1.15rem);
+    line-height: 1.55;
+    color: var(--text-secondary);
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-3);
+    margin-top: 0.25rem;
+  }
+
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: var(--touch-min);
+    padding: var(--cta-pad-y) var(--cta-pad-x);
+    border-radius: var(--radius-lg);
+    font-size: clamp(14px, 1.3vw, 16px);
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--text-primary);
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    &:hover {
+      text-decoration: none;
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.32);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    &--primary {
+      background: linear-gradient(
+        180deg,
+        rgba(218, 211, 148, 0.28),
+        rgba(218, 211, 148, 0.12)
+      );
+      border-color: rgba(218, 211, 148, 0.5);
+
+      &:hover {
+        color: var(--primary);
+        border-color: rgba(218, 211, 148, 0.7);
+        background: linear-gradient(
+          180deg,
+          rgba(218, 211, 148, 0.34),
+          rgba(218, 211, 148, 0.16)
+        );
+      }
+    }
+  }
+
+  &__cta-icon {
+    flex-shrink: 0;
+  }
+
+  &__focus {
+    margin: 0.5rem 0 0;
+    font-size: clamp(12px, 1.15vw, 14px);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    line-height: 1.45;
+  }
+
+  &__reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: hero-reveal 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  &__reveal--1 {
+    animation-delay: 0.04s;
+  }
+
+  &__reveal--2 {
+    animation-delay: 0.14s;
+  }
+
+  &__reveal--3 {
+    animation-delay: 0.24s;
+  }
+
+  &__reveal--4 {
+    animation-delay: 0.34s;
+  }
+
+  &__reveal--5 {
+    animation-delay: 0.44s;
+  }
+}
+
+@keyframes hero-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__reveal {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+@include media(max, mobile) {
+  .hero {
+    min-height: auto;
+    padding-top: clamp(4.5rem, 10vh, 6rem);
+    align-items: stretch;
+
+    &__brand {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__headline {
+      max-width: none;
+    }
+  }
+}

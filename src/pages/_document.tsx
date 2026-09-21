@@ -9,7 +9,7 @@ import {
   AUTHOR_EMAIL,
   SAME_AS,
   SKILLS_LIST,
-} from '@/config/constants';
+} from '@/shared/config';
 
 export default function Document() {
   return (
@@ -34,10 +34,6 @@ export default function Document() {
               email: AUTHOR_EMAIL,
               nationality: 'RU',
               knowsAbout: SKILLS_LIST,
-              alumniOf: {
-                '@type': 'EducationalOrganization',
-                name: 'Яндекс Практикум',
-              },
             }),
           }}
         />

@@ -1,13 +1,13 @@
-import Hero from "@/components/pages/main/Hero/Hero";
-import Metrics from "@/components/pages/main/Metrics/Metrics";
-import WhatRemains from "@/components/pages/main/WhatRemains/WhatRemains";
-import PlayunmuteShowcase from "@/components/pages/main/Playunmute/PlayunmuteShowcase";
-import Projects from "@/components/pages/main/Projects/Projects";
-import SocialProof from "@/components/pages/main/SocialProof/SocialProof";
-import Mentorship from "@/components/pages/main/Mentorship/Mentorship";
-import Skills from "@/components/pages/main/Skills/Skills";
-import Header from "@/components/common/Header/Header";
-import Footer from "@/components/common/Footer/Footer";
+import Hero from "@/widgets/hero";
+import Metrics from "@/widgets/metrics";
+import WhatRemains from "@/widgets/what-remains";
+import PlayunmuteShowcase from "@/widgets/playunmute";
+import Projects from "@/widgets/projects";
+import SocialProof from "@/widgets/social-proof";
+import Mentorship from "@/widgets/mentorship";
+import Skills from "@/widgets/skills";
+import Header from "@/widgets/header";
+import Footer from "@/widgets/footer";
 import Head from "next/head";
 import {
   SITE_URL,
@@ -17,7 +17,7 @@ import {
   OG_IMAGE,
   AUTHOR_NAME,
   AUTHOR_JOB_TITLE,
-} from "@/config/constants";
+} from "@/shared/config";
 
 export default function Home() {
   return (

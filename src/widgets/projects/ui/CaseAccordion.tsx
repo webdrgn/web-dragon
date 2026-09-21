@@ -1,0 +1,89 @@
+'use client'
+
+import React, { useId } from 'react'
+import type { Case } from '@/entities/case'
+import KitIcon from '@/shared/ui/kit-icon'
+import type { KitIconName } from '@/shared/ui/kit-icon'
+
+const CASE_ICON_BY_ID: Record<string, KitIconName> = {
+  'multi-product-platform': 'castle',
+  'retail-platform': 'cart',
+  'mini-apps': 'rocket',
+}
+
+function renderCaseText(text: string) {
+  const parts = text.split(/(\d+\+?%?|\d+ → \d+)/g)
+
+  return parts.map((part, index) => {
+    if (/^\d/.test(part)) {
+      return <strong key={index}>{part}</strong>
+    }
+    return part
+  })
+}
+
+type CaseAccordionProps = {
+  caseEntry: Case
+  isOpen: boolean
+  onToggle: () => void
+}
+
+export default function CaseAccordion({
+  caseEntry,
+  isOpen,
+  onToggle,
+}: CaseAccordionProps) {
+  const panelId = useId()
+  const triggerId = useId()
+  const caseIcon = CASE_ICON_BY_ID[caseEntry.id] ?? 'folder'
+
+  return (
+    <article
+      className={`case case--accordion${isOpen ? ' case--open' : ''}`}
+    >
+      <h3 className="case__heading">
+        <button
+          id={triggerId}
+          type="button"
+          className="case__trigger"
+          aria-expanded={isOpen}
+          aria-controls={panelId}
+          onClick={onToggle}
+        >
+          <span className="case__trigger-start">
+            <KitIcon name={caseIcon} size={28} className="case__trigger-icon" />
+            <span className="case__trigger-text">{caseEntry.title}</span>
+          </span>
+          <svg
+            className="case__chevron"
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="none"
+            aria-hidden
+          >
+            <path
+              d="M3 5l4 4 4-4"
+              stroke="currentColor"
+              strokeWidth="1.6"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </button>
+      </h3>
+
+      <div
+        id={panelId}
+        role="region"
+        aria-labelledby={triggerId}
+        className="case__panel"
+        aria-hidden={!isOpen}
+      >
+        <div className="case__panel-inner">
+          <p className="case__proof">{renderCaseText(caseEntry.description)}</p>
+        </div>
+      </div>
+    </article>
+  )
+}

@@ -1,0 +1,23 @@
+@import 'mixins/flexbox';
+@import 'mixins/media';
+
+.skill {
+  @include flexbox(initial, initial, column, var(--space-5));
+  padding: var(--space-7);
+  border-radius: var(--radius-xl);
+  background-color: #00000033;
+  opacity: 0.6;
+
+  @include media(max, mobile) {
+    padding: var(--space-6);
+  }
+
+  &__preview {
+    @include flexbox(initial, initial, column, var(--space-5));
+  }
+
+  &__description {
+    text-shadow: 0 0 20px var(--primary);
+    text-transform: lowercase;
+  }
+}

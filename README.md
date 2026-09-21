@@ -39,20 +39,19 @@
 
 ---
 
-## **📂 Структура проекта**  
+## **📂 Структура проекта (FSD)**  
 ```
 web-dragon/
-├── public/          # Статика (шрифты, изображения, favicon)
-│   ├── fonts/       # Локальные шрифты (Roboto)
-│   └── img/         # Оптимизированные изображения
+├── public/                 # Статика (шрифты, изображения, favicon)
 ├── src/
-│   ├── components/  # React-компоненты
-│   ├── styles/      # Глобальные стили (SCSS)
-│   ├── pages/       # Страницы приложения
-│   └── utils/       # Вспомогательные функции
-├── .github/         # GitHub Actions для деплоя
-├── next.config.js   # Конфигурация Next.js
-└── package.json     # Зависимости и скрипты
+│   ├── pages/              # Next.js routes (тонкий слой)
+│   ├── widgets/            # Составные блоки страницы (Hero, Header, Projects…)
+│   ├── features/           # Пользовательские фичи (DragonAssistant, Modal)
+│   ├── entities/           # Бизнес-сущности (skill, project, case)
+│   └── shared/             # UI-kit, config, lib, styles, types
+├── .github/
+├── next.config.ts
+└── package.json
 ```
 
 ## **📌 Особенности реализации**  

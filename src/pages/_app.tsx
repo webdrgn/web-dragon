@@ -1,20 +1,24 @@
-import '@/styles/globals.scss';
-import type { AppProps } from 'next/app';
-import Head from 'next/head';
-import { useEffect } from 'react';
-import NoiseAnimation from '@/components/animation/NoiseAnimation';
-import DragonFireflies from '@/components/animation/DragonFireflies/DragonFireflies';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
-import ErrorBoundary from '@/components/common/ErrorBoundary';
-import { AOS_DURATION_MS, FIREFLIES_COUNT } from '@/config/constants';
-import FollowCursor from '@/components/animation/FollowCursor/FollowCursor';
+import '@/shared/styles/globals.scss'
+import type { AppProps } from 'next/app'
+import Head from 'next/head'
+import dynamic from 'next/dynamic'
+import { useEffect } from 'react'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+import ErrorBoundary from '@/shared/ui/error-boundary'
+import { AOS_DURATION_MS, FIREFLIES_COUNT } from '@/shared/config'
+import { roboto, displayFont } from '@/shared/lib/fonts'
+
+const PageAtmosphere = dynamic(
+  () => import('@/widgets/page-atmosphere/ui/PageAtmosphere'),
+  { ssr: false }
+)
 
 export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
       '(prefers-reduced-motion: reduce)'
-    ).matches;
+    ).matches
 
     Aos.init({
       duration: prefersReducedMotion ? 0 : AOS_DURATION_MS,
@@ -22,14 +26,14 @@ export default function App({ Component, pageProps }: AppProps) {
       once: true,
       offset: 48,
       easing: 'ease-out-cubic',
-    });
+    })
 
     const refreshTimer = window.setTimeout(() => {
-      Aos.refreshHard();
-    }, 50);
+      Aos.refreshHard()
+    }, 50)
 
-    return () => window.clearTimeout(refreshTimer);
-  }, []);
+    return () => window.clearTimeout(refreshTimer)
+  }, [])
 
   return (
     <ErrorBoundary>
@@ -39,12 +43,10 @@ export default function App({ Component, pageProps }: AppProps) {
           content="width=device-width, initial-scale=1, maximum-scale=5"
         />
       </Head>
-      <div className="app">
-        <NoiseAnimation />
-        <DragonFireflies count={FIREFLIES_COUNT} />
-        <FollowCursor />
+      <div className={`app ${roboto.className} ${displayFont.variable}`}>
+        <PageAtmosphere firefliesCount={FIREFLIES_COUNT} />
         <Component {...pageProps} />
       </div>
     </ErrorBoundary>
-  );
+  )
 }

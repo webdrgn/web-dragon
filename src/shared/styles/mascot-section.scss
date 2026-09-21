@@ -1,0 +1,10 @@
+.section-heading-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+
+  .section-heading {
+    text-align: center;
+  }
+}

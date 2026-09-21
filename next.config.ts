@@ -7,7 +7,7 @@ const basePath = `/${repoName}`;
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   sassOptions: {
-    includePaths: [path.join(__dirname, 'styles')],
+    includePaths: [path.join(__dirname, 'src/shared/styles')],
     prependData: `@import "variables.scss";`,
   },
   output: 'export',
