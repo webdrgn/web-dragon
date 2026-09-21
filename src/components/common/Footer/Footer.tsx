@@ -24,7 +24,7 @@ export default function Footer() {
           rel="noopener noreferrer"
           className="footer__cta"
         >
-          Обсудим?
+          С чего начнём?
         </a>
 
         <nav
