@@ -1,8 +1,18 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { publicAsset } from '@/shared/lib'
+
+const MOBILE_MAX_WIDTH_PX = 767
+
+function isDesktopViewport() {
+  if (typeof window === 'undefined') {
+    return true
+  }
+
+  return window.matchMedia(`(min-width: ${MOBILE_MAX_WIDTH_PX + 1}px)`).matches
+}
 
 export default function DragonAssistant({
   tipId,
@@ -16,6 +26,10 @@ export default function DragonAssistant({
   className?: string
 }) {
   const [isOpen, setIsOpen] = useState(true)
+
+  useEffect(() => {
+    setIsOpen(isDesktopViewport())
+  }, [])
 
   const closeTip = () => {
     setIsOpen(false)
