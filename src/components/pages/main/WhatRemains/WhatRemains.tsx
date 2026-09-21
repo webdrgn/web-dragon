@@ -57,7 +57,7 @@ export default function WhatRemains() {
       </header>
 
       <p className="section-lead what-remains__lead" data-aos="fade-up">
-        Система, которая живёт без моего вмешательства
+        Система, которая живёт без моего вмешательства.
       </p>
 
       <ul className="what-remains__grid">
