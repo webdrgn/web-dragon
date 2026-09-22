@@ -1,21 +1,24 @@
-import React from "react";
-import SectionHeading from "@/shared/ui/section-heading";
-import Skill, { skills } from '@/entities/skill';
+'use client'
+
+import React from 'react'
+import SectionHeading from '@/shared/ui/section-heading'
+import Skill, { skills } from '@/entities/skill'
+import { useTranslation } from 'react-i18next'
 
 export default function Skills() {
+  const { t } = useTranslation()
+
   return (
     <div id="stack" className="skills">
       <header className="skills__header">
         <SectionHeading className="skills__title">
-          Стек
+          {t('skills.title')}
         </SectionHeading>
       </header>
 
       <div className="skills__content">
         <div data-aos="fade-up">
-          <p className="section-lead skills__lead">
-          Технологии выбираю под задачу, команду и нагрузку. JavaScript, TypeScript, Vue, React, Node.js, PHP, PostgreSQL, Docker, CI/CD, WebSocket, Centrifugo. Строил дизайн-системы, вытаскивал проекты из легаси, настраивал инфраструктуру и процессы. Не важно на чём — важно, чтобы работало, масштабировалось и не ломалось.
-          </p>
+          <p className="section-lead skills__lead">{t('skills.lead')}</p>
         </div>
 
         <div className="skills__grid grid">
@@ -27,5 +30,5 @@ export default function Skills() {
         </div>
       </div>
     </div>
-  );
+  )
 }

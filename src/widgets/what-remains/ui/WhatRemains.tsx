@@ -1,42 +1,30 @@
+'use client'
+
 import React from 'react'
 import KitIcon, { KIT_ICON_MD } from '@/shared/ui/kit-icon'
 import type { KitIconName } from '@/shared/ui/kit-icon'
 import SectionHeading from '@/shared/ui/section-heading'
 import DragonAssistant from '@/features/dragon-assistant'
 import { WEB_DRAGON_TIPS } from '@/shared/config'
+import { useTranslation } from 'react-i18next'
 
-const WHAT_REMAINS_ITEMS: Array<{
-  title: string
-  detail: string
-  icon: KitIconName
-}> = [
-  {
-    title: 'Дизайн-система',
-    detail:
-      'Storybook, версии, changelog. Новый экран собирается из готовых блоков.',
-    icon: 'documents',
-  },
-  {
-    title: 'Релизы без пожаров',
-    detail:
-      'Пайплайн и ревью, которые реально ловят баги до прода.',
-    icon: 'shield',
-  },
-  {
-    title: 'Онбординг за неделю',
-    detail:
-      'Порядок в коде и документации. Новичок выходит на задачи без ментора рядом.',
-    icon: 'sprout',
-  },
-  {
-    title: 'Команда без ручного управления',
-    detail:
-      'Процессы, договорённости и люди, которые держат продукт, когда меня нет в чате.',
-    icon: 'community',
-  },
-]
+const WHAT_REMAINS_KEYS = [
+  'designSystem',
+  'releases',
+  'onboarding',
+  'team',
+] as const
+
+const WHAT_REMAINS_ICONS: Record<(typeof WHAT_REMAINS_KEYS)[number], KitIconName> = {
+  designSystem: 'documents',
+  releases: 'shield',
+  onboarding: 'sprout',
+  team: 'community',
+}
 
 export default function WhatRemains() {
+  const { t } = useTranslation()
+
   return (
     <section
       id="what-remains"
@@ -45,32 +33,36 @@ export default function WhatRemains() {
     >
       <header className="what-remains__header">
         <SectionHeading id="what-remains-heading">
-          Что остаётся после меня
+          {t('whatRemains.title')}
         </SectionHeading>
         <DragonAssistant
           tipId={WEB_DRAGON_TIPS.whatRemains.tipId}
           icon={WEB_DRAGON_TIPS.whatRemains.icon}
-          text={WEB_DRAGON_TIPS.whatRemains.text}
+          text={t(WEB_DRAGON_TIPS.whatRemains.tipKey)}
           className="dragon-guide--section"
         />
       </header>
 
       <p className="section-lead what-remains__lead" data-aos="fade-up">
-        Система, которая живёт без моего вмешательства.
+        {t('whatRemains.lead')}
       </p>
 
       <ul className="what-remains__grid">
-        {WHAT_REMAINS_ITEMS.map((item) => (
-          <li key={item.title} data-aos="fade-up" className="what-remains__card">
+        {WHAT_REMAINS_KEYS.map((itemKey) => (
+          <li key={itemKey} data-aos="fade-up" className="what-remains__card">
             <div className="what-remains__title-row">
               <KitIcon
-                name={item.icon}
+                name={WHAT_REMAINS_ICONS[itemKey]}
                 className="what-remains__icon"
                 size={KIT_ICON_MD}
               />
-              <div className="what-remains__title">{item.title}</div>
+              <div className="what-remains__title">
+                {t(`whatRemains.items.${itemKey}.title`)}
+              </div>
             </div>
-            <p className="what-remains__detail">{item.detail}</p>
+            <p className="what-remains__detail">
+              {t(`whatRemains.items.${itemKey}.detail`)}
+            </p>
           </li>
         ))}
       </ul>

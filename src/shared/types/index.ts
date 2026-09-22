@@ -1,6 +1,6 @@
 export interface Skill {
-  id: number;
-  image: string;
-  title: string;
-  description: string;
+  id: number
+  image: string
+  titleKey: string
+  description: string
 }

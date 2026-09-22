@@ -1,33 +1,25 @@
+'use client'
+
 import React from 'react'
 import KitIcon, { KIT_ICON_MD } from '@/shared/ui/kit-icon'
 import type { KitIconName } from '@/shared/ui/kit-icon'
 import SectionHeading from '@/shared/ui/section-heading'
 import DragonAssistant from '@/features/dragon-assistant'
 import { AUTHOR_TELEGRAM, WEB_DRAGON_TIPS } from '@/shared/config'
+import { useTranslation } from 'react-i18next'
 
 const MENTORSHIP_FORMATS: Array<{
-  accent: string
-  label: string
+  formatKey: 'interviews' | 'review' | 'playunmute'
   icon: KitIconName
 }> = [
-  {
-    accent: 'Собеседования',
-    label: 'Подготовка к реальным вопросам middle+',
-    icon: 'chat',
-  },
-  {
-    accent: 'Code review',
-    label: 'От страха комментировать к уверенным решениям',
-    icon: 'clipboard',
-  },
-  {
-    accent: 'Playunmute',
-    label: 'Мой тренажер для подготовки',
-    icon: 'diploma',
-  },
+  { formatKey: 'interviews', icon: 'chat' },
+  { formatKey: 'review', icon: 'clipboard' },
+  { formatKey: 'playunmute', icon: 'diploma' },
 ]
 
 export default function Mentorship() {
+  const { t } = useTranslation()
+
   return (
     <section
       id="mentorship"
@@ -36,19 +28,17 @@ export default function Mentorship() {
     >
       <header className="mentorship__header">
         <SectionHeading id="mentorship-heading">
-          Менторство
+          {t('mentorship.title')}
         </SectionHeading>
         <DragonAssistant
           tipId={WEB_DRAGON_TIPS.mentorship.tipId}
           icon={WEB_DRAGON_TIPS.mentorship.icon}
-          text={WEB_DRAGON_TIPS.mentorship.text}
+          text={t(WEB_DRAGON_TIPS.mentorship.tipKey)}
           className="dragon-guide--section"
         />
         <div data-aos="fade-up">
           <p className="section-lead mentorship__lead">
-            Боишься собеседований? Я провёл десятки. Знаю, на чём валятся даже
-            сильные инженеры. Дам шаблон ответов на каверзные вопросы. Разберу твоё ревью, покажу,
-            где ты сливаешься.
+            {t('mentorship.lead')}
           </p>
         </div>
       </header>
@@ -56,18 +46,22 @@ export default function Mentorship() {
       <ul className="mentorship__grid">
         {MENTORSHIP_FORMATS.map((format) => (
           <li
-            key={format.accent}
+            key={format.formatKey}
             data-aos="fade-up"
             className="mentorship__card"
           >
-            <div className="mentorship__accent">{format.accent}</div>
+            <div className="mentorship__accent">
+              {t(`mentorship.formats.${format.formatKey}.accent`)}
+            </div>
             <div className="mentorship__label-row">
               <KitIcon
                 name={format.icon}
                 className="mentorship__icon"
                 size={KIT_ICON_MD}
               />
-              <div className="mentorship__label">{format.label}</div>
+              <div className="mentorship__label">
+                {t(`mentorship.formats.${format.formatKey}.label`)}
+              </div>
             </div>
           </li>
         ))}
@@ -84,7 +78,7 @@ export default function Mentorship() {
           className="mentorship__cta-link"
         >
           <KitIcon name="send" size={KIT_ICON_MD} className="mentorship__cta-icon" />
-          Нужен ментор? Напиши.
+          {t('mentorship.cta')}
         </a>
       </div>
     </section>

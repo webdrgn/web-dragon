@@ -32,22 +32,40 @@
     flex-shrink: 0;
     overflow: visible;
 
-    &::before {
+    &::before,
+    &::after {
       content: '';
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 80px;
-      height: 80px;
+      z-index: 0;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
-      border: 1.5px solid rgba(218, 211, 148, 0.55);
-      opacity: 0;
       pointer-events: none;
-      transform: translate(-50%, -50%) scale(1);
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.45);
+      background: radial-gradient(
+        circle,
+        rgba(255, 244, 196, 0.36) 0%,
+        rgba(255, 244, 196, 0.14) 30%,
+        rgba(218, 211, 148, 0.07) 55%,
+        rgba(218, 211, 148, 0) 74%
+      );
+      filter: blur(14px);
+      will-change: transform, opacity;
     }
 
     &--pulse::before {
-      animation: dragon-guide-pulse 2.24s ease-in-out infinite;
+      animation: dragon-guide-pulse-bloom 3.8s cubic-bezier(0.33, 0, 0.2, 1) infinite;
+    }
+
+    &--pulse::after {
+      animation: dragon-guide-pulse-bloom 3.8s cubic-bezier(0.33, 0, 0.2, 1) 1.9s infinite;
+    }
+
+    &--pulse .dragon-guide__icon {
+      animation: dragon-guide-firefly 3.8s ease-in-out infinite;
     }
 
     &:hover {
@@ -56,10 +74,29 @@
       border: none;
       box-shadow: none;
 
-      &::before {
+      &::before,
+      &::after {
         animation: none;
-        opacity: 0.35;
-        transform: translate(-50%, -50%) scale(1.08);
+      }
+
+      &::before {
+        opacity: 0.7;
+        transform: translate(-50%, -50%) scale(0.85);
+      }
+
+      &::after {
+        opacity: 0;
+      }
+
+      .dragon-guide__icon {
+        animation: none;
+        filter: drop-shadow(0 0 10px rgba(255, 244, 196, 0.55))
+          drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
+      }
+
+      .dragon-guide__hint {
+        color: rgba(255, 244, 196, 0.98);
+        transform: scale(1.08);
       }
     }
 
@@ -75,14 +112,38 @@
   }
 
   &__icon {
+    position: relative;
+    z-index: 1;
     width: auto;
-    height: 100%;
+    height: 80px;
     max-width: none;
     object-fit: contain;
     object-position: center;
     filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
     pointer-events: none;
     user-select: none;
+  }
+
+  &__hint {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    margin: 0;
+    color: rgba(218, 211, 148, 0.82);
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.45));
+    pointer-events: none;
+    user-select: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+
+    svg {
+      display: block;
+    }
   }
 
   &__bubble {
@@ -100,21 +161,38 @@
     padding: var(--space-3) var(--space-4);
     border-radius: var(--radius-lg);
     background: rgba(22, 22, 22, 0.96);
-    border: 1px solid rgba(218, 211, 148, 0.28);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
+    border: 1px solid rgba(218, 211, 148, 0.22);
+    box-shadow:
+      0 8px 20px rgba(0, 0, 0, 0.28),
+      0 0 24px rgba(218, 211, 148, 0.1);
     transform: translateX(-50%);
     transform-origin: top center;
     animation: dragon-guide-reveal-center 0.35s ease-out both;
 
-    &::before {
+    &::before,
+    &::after {
       content: '';
       position: absolute;
       inset: 0;
       border-radius: inherit;
-      border: 1.5px solid rgba(218, 211, 148, 0.55);
-      opacity: 0;
       pointer-events: none;
-      animation: dragon-guide-bubble-pulse 2.24s ease-in-out infinite;
+      background: transparent;
+    }
+
+    &::before {
+      opacity: 0;
+      box-shadow:
+        0 0 10px 2px rgba(255, 244, 196, 0.32),
+        0 0 22px 6px rgba(218, 211, 148, 0.18);
+      animation: dragon-guide-bubble-contour 3.6s ease-in-out infinite;
+    }
+
+    &::after {
+      opacity: 0.18;
+      box-shadow:
+        0 0 14px 3px rgba(255, 244, 196, 0.14),
+        0 0 28px 8px rgba(218, 211, 148, 0.08);
+      animation: dragon-guide-bubble-contour-breathe 3.6s ease-in-out infinite;
     }
   }
 
@@ -204,49 +282,105 @@
   }
 }
 
-@keyframes dragon-guide-pulse {
+@keyframes dragon-guide-pulse-bloom {
   0% {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(0.42);
   }
 
-  30% {
+  14% {
     opacity: 0.5;
   }
 
   100% {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(1.4);
+    transform: translate(-50%, -50%) scale(1.28);
   }
 }
 
-@keyframes dragon-guide-bubble-pulse {
-  0% {
-    opacity: 0;
-    inset: 0;
-  }
-
-  30% {
-    opacity: 0.5;
-  }
-
+@keyframes dragon-guide-firefly {
+  0%,
+  58%,
   100% {
-    opacity: 0;
-    inset: -6px;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35))
+      drop-shadow(0 0 3px rgba(218, 211, 148, 0.16));
+    transform: scale(1);
+  }
+
+  72% {
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35))
+      drop-shadow(0 0 10px rgba(255, 244, 196, 0.55))
+      drop-shadow(0 0 18px rgba(218, 211, 148, 0.28));
+    transform: scale(1.025);
+  }
+
+  84% {
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35))
+      drop-shadow(0 0 5px rgba(218, 211, 148, 0.22));
+    transform: scale(1);
+  }
+}
+
+@keyframes dragon-guide-bubble-contour {
+  0%,
+  100% {
+    opacity: 0.15;
+    box-shadow:
+      0 0 8px 2px rgba(255, 244, 196, 0.16),
+      0 0 18px 5px rgba(218, 211, 148, 0.08);
+  }
+
+  50% {
+    opacity: 0.7;
+    box-shadow:
+      0 0 12px 3px rgba(255, 244, 196, 0.38),
+      0 0 26px 8px rgba(218, 211, 148, 0.2);
+  }
+}
+
+@keyframes dragon-guide-bubble-contour-breathe {
+  0%,
+  100% {
+    opacity: 0.12;
+  }
+
+  50% {
+    opacity: 0.32;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .dragon-guide__trigger--pulse::before {
+  .dragon-guide__trigger--pulse::before,
+  .dragon-guide__trigger--pulse::after {
     animation: none;
-    opacity: 0.4;
-    transform: translate(-50%, -50%) scale(1.12);
+  }
+
+  .dragon-guide__trigger--pulse::before {
+    opacity: 0.55;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+
+  .dragon-guide__trigger--pulse::after {
+    opacity: 0;
+  }
+
+  .dragon-guide__trigger--pulse .dragon-guide__icon {
+    animation: none;
+    filter: drop-shadow(0 0 10px rgba(255, 244, 196, 0.55))
+      drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
+  }
+
+  .dragon-guide__bubble::before,
+  .dragon-guide__bubble::after {
+    animation: none;
   }
 
   .dragon-guide__bubble::before {
-    animation: none;
     opacity: 0.4;
-    inset: -3px;
+  }
+
+  .dragon-guide__bubble::after {
+    opacity: 0.2;
   }
 
   .dragon-guide__bubble {

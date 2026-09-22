@@ -1,0 +1,211 @@
+import type { ru } from './ru'
+
+type DeepStringify<T> = {
+  [K in keyof T]: T[K] extends string
+    ? string
+    : T[K] extends Record<string, unknown>
+      ? DeepStringify<T[K]>
+      : T[K]
+}
+
+export const en: DeepStringify<typeof ru> = {
+  meta: {
+    authorName: 'German Chernyshev',
+    description:
+      'Head of Development / Architect. Architecture · Team Leadership · Full-cycle Engineering. Strategy, architecture, team, quality. Design system with 70–100+ components, 20+ specialists, 30–70% faster delivery, onboarding month → week. Vue, React, TypeScript, Node.js.',
+    skipToContent: 'Skip to content',
+  },
+  common: {
+    jobTitle: 'Head of Development / Architect',
+    focus: 'Architecture · Team Leadership · Full-cycle Engineering',
+    focusAria: 'Focus',
+    write: 'Message',
+    email: 'Email',
+    github: 'GitHub',
+  },
+  nav: {
+    aria: 'Primary navigation',
+    metrics: 'Metrics',
+    product: 'Product',
+    cases: 'Cases',
+    mentorship: 'Mentorship',
+    stack: 'Stack',
+    home: 'Back to top',
+    homeAlt: 'Go to hero',
+  },
+  locale: {
+    switchAria: 'Interface language',
+    ru: 'RU',
+    en: 'EN',
+  },
+  dragon: {
+    openTip: "I'm here",
+    hideTip: 'Hiding',
+    tipDialog: 'Web Dragon whisper',
+    collapse: 'Okay',
+    tips: {
+      hero: "Hi! I'm Web Dragon, German's assistant. I'll guide you through the page and show what matters. Ready?",
+      metrics:
+        "Here are the numbers. 70–100+ components, 20+ specialists, 30–70% faster. I'm no accountant, but I count well. Dragon things.",
+      whatRemains: 'I go on vacation — and it still runs. Magic? No. Process.',
+      cases:
+        'Three projects. Each about a real pain we solved. Ugh... those data messes still itch. But we shipped it.',
+      article:
+        'We cut the OpenAPI busywork. Devs stopped copy-pasting. I helped tally the time saved. Dragons are not the villain — duplication is.',
+      mentorship:
+        'Interview fear crushing your wings? We can prep you. Not my first century at this.',
+    },
+  },
+  hero: {
+    headline: 'Started in code. Now I own delivery end to end.',
+    support:
+      'The team ships features predictably. Business gets results it can count on.',
+    discuss: "Let's talk?",
+    mentorCta: 'Need a mentor? Ping me.',
+  },
+  metrics: {
+    title: 'Metrics',
+    lead: 'What I treat as important — and know how to measure.',
+    items: {
+      components: {
+        value: '70–100+',
+        label: 'components',
+        context:
+          'Built a design system from scratch. Storybook, versions, changelog. A new developer joins and instantly sees where things live. Clear within an hour. Onboarding gets cheaper. Fewer mistakes.',
+      },
+      specialists: {
+        value: '20+',
+        label: 'specialists',
+        context:
+          'Hiring, onboarding, growth. I shape a team that delivers without endless approvals and overnight crunch before a release.',
+      },
+      faster: {
+        value: '30–70%',
+        label: 'faster',
+        context:
+          'A task that used to eat a week now lands in a day. New features plug in surgically. No rewriting half the product. Same team, different speed.',
+      },
+      bugs: {
+        value: '−45%',
+        label: 'critical bugs',
+        context:
+          "Bugs don't reach prod. Release pipeline and review that actually work — not checkbox theater. Rules exist so it runs, not because “we must.” On release day you press deploy.",
+      },
+      onboarding: {
+        value: 'month → week',
+        label: 'onboarding',
+        context:
+          'A newcomer ships to prod in week two. Nobody whispers where constants live. The team stops burning time on explanations. Business stops paying for three weeks of idle.',
+      },
+    },
+  },
+  whatRemains: {
+    title: 'What remains after me',
+    lead: 'A system that keeps living without my hands on it.',
+    items: {
+      designSystem: {
+        title: 'Design system',
+        detail:
+          'Storybook, versions, changelog. New screens assemble from ready blocks.',
+      },
+      releases: {
+        title: 'Releases without fires',
+        detail: 'Pipeline and review that catch bugs before production.',
+      },
+      onboarding: {
+        title: 'Onboarding in a week',
+        detail:
+          'Order in code and docs. A newcomer takes tasks without a mentor beside them.',
+      },
+      team: {
+        title: 'A team without handholding',
+        detail:
+          'Processes, agreements, and people who hold the product when I’m not in chat.',
+      },
+    },
+  },
+  playunmute: {
+    label: 'Product',
+    tryDemo: 'Try it',
+    proof1:
+      'Dozens of technical interviews. Candidates prep for the wrong thing. They grind algorithms and fail on simple questions.',
+    proof2:
+      'I built a trainer. Zoom-style interview simulation. Thinking pace calibration. Reaction speed scoring. A six-stage breakdown with scores and notes. An honest verdict.',
+    previewAlt: 'Playunmute — Zoom interview simulation',
+    features: {
+      zoom: 'Zoom interview simulation',
+      pace: 'Pace and reaction scoring',
+      verdict: 'Six-stage verdict',
+    },
+  },
+  projects: {
+    title: 'Cases',
+    kicker: 'Three projects. Three outcomes.',
+    ndaAria: 'NDA projects',
+    ndaTitle: 'NDA projects',
+    ndaText: 'Links and details — in a private chat.',
+    ndaLink: 'Message on Telegram',
+    cases: {
+      'multi-product-platform': {
+        title: 'Multi-product event platform',
+        description:
+          'Legacy nobody dared to touch: ticket sales, events, personal cabinet, admin, several products. Migration to a modern stack. No production downtime. No data loss. Extra pain — data chaos: we had to structure, recover, and keep it healthy so events for thousands of players ran without outages, transactions were not lost, and registrations no longer needed managers intervening by hand like before.',
+      },
+      'retail-platform': {
+        title: 'Retail platform',
+        description:
+          'B2B retail. Site, admin, personal cabinet for business clients. Thousands of users, a large product catalog. We automated processes that used to need manager intervention. Built a new design system — conversion rose, clients stopped dropping off at checkout.',
+      },
+      'mini-apps': {
+        title: 'Telegram & VK Mini Apps, AI integrations',
+        description:
+          'Mini Apps and bots for Telegram and VK. Major brands, audiences from 100k users. Peak hours — tens of thousands of requests per second. Hard deadlines with no slip room: risk control, precise estimation, AI features inside the apps. We hit timelines others refused. Stable releases, bugs caught before users see them. Brands happy, team calm.',
+      },
+    },
+  },
+  socialProof: {
+    title: 'GitHub article',
+    excerpt:
+      '15% of team time went to busywork. Ctrl+C Ctrl+V from the spec into code. I removed that. OpenAPI, codegen, predictable updates. Developers write features; the busywork stayed in the past.',
+    readOnGithub: 'Read on GitHub',
+  },
+  mentorship: {
+    title: 'Mentorship',
+    lead: 'Afraid of interviews? I’ve run dozens. I know where even strong engineers fall. I’ll give you answer patterns for tricky questions. I’ll review your code and show where you fold.',
+    cta: 'Need a mentor? Ping me.',
+    formats: {
+      interviews: {
+        accent: 'Interviews',
+        label: 'Prep for real middle+ questions',
+      },
+      review: {
+        accent: 'Code review',
+        label: 'From fear of comments to confident decisions',
+      },
+      playunmute: {
+        accent: 'Playunmute',
+        label: 'My prep trainer',
+      },
+    },
+  },
+  skills: {
+    title: 'Stack',
+    lead: 'I pick tech for the task, the team, and the load. JavaScript, TypeScript, Vue, React, Node.js, PHP, PostgreSQL, Docker, CI/CD, WebSocket, Centrifugo. I’ve built design systems, pulled projects out of legacy, set up infrastructure and process. Language doesn’t matter — it has to work, scale, and not break.',
+    groups: {
+      core: 'Core stack',
+      ui: 'UI & design systems',
+      integrations: 'Integrations & data',
+      backend: 'Backend & infrastructure',
+      process: 'Process',
+    },
+  },
+  footer: {
+    text: 'Strategy, architecture, team, quality.',
+    cta: 'Where do we start?',
+    contactsAria: 'Contacts',
+  },
+  error: {
+    title: 'Something went wrong.',
+    hint: 'Reload the page or try again later.',
+  },
+}

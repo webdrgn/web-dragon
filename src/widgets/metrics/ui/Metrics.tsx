@@ -1,55 +1,33 @@
-import React from "react";
-import KitIcon, { KIT_ICON_MD } from "@/shared/ui/kit-icon";
-import type { KitIconName } from "@/shared/ui/kit-icon";
-import SectionHeading from "@/shared/ui/section-heading";
-import DragonAssistant from "@/features/dragon-assistant";
-import { WEB_DRAGON_TIPS } from "@/shared/config";
-import MetricValue from "./MetricValue";
+'use client'
 
-const METRICS: Array<{
-  value: string;
-  label: string;
-  context: string;
-  icon: KitIconName;
-}> = [
-  {
-    value: "70–100+",
-    label: "компонентов",
-    context:
-      "Собрал дизайн-систему с нуля. Storybook, версии, changelog. Новый разработчик заходит в проект и сразу понимает, где что лежит. Всё понятно за час. Онбординг дешевеет. Ошибок меньше.",
-    icon: "presentation",
-  },
-  {
-    value: "20+",
-    label: "специалистов",
-    context:
-      "Найм, онбординг, рост. Выстраиваю команду так, чтобы она выдавала результат без постоянных согласований и работы по ночам перед релизом.",
-    icon: "users",
-  },
-  {
-    value: "30–70%",
-    label: "быстрее",
-    context:
-      "Задача, которая раньше съедала неделю, теперь делается за день. Новые фичи встраиваются точечно. Переписывать половину проекта не нужно. Команда та же, скорость другая.",
-    icon: "target",
-  },
-  {
-    value: "−45%",
-    label: "критических багов",
-    context:
-      "Баги не доезжают до прода. Релизный пайплайн и ревью для дела, не для галочки. Правила существуют, чтобы работало, не потому что «так надо». В релизный день достаточно нажать кнопку деплоя.",
-    icon: "bug",
-  },
-  {
-    value: "месяц → неделя",
-    label: "онбординг",
-    context:
-      "Новичок заливает задачи в прод на второй неделе. Никто не подсказывает, где лежат константы. Команда не тратит время на объяснения. Бизнес не платит за три недели простоя.",
-    icon: "history",
-  },
-];
+import React from 'react'
+import KitIcon, { KIT_ICON_MD } from '@/shared/ui/kit-icon'
+import type { KitIconName } from '@/shared/ui/kit-icon'
+import SectionHeading from '@/shared/ui/section-heading'
+import DragonAssistant from '@/features/dragon-assistant'
+import { WEB_DRAGON_TIPS } from '@/shared/config'
+import { useTranslation } from 'react-i18next'
+import MetricValue from './MetricValue'
+
+const METRIC_KEYS = [
+  'components',
+  'specialists',
+  'faster',
+  'bugs',
+  'onboarding',
+] as const
+
+const METRIC_ICONS: Record<(typeof METRIC_KEYS)[number], KitIconName> = {
+  components: 'presentation',
+  specialists: 'users',
+  faster: 'target',
+  bugs: 'bug',
+  onboarding: 'history',
+}
 
 export default function Metrics() {
+  const { t } = useTranslation()
+
   return (
     <section
       id="metrics"
@@ -57,31 +35,39 @@ export default function Metrics() {
       aria-labelledby="metrics-heading"
     >
       <header className="metrics__header">
-        <SectionHeading id="metrics-heading">Цифры</SectionHeading>
+        <SectionHeading id="metrics-heading">{t('metrics.title')}</SectionHeading>
         <DragonAssistant
           tipId={WEB_DRAGON_TIPS.metrics.tipId}
           icon={WEB_DRAGON_TIPS.metrics.icon}
-          text={WEB_DRAGON_TIPS.metrics.text}
+          text={t(WEB_DRAGON_TIPS.metrics.tipKey)}
           className="dragon-guide--section"
         />
       </header>
 
       <p className="section-lead metrics__lead" data-aos="fade-up">
-        То, что я считаю важным и умею измерять.
+        {t('metrics.lead')}
       </p>
 
       <ul className="metrics__grid">
-        {METRICS.map((metric) => (
-          <li key={metric.label} data-aos="fade-up" className="metrics__card">
-            <MetricValue value={metric.value} />
+        {METRIC_KEYS.map((metricKey) => (
+          <li key={metricKey} data-aos="fade-up" className="metrics__card">
+            <MetricValue value={t(`metrics.items.${metricKey}.value`)} />
             <div className="metrics__label-row">
-              <KitIcon name={metric.icon} className="metrics__card-icon" size={KIT_ICON_MD} />
-              <div className="metrics__label">{metric.label}</div>
+              <KitIcon
+                name={METRIC_ICONS[metricKey]}
+                className="metrics__card-icon"
+                size={KIT_ICON_MD}
+              />
+              <div className="metrics__label">
+                {t(`metrics.items.${metricKey}.label`)}
+              </div>
             </div>
-            <p className="metrics__context">{metric.context}</p>
+            <p className="metrics__context">
+              {t(`metrics.items.${metricKey}.context`)}
+            </p>
           </li>
         ))}
       </ul>
     </section>
-  );
+  )
 }

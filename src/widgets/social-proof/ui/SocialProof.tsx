@@ -1,10 +1,15 @@
+'use client'
+
 import React from 'react'
 import KitIcon, { KIT_ICON_MD } from '@/shared/ui/kit-icon'
 import SectionHeading from '@/shared/ui/section-heading'
 import DragonAssistant from '@/features/dragon-assistant'
 import { AUTHOR_GITHUB_ARTICLE, WEB_DRAGON_TIPS } from '@/shared/config'
+import { useTranslation } from 'react-i18next'
 
 export default function SocialProof() {
+  const { t } = useTranslation()
+
   return (
     <section
       id="expertise"
@@ -13,12 +18,12 @@ export default function SocialProof() {
     >
       <header className="social-proof__header">
         <SectionHeading id="social-proof-heading">
-          Статья на GitHub
+          {t('socialProof.title')}
         </SectionHeading>
         <DragonAssistant
           tipId={WEB_DRAGON_TIPS.article.tipId}
           icon={WEB_DRAGON_TIPS.article.icon}
-          text={WEB_DRAGON_TIPS.article.text}
+          text={t(WEB_DRAGON_TIPS.article.tipKey)}
           className="dragon-guide--section"
         />
       </header>
@@ -27,11 +32,7 @@ export default function SocialProof() {
         data-aos="fade-up"
         className="social-proof__card"
       >
-        <p className="social-proof__excerpt">
-          15% времени команды уходило на рутину. Ctrl+C Ctrl+V из спецификации
-          в код. Я убрал это. OpenAPI, авто-генерация, предсказуемые обновления.
-          Разработчики пишут фичи, рутина осталась в прошлом.
-        </p>
+        <p className="social-proof__excerpt">{t('socialProof.excerpt')}</p>
         <a
           href={AUTHOR_GITHUB_ARTICLE}
           target="_blank"
@@ -39,7 +40,7 @@ export default function SocialProof() {
           className="social-proof__link"
         >
           <KitIcon name="bookmark" size={KIT_ICON_MD} />
-          Читать на GitHub
+          {t('socialProof.readOnGithub')}
         </a>
       </article>
     </section>

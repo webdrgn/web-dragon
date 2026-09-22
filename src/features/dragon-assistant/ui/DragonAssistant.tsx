@@ -2,7 +2,9 @@
 
 import React, { useState } from 'react'
 import Image from 'next/image'
+import { HiOutlineInformationCircle } from 'react-icons/hi2'
 import { publicAsset } from '@/shared/lib'
+import { useTranslation } from 'react-i18next'
 
 export default function DragonAssistant({
   tipId,
@@ -15,7 +17,10 @@ export default function DragonAssistant({
   text: string
   className?: string
 }) {
+  const { t } = useTranslation()
   const [isOpen, setIsOpen] = useState(true)
+  const openLabel = t('dragon.openTip')
+  const hideLabel = t('dragon.hideTip')
 
   const closeTip = () => {
     setIsOpen(false)
@@ -35,7 +40,8 @@ export default function DragonAssistant({
         onClick={isOpen ? closeTip : openTip}
         aria-expanded={isOpen}
         aria-controls={`dragon-tip-${tipId}`}
-        aria-label={isOpen ? 'Скрыть подсказку Веб-дракончика' : 'Открыть подсказку Веб-дракончика'}
+        aria-label={isOpen ? hideLabel : openLabel}
+        title={isOpen ? undefined : openLabel}
       >
         <Image
           src={publicAsset(icon)}
@@ -43,11 +49,16 @@ export default function DragonAssistant({
           width={160}
           height={80}
           className="dragon-guide__icon"
-          style={{ width: 'auto', height: '100%' }}
+          style={{ width: 'auto', height: 80 }}
           aria-hidden
           unoptimized
           loading="lazy"
         />
+        {!isOpen ? (
+          <span className="dragon-guide__hint" aria-hidden>
+            <HiOutlineInformationCircle size={20} />
+          </span>
+        ) : null}
       </button>
 
       {isOpen ? (
@@ -55,7 +66,7 @@ export default function DragonAssistant({
           id={`dragon-tip-${tipId}`}
           className="dragon-guide__bubble"
           role="dialog"
-          aria-label="Подсказка Веб-дракончика"
+          aria-label={t('dragon.tipDialog')}
         >
           <p className="dragon-guide__text">{text}</p>
           <button
@@ -63,7 +74,7 @@ export default function DragonAssistant({
             className="dragon-guide__close"
             onClick={closeTip}
           >
-            Свернуть
+            {t('dragon.collapse')}
           </button>
         </div>
       ) : null}

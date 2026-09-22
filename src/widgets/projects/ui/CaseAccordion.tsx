@@ -4,6 +4,7 @@ import React, { useId } from 'react'
 import type { Case } from '@/entities/case'
 import KitIcon, { KIT_ICON_MD } from '@/shared/ui/kit-icon'
 import type { KitIconName } from '@/shared/ui/kit-icon'
+import { useTranslation } from 'react-i18next'
 
 const CASE_ICON_BY_ID: Record<string, KitIconName> = {
   'multi-product-platform': 'castle',
@@ -33,9 +34,12 @@ export default function CaseAccordion({
   isOpen,
   onToggle,
 }: CaseAccordionProps) {
+  const { t } = useTranslation()
   const panelId = useId()
   const triggerId = useId()
   const caseIcon = CASE_ICON_BY_ID[caseEntry.id] ?? 'folder'
+  const title = t(`projects.cases.${caseEntry.id}.title`)
+  const description = t(`projects.cases.${caseEntry.id}.description`)
 
   return (
     <article
@@ -52,7 +56,7 @@ export default function CaseAccordion({
         >
           <span className="case__trigger-start">
             <KitIcon name={caseIcon} size={KIT_ICON_MD} className="case__trigger-icon" />
-            <span className="case__trigger-text">{caseEntry.title}</span>
+            <span className="case__trigger-text">{title}</span>
           </span>
           <svg
             className="case__chevron"
@@ -81,7 +85,7 @@ export default function CaseAccordion({
         aria-hidden={!isOpen}
       >
         <div className="case__panel-inner">
-          <p className="case__proof">{renderCaseText(caseEntry.description)}</p>
+          <p className="case__proof">{renderCaseText(description)}</p>
         </div>
       </div>
     </article>

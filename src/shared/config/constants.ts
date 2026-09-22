@@ -1,33 +1,33 @@
 export const WEB_DRAGON_TIPS = {
   hero: {
     tipId: 'hero',
+    tipKey: 'dragon.tips.hero',
     icon: '/img/dragon.png',
-    text: 'Привет! Я Веб-дракончик, ассистент Германа. Проведу по странице — покажу, что тут важно. Полетели?',
   },
   metrics: {
     tipId: 'metrics',
+    tipKey: 'dragon.tips.metrics',
     icon: '/img/dragon4.png',
-    text: 'Тут я собрал цифры. 70–100+ компонентов, 20+ специалистов, 30–70% быстрее. Я, конечно, не бухгалтер, но считаю неплохо. Дракон же.',
   },
   whatRemains: {
     tipId: 'what-remains',
+    tipKey: 'dragon.tips.whatRemains',
     icon: '/img/dragon3.png',
-    text: 'Ушёл в отпуск — а оно всё ещё работает. Магия? Нет, процессы.',
   },
   cases: {
     tipId: 'cases',
+    tipKey: 'dragon.tips.cases',
     icon: '/img/dragon2.png',
-    text: 'Три проекта. Каждый — про боль, которую решали. Ох... как вспомню эти данные — до сих пор чешусь. Но получилось же!',
   },
   article: {
     tipId: 'article',
+    tipKey: 'dragon.tips.article',
     icon: '/img/dragon3.png',
-    text: 'Убрали рутину через OpenAPI. Разработчики перестали копипастить. Я помогал считать сэкономленное время. Драконы — не зло, а вот дублирование — да.',
   },
   mentorship: {
     tipId: 'mentorship',
+    tipKey: 'dragon.tips.mentorship',
     icon: '/img/dragon4.png',
-    text: 'Страх перед интервью давит так, что не взлететь? Поможем подготовиться. Я в этом деле не первый век.',
   },
 } as const;
 

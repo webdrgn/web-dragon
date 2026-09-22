@@ -5,23 +5,31 @@ import Image from 'next/image'
 import KitIcon, { KIT_ICON_MD } from '@/shared/ui/kit-icon'
 import type { KitIconName } from '@/shared/ui/kit-icon'
 import { publicAsset } from '@/shared/lib'
+import LocaleToggle from '@/features/locale-toggle'
+import { useTranslation } from 'react-i18next'
 
 const NAV_SECTIONS: Array<{
   href: string
   sectionId: string
-  label: string
+  labelKey:
+    | 'nav.metrics'
+    | 'nav.product'
+    | 'nav.cases'
+    | 'nav.mentorship'
+    | 'nav.stack'
   icon: KitIconName
 }> = [
-  { href: '#metrics', sectionId: 'metrics', label: 'Цифры', icon: 'bar-chart' },
-  { href: '#playunmute', sectionId: 'playunmute', label: 'Продукт', icon: 'rocket' },
-  { href: '#cases', sectionId: 'cases', label: 'Кейсы', icon: 'pouch' },
-  { href: '#mentorship', sectionId: 'mentorship', label: 'Менторство', icon: 'book' },
-  { href: '#stack', sectionId: 'stack', label: 'Стек', icon: 'scroll-code' },
+  { href: '#metrics', sectionId: 'metrics', labelKey: 'nav.metrics', icon: 'bar-chart' },
+  { href: '#playunmute', sectionId: 'playunmute', labelKey: 'nav.product', icon: 'rocket' },
+  { href: '#cases', sectionId: 'cases', labelKey: 'nav.cases', icon: 'pouch' },
+  { href: '#mentorship', sectionId: 'mentorship', labelKey: 'nav.mentorship', icon: 'book' },
+  { href: '#stack', sectionId: 'stack', labelKey: 'nav.stack', icon: 'scroll-code' },
 ]
 
 const NAV_SPLIT_AT = 3
 
 export default function Navbar() {
+  const { t } = useTranslation()
   const [activeSection, setActiveSection] = useState('')
 
   useEffect(() => {
@@ -64,30 +72,34 @@ export default function Navbar() {
       <div className="header__bar">
         <nav
           className="nav"
-          aria-label="Основная навигация"
+          aria-label={t('nav.aria')}
         >
-          {NAV_SECTIONS.slice(0, NAV_SPLIT_AT).map(({ href, sectionId, label, icon }) => (
-            <a
-              key={sectionId}
-              href={href}
-              className={`nav__item${activeSection === sectionId ? ' nav__item--active' : ''}`}
-              title={label}
-              aria-current={activeSection === sectionId ? 'true' : undefined}
-            >
-              <KitIcon name={icon} size={KIT_ICON_MD} className="nav__item-icon" />
-              <span className="nav__item-text">{label}</span>
-            </a>
-          ))}
+          {NAV_SECTIONS.slice(0, NAV_SPLIT_AT).map(({ href, sectionId, labelKey, icon }) => {
+            const label = t(labelKey)
+
+            return (
+              <a
+                key={sectionId}
+                href={href}
+                className={`nav__item${activeSection === sectionId ? ' nav__item--active' : ''}`}
+                title={label}
+                aria-current={activeSection === sectionId ? 'true' : undefined}
+              >
+                <KitIcon name={icon} size={KIT_ICON_MD} className="nav__item-icon" />
+                <span className="nav__item-text">{label}</span>
+              </a>
+            )
+          })}
 
           <a
             href="#top"
             className={`nav__item nav__item--logo${activeSection === '' ? ' nav__item--active' : ''}`}
-            title="На главную"
+            title={t('nav.home')}
             aria-current={activeSection === '' ? 'true' : undefined}
           >
             <Image
               src={publicAsset('/img/dragon4.png')}
-              alt="На главный экран"
+              alt={t('nav.homeAlt')}
               width={80}
               height={80}
               className="nav-img"
@@ -96,29 +108,35 @@ export default function Navbar() {
             />
           </a>
 
-          {NAV_SECTIONS.slice(NAV_SPLIT_AT).map(({ href, sectionId, label, icon }) => (
-            <a
-              key={sectionId}
-              href={href}
-              className={`nav__item${activeSection === sectionId ? ' nav__item--active' : ''}`}
-              title={label}
-              aria-current={activeSection === sectionId ? 'true' : undefined}
-            >
-              <KitIcon name={icon} size={KIT_ICON_MD} className="nav__item-icon" />
-              <span className="nav__item-text">{label}</span>
-            </a>
-          ))}
+          {NAV_SECTIONS.slice(NAV_SPLIT_AT).map(({ href, sectionId, labelKey, icon }) => {
+            const label = t(labelKey)
+
+            return (
+              <a
+                key={sectionId}
+                href={href}
+                className={`nav__item${activeSection === sectionId ? ' nav__item--active' : ''}`}
+                title={label}
+                aria-current={activeSection === sectionId ? 'true' : undefined}
+              >
+                <KitIcon name={icon} size={KIT_ICON_MD} className="nav__item-icon" />
+                <span className="nav__item-text">{label}</span>
+              </a>
+            )
+          })}
+
+          <LocaleToggle />
         </nav>
 
         <a
           href="#contacts"
           className={`header__cta${activeSection === 'contacts' ? ' header__cta--active' : ''}`}
-          aria-label="Написать"
-          title="Написать"
+          aria-label={t('common.write')}
+          title={t('common.write')}
           aria-current={activeSection === 'contacts' ? 'true' : undefined}
         >
           <KitIcon name="mail" size={KIT_ICON_MD} className="header__cta-icon" />
-          <span className="header__cta-text">Написать</span>
+          <span className="header__cta-text">{t('common.write')}</span>
         </a>
       </div>
     </header>

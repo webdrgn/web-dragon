@@ -1,0 +1,42 @@
+.locale-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  gap: 3px;
+  min-width: var(--touch-min);
+  min-height: var(--touch-min);
+  padding: var(--space-2) 10px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba(218, 211, 148, 0.55);
+    outline-offset: 1px;
+  }
+
+  &__code {
+    transition: color 0.2s ease;
+
+    &--active {
+      color: var(--primary);
+    }
+  }
+
+  &__divider {
+    opacity: 0.35;
+  }
+}

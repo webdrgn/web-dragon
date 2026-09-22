@@ -64,7 +64,7 @@
   .nav {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: var(--space-1);
     flex: 1;
@@ -82,6 +82,8 @@
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    scroll-padding-inline: var(--space-2);
+    overscroll-behavior-x: contain;
 
     &::-webkit-scrollbar {
       display: none;
@@ -182,6 +184,10 @@
       padding: var(--space-2);
     }
 
+    .locale-toggle {
+      padding: var(--space-2);
+    }
+
     .nav__item--logo {
       padding: var(--space-1);
     }
@@ -206,6 +212,10 @@
     .nav__item {
       padding: 10px var(--space-3);
       font-size: clamp(12px, 1.1vw, 14px);
+    }
+
+    .locale-toggle {
+      padding: 10px var(--space-3);
     }
 
     &__cta {
