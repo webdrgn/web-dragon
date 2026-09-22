@@ -7,7 +7,7 @@ import { I18nextProvider } from 'react-i18next'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 import ErrorBoundary from '@/shared/ui/error-boundary'
-import { i18n } from '@/shared/i18n'
+import { i18n, syncClientLocale } from '@/shared/i18n'
 import { AOS_DURATION_MS, FIREFLIES_COUNT } from '@/shared/config'
 import { roboto, displayFont } from '@/shared/lib/fonts'
 
@@ -17,6 +17,10 @@ const PageAtmosphere = dynamic(
 )
 
 export default function App({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    syncClientLocale()
+  }, [])
+
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
       '(prefers-reduced-motion: reduce)'
