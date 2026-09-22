@@ -120,11 +120,12 @@
     flex-shrink: 0;
     align-items: center;
     justify-content: center;
-    width: 18px;
-    height: 18px;
+    width: 28px;
+    height: 28px;
     color: inherit;
 
-    svg {
+    svg,
+    img {
       display: block;
     }
   }

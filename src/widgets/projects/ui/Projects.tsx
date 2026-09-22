@@ -1,7 +1,7 @@
 import React from 'react'
 import { AUTHOR_TELEGRAM, WEB_DRAGON_TIPS } from '@/shared/config'
 import SectionHeading from '@/shared/ui/section-heading'
-import KitIcon from '@/shared/ui/kit-icon'
+import KitIcon, { KIT_ICON_MD } from '@/shared/ui/kit-icon'
 import DragonAssistant from '@/features/dragon-assistant'
 import CaseList from './CaseList'
 
@@ -37,7 +37,7 @@ export default function Projects() {
         aria-label="Проекты под NDA"
       >
         <h3 className="projects__nda-title">
-          <KitIcon name="key" size={28} className="projects__nda-icon" />
+          <KitIcon name="key" size={KIT_ICON_MD} className="projects__nda-icon" />
           Проекты под NDA
         </h3>
         <p>
@@ -49,7 +49,7 @@ export default function Projects() {
           rel="noopener noreferrer"
           className="projects__nda-link"
         >
-          <KitIcon name="send" size={22} />
+          <KitIcon name="send" size={KIT_ICON_MD} />
           Написать в Telegram
         </a>
       </aside>

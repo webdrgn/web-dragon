@@ -2,11 +2,9 @@
 
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
-import KitIcon from '@/shared/ui/kit-icon'
+import KitIcon, { KIT_ICON_MD } from '@/shared/ui/kit-icon'
 import type { KitIconName } from '@/shared/ui/kit-icon'
 import { publicAsset } from '@/shared/lib'
-
-const NAV_ICON_SIZE = 22
 
 const NAV_SECTIONS: Array<{
   href: string
@@ -76,7 +74,7 @@ export default function Navbar() {
               title={label}
               aria-current={activeSection === sectionId ? 'true' : undefined}
             >
-              <KitIcon name={icon} size={NAV_ICON_SIZE} className="nav__item-icon" />
+              <KitIcon name={icon} size={KIT_ICON_MD} className="nav__item-icon" />
               <span className="nav__item-text">{label}</span>
             </a>
           ))}
@@ -88,10 +86,10 @@ export default function Navbar() {
             aria-current={activeSection === '' ? 'true' : undefined}
           >
             <Image
-              src={publicAsset('/img/dragon4.webp')}
+              src={publicAsset('/img/dragon4.png')}
               alt="На главный экран"
-              width={40}
-              height={40}
+              width={80}
+              height={80}
               className="nav-img"
               unoptimized
               priority
@@ -106,7 +104,7 @@ export default function Navbar() {
               title={label}
               aria-current={activeSection === sectionId ? 'true' : undefined}
             >
-              <KitIcon name={icon} size={NAV_ICON_SIZE} className="nav__item-icon" />
+              <KitIcon name={icon} size={KIT_ICON_MD} className="nav__item-icon" />
               <span className="nav__item-text">{label}</span>
             </a>
           ))}
@@ -119,7 +117,7 @@ export default function Navbar() {
           title="Написать"
           aria-current={activeSection === 'contacts' ? 'true' : undefined}
         >
-          <KitIcon name="mail" size={24} className="header__cta-icon" />
+          <KitIcon name="mail" size={KIT_ICON_MD} className="header__cta-icon" />
           <span className="header__cta-text">Написать</span>
         </a>
       </div>

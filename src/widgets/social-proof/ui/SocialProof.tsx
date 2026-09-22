@@ -1,5 +1,5 @@
 import React from 'react'
-import KitIcon from '@/shared/ui/kit-icon'
+import KitIcon, { KIT_ICON_MD } from '@/shared/ui/kit-icon'
 import SectionHeading from '@/shared/ui/section-heading'
 import DragonAssistant from '@/features/dragon-assistant'
 import { AUTHOR_GITHUB_ARTICLE, WEB_DRAGON_TIPS } from '@/shared/config'
@@ -38,7 +38,7 @@ export default function SocialProof() {
           rel="noopener noreferrer"
           className="social-proof__link"
         >
-          <KitIcon name="globe" size={25} />
+          <KitIcon name="bookmark" size={KIT_ICON_MD} />
           Читать на GitHub
         </a>
       </article>

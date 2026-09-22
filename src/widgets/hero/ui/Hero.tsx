@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { AUTHOR_NAME, AUTHOR_JOB_TITLE, AUTHOR_PHOTO, WEB_DRAGON_TIPS } from '@/shared/config'
 import DragonAssistant from '@/features/dragon-assistant'
-import KitIcon from '@/shared/ui/kit-icon'
+import KitIcon, { KIT_ICON_MD } from '@/shared/ui/kit-icon'
 import { publicAsset } from '@/shared/lib'
 
 export default function Hero() {
@@ -44,11 +44,11 @@ export default function Hero() {
 
         <div className="hero__actions hero__reveal hero__reveal--4">
           <a href="#contacts" className="hero__cta hero__cta--primary">
-            <KitIcon name="send" size={22} className="hero__cta-icon" />
+            <KitIcon name="send" size={KIT_ICON_MD} className="hero__cta-icon" />
             Обсудим?
           </a>
           <a href="#mentorship" className="hero__cta">
-            <KitIcon name="wand" size={22} className="hero__cta-icon" />
+            <KitIcon name="wand" size={KIT_ICON_MD} className="hero__cta-icon" />
             Нужен ментор? Напиши.
           </a>
         </div>

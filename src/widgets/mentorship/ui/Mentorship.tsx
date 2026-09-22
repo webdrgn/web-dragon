@@ -1,5 +1,5 @@
 import React from 'react'
-import KitIcon from '@/shared/ui/kit-icon'
+import KitIcon, { KIT_ICON_MD } from '@/shared/ui/kit-icon'
 import type { KitIconName } from '@/shared/ui/kit-icon'
 import SectionHeading from '@/shared/ui/section-heading'
 import DragonAssistant from '@/features/dragon-assistant'
@@ -18,12 +18,12 @@ const MENTORSHIP_FORMATS: Array<{
   {
     accent: 'Code review',
     label: 'От страха комментировать к уверенным решениям',
-    icon: 'wand',
+    icon: 'clipboard',
   },
   {
     accent: 'Playunmute',
     label: 'Мой тренажер для подготовки',
-    icon: 'laptop',
+    icon: 'diploma',
   },
 ]
 
@@ -65,7 +65,7 @@ export default function Mentorship() {
               <KitIcon
                 name={format.icon}
                 className="mentorship__icon"
-                size={28}
+                size={KIT_ICON_MD}
               />
               <div className="mentorship__label">{format.label}</div>
             </div>
@@ -83,7 +83,7 @@ export default function Mentorship() {
           rel="noopener noreferrer"
           className="mentorship__cta-link"
         >
-          <KitIcon name="send" size={22} className="mentorship__cta-icon" />
+          <KitIcon name="send" size={KIT_ICON_MD} className="mentorship__cta-icon" />
           Нужен ментор? Напиши.
         </a>
       </div>

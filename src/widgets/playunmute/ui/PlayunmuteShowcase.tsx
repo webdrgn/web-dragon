@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import KitIcon from '@/shared/ui/kit-icon'
+import KitIcon, { KIT_ICON_MD } from '@/shared/ui/kit-icon'
 import type { KitIconName } from '@/shared/ui/kit-icon'
 import { publicAsset } from '@/shared/lib'
 
@@ -39,7 +39,7 @@ export default function PlayunmuteShowcase() {
             rel="noopener noreferrer"
             className="product-showcase__demo"
           >
-            <KitIcon name="globe" size={25} />
+            <KitIcon name="star" size={KIT_ICON_MD} />
             Попробовать
           </a>
         </div>
@@ -60,7 +60,7 @@ export default function PlayunmuteShowcase() {
             <li key={feature.label} className="product-showcase__feature">
               <KitIcon
                 name={feature.icon}
-                size={24}
+                size={KIT_ICON_MD}
                 className="product-showcase__feature-icon"
               />
               <span>{feature.label}</span>

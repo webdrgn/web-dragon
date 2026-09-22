@@ -2,13 +2,13 @@
 
 import React, { useId } from 'react'
 import type { Case } from '@/entities/case'
-import KitIcon from '@/shared/ui/kit-icon'
+import KitIcon, { KIT_ICON_MD } from '@/shared/ui/kit-icon'
 import type { KitIconName } from '@/shared/ui/kit-icon'
 
 const CASE_ICON_BY_ID: Record<string, KitIconName> = {
   'multi-product-platform': 'castle',
   'retail-platform': 'cart',
-  'mini-apps': 'rocket',
+  'mini-apps': 'flask',
 }
 
 function renderCaseText(text: string) {
@@ -51,7 +51,7 @@ export default function CaseAccordion({
           onClick={onToggle}
         >
           <span className="case__trigger-start">
-            <KitIcon name={caseIcon} size={28} className="case__trigger-icon" />
+            <KitIcon name={caseIcon} size={KIT_ICON_MD} className="case__trigger-icon" />
             <span className="case__trigger-text">{caseEntry.title}</span>
           </span>
           <svg

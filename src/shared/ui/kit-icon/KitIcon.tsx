@@ -81,20 +81,26 @@ type KitIconProps = {
   className?: string
 }
 
+export const KIT_ICON_MD = 28
+export const KIT_ICON_LG = 40
+
 export default function KitIcon({
   name,
-  size = 46,
+  size = KIT_ICON_MD,
   className,
 }: KitIconProps) {
+  const classes = ['kit-icon', className].filter(Boolean).join(' ')
+
   return (
     <img
       src={publicAsset(`/icons-kit/${name}.svg`)}
       alt=""
       width={size}
       height={size}
-      className={className}
+      className={classes}
       aria-hidden
       draggable={false}
+      decoding="async"
     />
   )
 }

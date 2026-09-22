@@ -4,14 +4,14 @@ import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { publicAsset } from '@/shared/lib'
 
-const MOBILE_MAX_WIDTH_PX = 767
+const WIDE_MIN_WIDTH_PX = 1200
 
-function isDesktopViewport() {
+function isWideViewport() {
   if (typeof window === 'undefined') {
     return true
   }
 
-  return window.matchMedia(`(min-width: ${MOBILE_MAX_WIDTH_PX + 1}px)`).matches
+  return window.matchMedia(`(min-width: ${WIDE_MIN_WIDTH_PX}px)`).matches
 }
 
 export default function DragonAssistant({
@@ -28,7 +28,7 @@ export default function DragonAssistant({
   const [isOpen, setIsOpen] = useState(true)
 
   useEffect(() => {
-    setIsOpen(isDesktopViewport())
+    setIsOpen(isWideViewport())
   }, [])
 
   const closeTip = () => {
@@ -54,9 +54,10 @@ export default function DragonAssistant({
         <Image
           src={publicAsset(icon)}
           alt=""
-          width={96}
-          height={48}
+          width={160}
+          height={80}
           className="dragon-guide__icon"
+          style={{ width: 'auto', height: '100%' }}
           aria-hidden
           unoptimized
           loading="lazy"

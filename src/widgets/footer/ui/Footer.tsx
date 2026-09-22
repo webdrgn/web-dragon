@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaGithub } from 'react-icons/fa'
-import KitIcon from '@/shared/ui/kit-icon'
+import KitIcon, { KIT_ICON_MD } from '@/shared/ui/kit-icon'
 import {
   AUTHOR_JOB_TITLE,
   AUTHOR_TELEGRAM,
@@ -8,8 +8,6 @@ import {
   AUTHOR_EMAIL,
 } from '@/shared/config'
 import dayjs from 'dayjs'
-
-const ICON_SIZE = 28
 
 export default function Footer() {
   const currentYear = dayjs().year()
@@ -33,7 +31,7 @@ export default function Footer() {
           rel="noopener noreferrer"
           className="footer__cta"
         >
-          <KitIcon name="send" size={22} className="footer__cta-icon" />
+          <KitIcon name="send" size={KIT_ICON_MD} className="footer__cta-icon" />
           С чего начнём?
         </a>
 
@@ -46,7 +44,7 @@ export default function Footer() {
             className="footer__text-link"
           >
             <span className="footer__link-icon">
-              <KitIcon name="mail" size={ICON_SIZE} />
+              <KitIcon name="mail" size={KIT_ICON_MD} />
             </span>
             Email
           </a>
@@ -57,7 +55,7 @@ export default function Footer() {
             className="footer__text-link"
           >
             <span className="footer__link-icon">
-              <FaGithub size={ICON_SIZE} aria-hidden />
+              <FaGithub size={KIT_ICON_MD} aria-hidden />
             </span>
             GitHub
           </a>

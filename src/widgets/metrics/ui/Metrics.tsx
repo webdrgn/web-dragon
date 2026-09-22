@@ -1,5 +1,5 @@
 import React from "react";
-import KitIcon from "@/shared/ui/kit-icon";
+import KitIcon, { KIT_ICON_MD } from "@/shared/ui/kit-icon";
 import type { KitIconName } from "@/shared/ui/kit-icon";
 import SectionHeading from "@/shared/ui/section-heading";
 import DragonAssistant from "@/features/dragon-assistant";
@@ -31,7 +31,7 @@ const METRICS: Array<{
     label: "быстрее",
     context:
       "Задача, которая раньше съедала неделю, теперь делается за день. Новые фичи встраиваются точечно. Переписывать половину проекта не нужно. Команда та же, скорость другая.",
-    icon: "bar-chart",
+    icon: "target",
   },
   {
     value: "−45%",
@@ -75,7 +75,7 @@ export default function Metrics() {
           <li key={metric.label} data-aos="fade-up" className="metrics__card">
             <MetricValue value={metric.value} />
             <div className="metrics__label-row">
-              <KitIcon name={metric.icon} className="metrics__card-icon" size={28} />
+              <KitIcon name={metric.icon} className="metrics__card-icon" size={KIT_ICON_MD} />
               <div className="metrics__label">{metric.label}</div>
             </div>
             <p className="metrics__context">{metric.context}</p>

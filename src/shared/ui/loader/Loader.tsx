@@ -10,7 +10,7 @@ export default function Loader({ className = '' }: LoaderProps) {
   return (
     <div className={`loader ${className}`}>
       <Image
-        src={publicAsset('/img/dragon4.webp')}
+        src={publicAsset('/img/dragon4.png')}
         alt="Dragon illustration"
         width={100}
         height={100}

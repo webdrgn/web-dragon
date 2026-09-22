@@ -1,5 +1,5 @@
 import React from 'react'
-import KitIcon from '@/shared/ui/kit-icon'
+import KitIcon, { KIT_ICON_MD } from '@/shared/ui/kit-icon'
 import type { KitIconName } from '@/shared/ui/kit-icon'
 import SectionHeading from '@/shared/ui/section-heading'
 import DragonAssistant from '@/features/dragon-assistant'
@@ -14,7 +14,7 @@ const WHAT_REMAINS_ITEMS: Array<{
     title: 'Дизайн-система',
     detail:
       'Storybook, версии, changelog. Новый экран собирается из готовых блоков.',
-    icon: 'presentation',
+    icon: 'documents',
   },
   {
     title: 'Релизы без пожаров',
@@ -26,13 +26,13 @@ const WHAT_REMAINS_ITEMS: Array<{
     title: 'Онбординг за неделю',
     detail:
       'Порядок в коде и документации. Новичок выходит на задачи без ментора рядом.',
-    icon: 'book',
+    icon: 'sprout',
   },
   {
     title: 'Команда без ручного управления',
     detail:
       'Процессы, договорённости и люди, которые держат продукт, когда меня нет в чате.',
-    icon: 'users',
+    icon: 'community',
   },
 ]
 
@@ -66,7 +66,7 @@ export default function WhatRemains() {
               <KitIcon
                 name={item.icon}
                 className="what-remains__icon"
-                size={28}
+                size={KIT_ICON_MD}
               />
               <div className="what-remains__title">{item.title}</div>
             </div>

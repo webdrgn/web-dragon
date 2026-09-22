@@ -2,21 +2,13 @@
 @import 'mixins/media';
 
 .dragon-guide {
-  position: absolute;
+  position: relative;
   z-index: 5;
-  width: 56px;
-  height: 56px;
+  width: fit-content;
+  height: 80px;
+  margin-inline: auto;
+  margin-bottom: var(--space-2);
   pointer-events: none;
-
-  &--hero {
-    top: 0;
-    right: 0;
-  }
-
-  &--section {
-    top: 0;
-    right: 0;
-  }
 
   &__trigger {
     pointer-events: auto;
@@ -24,34 +16,29 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 56px;
-    height: 56px;
-    min-width: 56px;
-    min-height: 56px;
-    max-width: 56px;
-    max-height: 56px;
+    width: auto;
+    height: 80px;
+    min-width: 80px;
+    min-height: 80px;
+    max-height: 80px;
     padding: 0;
-    aspect-ratio: 1 / 1;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 50%;
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.06),
-      rgba(255, 255, 255, 0.02)
-    );
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     cursor: pointer;
     flex-shrink: 0;
+    overflow: visible;
 
     &::before {
       content: '';
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 56px;
-      height: 56px;
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
       border: 1.5px solid rgba(218, 211, 148, 0.55);
       opacity: 0;
@@ -65,13 +52,9 @@
 
     &:hover {
       transform: translateY(-2px);
-      border-color: rgba(255, 255, 255, 0.2);
-      background: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.08),
-        rgba(255, 255, 255, 0.04)
-      );
-      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
+      background: transparent;
+      border: none;
+      box-shadow: none;
 
       &::before {
         animation: none;
@@ -82,7 +65,7 @@
 
     &:active {
       transform: translateY(0);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
+      box-shadow: none;
     }
 
     &:focus-visible {
@@ -92,9 +75,12 @@
   }
 
   &__icon {
-    width: 44px;
-    height: 28px;
+    width: auto;
+    height: 100%;
+    max-width: none;
     object-fit: contain;
+    object-position: center;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
     pointer-events: none;
     user-select: none;
   }
@@ -103,7 +89,8 @@
     pointer-events: auto;
     position: absolute;
     top: calc(100% + var(--space-2));
-    right: 0;
+    left: 50%;
+    right: auto;
     z-index: 1;
     display: flex;
     flex-direction: column;
@@ -115,8 +102,9 @@
     background: rgba(22, 22, 22, 0.96);
     border: 1px solid rgba(218, 211, 148, 0.28);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
-    transform-origin: top right;
-    animation: dragon-guide-reveal 0.35s ease-out both;
+    transform: translateX(-50%);
+    transform-origin: top center;
+    animation: dragon-guide-reveal-center 0.35s ease-out both;
 
     &::before {
       content: '';
@@ -169,31 +157,25 @@
   }
 }
 
-@include media(max, mobile) {
+@include media(min, tablet) {
   .dragon-guide {
-    position: relative;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    margin-inline: auto;
-    margin-bottom: var(--space-2);
-    z-index: 5;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
 
     &--hero,
     &--section {
-      top: auto;
-      right: auto;
-      bottom: auto;
+      top: 0;
+      right: 0;
     }
 
     &__bubble {
-      top: calc(100% + var(--space-2));
-      bottom: auto;
-      left: 50%;
-      right: auto;
-      transform: translateX(-50%);
-      transform-origin: top center;
-      animation-name: dragon-guide-reveal-center;
+      left: auto;
+      right: 0;
+      transform: none;
+      transform-origin: top right;
+      animation-name: dragon-guide-reveal;
     }
   }
 }
