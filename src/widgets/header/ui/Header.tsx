@@ -5,7 +5,6 @@ import Image from 'next/image'
 import KitIcon, { KIT_ICON_MD } from '@/shared/ui/kit-icon'
 import type { KitIconName } from '@/shared/ui/kit-icon'
 import { publicAsset } from '@/shared/lib'
-import LocaleToggle from '@/features/locale-toggle'
 import { useTranslation } from 'react-i18next'
 
 const NAV_SECTIONS: Array<{
@@ -124,8 +123,6 @@ export default function Navbar() {
               </a>
             )
           })}
-
-          <LocaleToggle />
         </nav>
 
         <a

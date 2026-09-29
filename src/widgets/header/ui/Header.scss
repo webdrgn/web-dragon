@@ -184,10 +184,6 @@
       padding: var(--space-2);
     }
 
-    .locale-toggle {
-      padding: var(--space-2);
-    }
-
     .nav__item--logo {
       padding: var(--space-1);
     }
@@ -212,10 +208,6 @@
     .nav__item {
       padding: 10px var(--space-3);
       font-size: clamp(12px, 1.1vw, 14px);
-    }
-
-    .locale-toggle {
-      padding: 10px var(--space-3);
     }
 
     &__cta {

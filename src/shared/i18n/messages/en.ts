@@ -33,11 +33,6 @@ export const en: DeepStringify<typeof ru> = {
     home: 'Back to top',
     homeAlt: 'Go to hero',
   },
-  locale: {
-    switchAria: 'Interface language',
-    ru: 'RU',
-    en: 'EN',
-  },
   dragon: {
     openTip: "I'm here",
     hideTip: 'Hiding',

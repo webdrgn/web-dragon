@@ -2,28 +2,11 @@ import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import { ru } from './messages/ru'
 import { en } from './messages/en'
-import { LOCALE_STORAGE_KEY, isLocale, type Locale } from './locales'
+import { isLocale, type Locale } from './locales'
 
 export const SSR_LOCALE: Locale = 'ru'
 
-function readStoredLocale(): Locale | null {
-  if (typeof window === 'undefined') {
-    return null
-  }
-
-  try {
-    const stored = window.localStorage.getItem(LOCALE_STORAGE_KEY)
-    if (stored && isLocale(stored)) {
-      return stored
-    }
-  } catch (error) {
-    console.error('Failed to read locale from storage', error)
-  }
-
-  return null
-}
-
-function readBrowserLocale(): Locale {
+export function resolveClientLocale(): Locale {
   if (typeof window === 'undefined') {
     return SSR_LOCALE
   }
@@ -39,10 +22,6 @@ function readBrowserLocale(): Locale {
   }
 
   return 'en'
-}
-
-export function resolveClientLocale(): Locale {
-  return readStoredLocale() ?? readBrowserLocale()
 }
 
 void i18n.use(initReactI18next).init({
@@ -68,19 +47,11 @@ i18n.on('languageChanged', (language) => {
     return
   }
 
-  const nextLocale: Locale = isLocale(language)
+  document.documentElement.lang = isLocale(language)
     ? language
     : language.startsWith('ru')
       ? 'ru'
       : 'en'
-
-  document.documentElement.lang = nextLocale
-
-  try {
-    window.localStorage.setItem(LOCALE_STORAGE_KEY, nextLocale)
-  } catch (error) {
-    console.error('Failed to persist locale', error)
-  }
 })
 
 export function syncClientLocale() {

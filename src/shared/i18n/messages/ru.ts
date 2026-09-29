@@ -23,11 +23,6 @@ export const ru = {
     home: 'На главную',
     homeAlt: 'На главный экран',
   },
-  locale: {
-    switchAria: 'Язык интерфейса',
-    ru: 'RU',
-    en: 'EN',
-  },
   dragon: {
     openTip: 'Я тут',
     hideTip: 'Спрятался',
