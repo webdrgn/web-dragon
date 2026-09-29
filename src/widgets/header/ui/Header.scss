@@ -64,9 +64,9 @@
   .nav {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    gap: var(--space-1);
+    gap: 0;
     flex: 1;
     min-width: 0;
     max-width: 100%;
@@ -84,6 +84,8 @@
     scrollbar-width: none;
     scroll-padding-inline: var(--space-2);
     overscroll-behavior-x: contain;
+    container-type: inline-size;
+    container-name: header-nav;
 
     &::-webkit-scrollbar {
       display: none;
@@ -120,7 +122,7 @@
     }
 
     &__item-text {
-      @include media(max, mobile) {
+      @container header-nav (max-width: 520px) {
         position: absolute;
         width: 1px;
         height: 1px;
@@ -176,7 +178,6 @@
 
     .nav {
       padding: var(--space-1) 6px;
-      gap: var(--space-1);
       border-radius: var(--radius-md);
     }
 
@@ -198,11 +199,7 @@
     top: var(--space-2);
 
     .nav {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: var(--space-2) 10px;
       padding: var(--space-2) var(--space-3);
-      overflow: visible;
     }
 
     .nav__item {
