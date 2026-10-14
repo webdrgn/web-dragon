@@ -41,7 +41,7 @@ export const AUTHOR_JOB_TITLE = 'Head of Development / Architect';
 export const SITE_NAME = `${AUTHOR_NAME} · ${AUTHOR_JOB_TITLE}`;
 export const AUTHOR_PHOTO = '/img/resume.webp';
 export const SEO_DESCRIPTION =
-  'Head of Development / Architect. Architecture · Team Leadership · Full-cycle Engineering. Стратегия, архитектура, команда, качество. Дизайн-система 70–100+ компонентов, 20+ специалистов, ускорение разработки 30–70%, онбординг месяц → неделя. Vue, React, TypeScript, Node.js.';
+  'Head of Development / Architect. Architecture · Team Leadership · Full-cycle Engineering. Стратегия, архитектура, команда, качество. Дизайн-система 70–100+ компонентов, 20+ специалистов, ускорение разработки 30–70%, онбординг месяц → неделя. TypeScript, Vue, React, Node.js, PHP, PostgreSQL, Docker.';
 export const SEO_KEYWORDS = [
   'Head of Development',
   'Frontend Architect',

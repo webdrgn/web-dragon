@@ -14,12 +14,15 @@ const PLAYUNMUTE_STACK =
   'Fullstack · Nuxt 3 · Vue 3 · TypeScript · Node.js · Express'
 
 const PLAYUNMUTE_FEATURES: Array<{
-  labelKey: 'playunmute.features.zoom' | 'playunmute.features.pace' | 'playunmute.features.verdict'
+  labelKey:
+    | 'playunmute.features.zoom'
+    | 'playunmute.features.pace'
+    | 'playunmute.features.verdict'
   icon: KitIconName
 }> = [
   { labelKey: 'playunmute.features.zoom', icon: 'headset' },
   { labelKey: 'playunmute.features.pace', icon: 'terminal' },
-  { labelKey: 'playunmute.features.verdict', icon: 'trophy' },
+  { labelKey: 'playunmute.features.verdict', icon: 'trophy' }
 ]
 
 export default function PlayunmuteShowcase() {
@@ -31,11 +34,17 @@ export default function PlayunmuteShowcase() {
       className="playunmute"
       aria-labelledby="playunmute-heading"
     >
-      <article data-aos="fade-up" className="product-showcase">
+      <article
+        data-aos="fade-up"
+        className="product-showcase"
+      >
         <p className="product-showcase__label">{t('playunmute.label')}</p>
 
         <div className="product-showcase__head">
-          <h2 id="playunmute-heading" className="product-showcase__title">
+          <h2
+            id="playunmute-heading"
+            className="product-showcase__title"
+          >
             Playunmute
           </h2>
           <a
@@ -44,7 +53,10 @@ export default function PlayunmuteShowcase() {
             rel="noopener noreferrer"
             className="product-showcase__demo"
           >
-            <KitIcon name="star" size={KIT_ICON_MD} />
+            <KitIcon
+              name="star"
+              size={KIT_ICON_MD}
+            />
             {t('playunmute.tryDemo')}
           </a>
         </div>
@@ -52,8 +64,11 @@ export default function PlayunmuteShowcase() {
         <p className="product-showcase__proof">{t('playunmute.proof1')}</p>
 
         <ul className="product-showcase__features">
-          {PLAYUNMUTE_FEATURES.map((feature) => (
-            <li key={feature.labelKey} className="product-showcase__feature">
+          {PLAYUNMUTE_FEATURES.map(feature => (
+            <li
+              key={feature.labelKey}
+              className="product-showcase__feature"
+            >
               <KitIcon
                 name={feature.icon}
                 size={KIT_ICON_MD}
