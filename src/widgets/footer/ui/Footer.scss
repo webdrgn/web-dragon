@@ -122,11 +122,17 @@
     justify-content: center;
     width: 28px;
     height: 28px;
-    color: inherit;
+    color: #fff;
 
-    svg,
+    svg {
+      display: block;
+      color: #fff;
+      fill: currentColor;
+    }
+
     img {
       display: block;
+      filter: brightness(0) invert(1);
     }
   }
 

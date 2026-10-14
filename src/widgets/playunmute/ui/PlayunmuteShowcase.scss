@@ -47,10 +47,10 @@
     font-size: clamp(14px, 1.35vw, 16px);
     line-height: 1.55;
     color: var(--text-secondary);
-  }
 
-  &__proof + &__proof {
-    margin-top: var(--space-3);
+    @include media(min, mobile) {
+      max-width: 70%;
+    }
   }
 
   &__preview {

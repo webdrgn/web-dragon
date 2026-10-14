@@ -50,7 +50,6 @@ export default function PlayunmuteShowcase() {
         </div>
 
         <p className="product-showcase__proof">{t('playunmute.proof1')}</p>
-        <p className="product-showcase__proof">{t('playunmute.proof2')}</p>
 
         <ul className="product-showcase__features">
           {PLAYUNMUTE_FEATURES.map((feature) => (

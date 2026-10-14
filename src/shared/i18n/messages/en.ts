@@ -37,7 +37,7 @@ export const en: DeepStringify<typeof ru> = {
     openTip: "I'm here",
     hideTip: 'Hiding',
     tipDialog: 'Web Dragon whisper',
-    collapse: 'Okay',
+    collapse: 'Collapse',
     tips: {
       hero: "Hi! I'm Web Dragon, German's assistant. I'll guide you through the page and show what matters. Ready?",
       metrics:
@@ -123,9 +123,7 @@ export const en: DeepStringify<typeof ru> = {
     label: 'Product',
     tryDemo: 'Try it',
     proof1:
-      'Dozens of technical interviews. Candidates prep for the wrong thing. They grind algorithms and fail on simple questions.',
-    proof2:
-      'I built a trainer. Zoom-style interview simulation. Thinking pace calibration. Reaction speed scoring. A six-stage breakdown with scores and notes. An honest verdict.',
+      'I’ve run dozens of interviews. Candidates prep for the wrong thing: they grind algorithms and fall apart on simple questions. The trainer shows exactly where.',
     previewAlt: 'Playunmute — Zoom interview simulation',
     features: {
       zoom: 'Zoom interview simulation',
