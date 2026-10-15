@@ -122,6 +122,7 @@ export const en: DeepStringify<typeof ru> = {
   playunmute: {
     label: 'Product',
     tryDemo: 'Try it',
+    comingSoon: 'Coming soon',
     proof1:
       'I’ve run dozens of interviews. Candidates prep for the wrong thing: they grind algorithms and fall apart on simple questions. The trainer shows exactly where.',
     previewAlt: 'Playunmute — Zoom interview simulation',
