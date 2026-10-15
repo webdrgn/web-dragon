@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next'
 
 const PLAYUNMUTE_DEMO = 'https://webdrgn.github.io/playunmute'
 const PLAYUNMUTE_PREVIEW = publicAsset('/img/playunmute.webp')
-const PLAYUNMUTE_COMING_SOON = true
+const PLAYUNMUTE_COMING_SOON = false
 
 const PLAYUNMUTE_STACK =
   'Fullstack · Nuxt 3 · Vue 3 · TypeScript · Node.js · Express'
