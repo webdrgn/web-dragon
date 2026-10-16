@@ -12,11 +12,11 @@ export const en: DeepStringify<typeof ru> = {
   meta: {
     authorName: 'German Chernyshev',
     description:
-      'Head of Development / Architect. Architecture · Team Leadership · Full-cycle Engineering. Strategy, architecture, team, quality. Design system with 70–100+ components, 20+ specialists, 30–70% faster delivery, onboarding month → week. TypeScript, Vue, React, Node.js, PHP, PostgreSQL, Docker.',
+      'Head of Engineering / Architect. Architecture · Team Leadership · Full-cycle Engineering. Strategy, architecture, team, quality. Design system with 70–100+ components, 20+ specialists, 30–70% faster delivery, onboarding month → week. TypeScript, Vue, React, Node.js, PHP, PostgreSQL, Docker.',
     skipToContent: 'Skip to content',
   },
   common: {
-    jobTitle: 'Head of Development / Architect',
+    jobTitle: 'Head of Engineering / Architect',
     focus: 'Architecture · Team Leadership · Full-cycle Engineering',
     focusAria: 'Focus',
     write: 'Message',

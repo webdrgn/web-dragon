@@ -2,11 +2,11 @@ export const ru = {
   meta: {
     authorName: 'Герман Чернышёв',
     description:
-      'Head of Development / Architect. Architecture · Team Leadership · Full-cycle Engineering. Стратегия, архитектура, команда, качество. Дизайн-система 70–100+ компонентов, 20+ специалистов, ускорение разработки 30–70%, онбординг месяц → неделя. TypeScript, Vue, React, Node.js, PHP, PostgreSQL, Docker.',
+      'Head of Engineering / Architect. Architecture · Team Leadership · Full-cycle Engineering. Стратегия, архитектура, команда, качество. Дизайн-система 70–100+ компонентов, 20+ специалистов, ускорение разработки 30–70%, онбординг месяц → неделя. TypeScript, Vue, React, Node.js, PHP, PostgreSQL, Docker.',
     skipToContent: 'Перейти к содержимому',
   },
   common: {
-    jobTitle: 'Head of Development / Architect',
+    jobTitle: 'Head of Engineering / Architect',
     focus: 'Architecture · Team Leadership · Full-cycle Engineering',
     focusAria: 'Фокус',
     write: 'Написать',

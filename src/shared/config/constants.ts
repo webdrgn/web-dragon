@@ -37,13 +37,13 @@ export const REPO_NAME = 'web-dragon';
 export const BASE_PATH = `/${REPO_NAME}`;
 export const SITE_URL = `https://webdrgn.github.io${BASE_PATH}`;
 export const AUTHOR_NAME = 'Герман Чернышёв';
-export const AUTHOR_JOB_TITLE = 'Head of Development / Architect';
+export const AUTHOR_JOB_TITLE = 'Head of Engineering / Architect';
 export const SITE_NAME = `${AUTHOR_NAME} · ${AUTHOR_JOB_TITLE}`;
 export const AUTHOR_PHOTO = '/img/resume.webp';
 export const SEO_DESCRIPTION =
-  'Head of Development / Architect. Architecture · Team Leadership · Full-cycle Engineering. Стратегия, архитектура, команда, качество. Дизайн-система 70–100+ компонентов, 20+ специалистов, ускорение разработки 30–70%, онбординг месяц → неделя. TypeScript, Vue, React, Node.js, PHP, PostgreSQL, Docker.';
+  'Head of Engineering / Architect. Architecture · Team Leadership · Full-cycle Engineering. Стратегия, архитектура, команда, качество. Дизайн-система 70–100+ компонентов, 20+ специалистов, ускорение разработки 30–70%, онбординг месяц → неделя. TypeScript, Vue, React, Node.js, PHP, PostgreSQL, Docker.';
 export const SEO_KEYWORDS = [
-  'Head of Development',
+  'Head of Engineering',
   'Frontend Architect',
   'Tech Lead',
   'архитектор фронтенда',
