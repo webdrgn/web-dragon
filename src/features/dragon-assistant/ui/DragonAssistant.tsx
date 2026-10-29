@@ -1,10 +1,12 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { HiOutlineInformationCircle } from 'react-icons/hi2'
 import { publicAsset } from '@/shared/lib'
 import { useTranslation } from 'react-i18next'
+
+const DESKTOP_MIN_WIDTH = '(min-width: 768px)'
 
 export default function DragonAssistant({
   tipId,
@@ -18,9 +20,13 @@ export default function DragonAssistant({
   className?: string
 }) {
   const { t } = useTranslation()
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
   const openLabel = t('dragon.openTip')
   const hideLabel = t('dragon.hideTip')
+
+  useEffect(() => {
+    setIsOpen(window.matchMedia(DESKTOP_MIN_WIDTH).matches)
+  }, [])
 
   const closeTip = () => {
     setIsOpen(false)
